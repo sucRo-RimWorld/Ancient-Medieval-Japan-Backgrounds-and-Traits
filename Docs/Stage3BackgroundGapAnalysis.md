@@ -18,10 +18,37 @@
 | Medicine and religious care | 医僧, 医家育ち, 医術の大家, 村の世話役, 薬師, 水軍の療治役 | Preserve distinct period medical careers without duplicating labels |
 | Construction, mining and crafts | 熟練の大工, 番匠, 石工, 鉱夫, 鍛冶職人, 仏師 | Additional generic 'craftsman' is not a demonstrated coverage gap |
 | Traders, accounting and estate officials | 廻船商人, 市の商人, 荘園の書記, 荘園の勘定役, 荘園の差配人 | Differentiate occupations through actual daily activities and retained skill balance |
-| Food preparation and temple instruction | 館の料理人, 船中の炊事役, 陣中の膳夫, 寺の学僧, 神事見習いの子 | Generic cook/temple apprentice is already represented |
+| Food preparation and temple instruction | 館の料理人, 船中の炊事役, 陣中の膳夫, 寺の学僧 | Cooking and Buddhist temple scholars already represented; they do not replace shrine officiants |
+| Shrine ceremonies and ritual | 神事見習いの子 (ApprenticeOracle83, childhood) | A shrine child already exists; no specifically titled adult shrine officiant among the 123 rewritten titles |
+| Hunting and itinerant livelihoods | 山野の猟師 (SpaceHunter79), 旅芸人, 流れ者, 行商の子 | Existing ordinary hunter and travelers; new additions must have distinct roles or age slots |
 | Farming-related or rural childhood | 田畑育ち, 田畑の知恵者, 山里の暮らし | Some rural coverage exists; a new agriculture entry must represent a distinct social/work role |
 
 **Names in this table are actual approved titles, not invented existing Defs.** The 123-entry source inventory is the deduplication guard for new titles and role concepts. There are also unchanged Vanilla biographies and MO gameplay-related traits outside this set; never claim thematic absence from all installed Defs without an actual loaded inventory.
+
+## Author-prioritized P3 themes (2026-10-19): shrine, itinerant livelihoods and hunting
+
+The author explicitly requests representation of 神道・神社祭祀関係者, 漂泊の民 and 狩人. This is **approval to prioritize thematic coverage**, not approval of individual final biographies, skills, generation rates or a number of new Defs. The current 123 approved rewrites already include original childhood ApprenticeOracle83 = 神事見習いの子, adult SpaceHunter79 = 山野の猟師, RunawayDancer35 = 旅芸人 and other itinerant/merchant characters. This **does not** establish that these subjects are absent from every unrewritten Vanilla or MO background.
+
+**Historical boundaries:** A shrine specialist may be a 禰宜/祝 with responsibilities in local offerings and ceremonies; do not project modern centralized shrine systems onto ancient/medieval history, or imply shrine practitioners never interacted with Buddhism. A shrine-service 巫女 and a mobile 渡り巫女 represent different livelihoods. 漂泊の民 is **not one occupation or one homogeneous ethnic/social group**; specify the actual livelihood rather than portraying all itinerants as thieves, outcasts, or fantasy nomads. Mobile woodenware workers (木地師/木地屋) are a researched example, though period-specific naming needs review. Hunting was a livelihood and material source; 山立 is a documented historic term, whereas マタギ is regionally contextual. Do not conflate practical hunting with elite 鷹狩 or automatically label it as entertainment.
+
+| Priority | Slot | Distinct candidate role | Main content difference from the 123 rewrites | Possible Vanilla skill focus (NOT final values) |
+|---|---|---|---|---|
+| High | Adult | 社の禰宜・祝 | Shrine ceremony and community service; distinct from 寺の学僧 and the child shrine novice | Social, Intellectual |
+| High | Adult | 社に仕える巫女 | Local festival rites, offerings and kagura distinct from temple medicine | Artistic, Social |
+| High | Adult | 渡り巫女 | Itinerant rites at festivals and markets: shrine and traveling roles | Social, Artistic |
+| High | Adult | 木地師（山を渡る木工職人） | Moves in search of suitable wood to make utensils; not settled carpenter or generic wanderer | Crafting, Plants |
+| High | Child | 狩人の家の子 | Learns tracking and snares; different age slot from existing adult 山野の猟師 | Plants, Animals, modest Shooting |
+| Medium | Adult | 鷹匠 | Specialist in bird-assisted hunts; distinct from everyday subsistence hunter | Animals, Shooting |
+| Medium | Child | 漂泊する職人の子 | Grows up with a mobile working household, not simply a one-time fugitive | Crafting, Social |
+
+**Japanese-first narrative sketches — candidates only, not accepted game text:**
+- Shrine adulthood: 社の祭礼と供え物を取り仕切り、村人と相談しながら神事を続けた。
+- Itinerant craft adulthood: 良い木を求めて各地の山に入り、椀や器を作って暮らした。
+- Hunter childhood: 山の獣道を覚え、罠の手入れや獲物の運搬を手伝って育った。
+
+**Overlap / scope gate:** Do **not** add another unqualified adult 狩人 because 山野の猟師 already fills it; do not add another generic shrine child because 神事見習いの子 already fills it. Traveling artisan, pilgrim, miko, troupe member, hunter and trader are not interchangeable histories. An extra ritual mechanic, Ideology DLC dependence, hunting/fishing jobs, altered psychic/fantasy beliefs, new TraitDefs, or special restrictive caste system is outside this background-candidate slice. Before production, compare available Vanilla/MO and VE/non-VE background Mods and verify era-specific roles, skills, slot, generation filters and author-approved Japanese prose.
+
+**Historical reference anchors:** [神職（マイペディア）](https://kotobank.jp/word/神職-81980); [巫女（ジャパンサーチ）](https://jpsearch.go.jp/gallery/ndl-dKYRDz2Z2Yx); [木地屋研究（CiNii）](https://ci.nii.ac.jp/ncid/BN09021209); [狩猟習俗（文化庁）](https://online.bunka.go.jp/heritages/detail/203533); [狩猟と権力（書誌）](https://www.unp.or.jp/ISBN/ISBN978-4-8158-1106-8.html). They provide historically grounded *possibilities*, not a universal timeline or gameplay implementation proof.
 
 ## Stage 3 priority candidates — new Defs not yet approved
 
