@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AMJC_AlcoholLover.degreeDatas.0.label>酒好き</AMJC_AlcoholLover.degreeDatas.0.label>
+  <AMJC_AlcoholLover.degreeDatas.0.description>[PAWN_nameDef]は酒を好み、飲んでいる間は少し気分がよくなる。酒を飲まなくても不満は感じない。</AMJC_AlcoholLover.degreeDatas.0.description>
+  <AMJC_AlcoholAverse.degreeDatas.0.label>酒嫌い</AMJC_AlcoholAverse.degreeDatas.0.label>
+  <AMJC_AlcoholAverse.degreeDatas.0.description>[PAWN_nameDef]は酒の酔い心地を好まず、酔うと不快に感じる。酒への好悪であり、アルコールへの身体的な強さとは無関係。</AMJC_AlcoholAverse.degreeDatas.0.description>
+</LanguageData>

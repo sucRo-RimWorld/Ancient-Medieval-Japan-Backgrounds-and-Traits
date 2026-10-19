@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Keep the old TraitDef for save references; all DrugDesire degrees cease ordinary rolling. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TraitDef[defName="DrugDesire"]/commonality</xpath>
+    <value><commonality>0</commonality></value>
+  </Operation>
+  <!-- Zero commonality does not block historical forced traits; remove only DrugDesire. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/li[traitDef="DrugDesire"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/li[traitDef="DrugDesire"]</xpath>
+    </match>
+  </Operation>
+</Patch>
