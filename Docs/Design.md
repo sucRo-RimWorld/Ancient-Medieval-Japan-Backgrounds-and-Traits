@@ -1,5 +1,22 @@
 # AMJ Culture – Characters — independent Mod design
 
+## Phase 3 — focused original childhood/adulthood additions (2026-10-19)
+
+**Status:** an initial playable-source slice of **four new** Japanese-occupied `BackstoryDef` IDs, not 135 blanket replacements or completed character variety. Original Vanilla 1.6/1.7 has 784 IDs; Characters restricts 135 (adult 77, childhood 58), rewrites 123 other existing IDs, and leaves 526 neither modified nor restricted. This is an ID count, **not** a verified natural-roll distribution. Existing Core backgrounds and 123 revised narratives remain intact.
+
+**First missing niches:** nearshore fishery working households, and village water-maintenance households. Original authored bilingual content in `Defs/BackstoryDefs/Backstories_P3CoastalWater.xml` and `Languages/Japanese/DefInjected/BackstoryDef/Backstories_P3CoastalWater.xml`:
+
+| ID | Slot | Japanese | Gameplay skillGains | Intent |
+|---|---|---|---|---|
+| `AMJC_ShoreRaisedChild` | Childhood | 浜育ち | Cooking +1; Crafting +1; Social +1 | Shore gathering/net care, not shipboard warfare or the existing merchant biography |
+| `AMJC_CanalRaisedChild` | Childhood | 用水のほとり育ち | Plants +2; Construction +1 | Village canal cleaning/levee familiarity, not generic academic study |
+| `AMJC_InshoreFisherAdult` | Adulthood | 浜の漁師 | Cooking +3; Crafting +2; Plants +2 | Net work, fish preservation, shore gathering; no fabricated fishing skill or special pawn job |
+| `AMJC_IrrigationKeeperAdult` | Adulthood | 用水の世話役 | Plants +3; Construction +3; Social +1 | Shared irrigation channel care, without requiring AMJ Waterworks |
+
+**Spawn selection:** each defines `Civil` and `Tribal` plus `Medieval` and `MedievalCommon` compatibility categories so the same original authored records may be eligible under Vanilla and optional medieval-faction category patches. No `PawnKindDef` / `FactionDef` edits, no `forcedTraits`, `workDisables`, possessions, extra recipes, fisheries, watering tasks, land generation, World Tech Level or mandatory MO/Culture/Grains dependency. These categories do not promise a specific appearance probability: both pawn kind and faction filters must match, and other Mods may override them. With 2 childhood and 2 adulthood added symmetrically, do not apply a wholesale roll-rate override that would suppress other useful original backgrounds. Historical evidence and comparison with VE and non-VE existing Mods: `Docs/Research/P3BackgroundGapPriorArt.md`, validated-entry data in `Docs/Research/P3BackgroundPriorArtDecision.json`.
+
+**Not yet completed:** loaded 1.6/1.7 `BackstoryDef`/DefInjected text, actual normal pawn spawning with different faction filters, current-MO compatibility, old saved-game loading, and numerical distribution are **unverified**, and require one focused final acceptance after source completion. Original modern background prose and already accepted 123 historical rewrites are unchanged. New TraitDef concepts `義理堅い`/`職人気質` are **not implemented**: they require a nonduplicative distinct gameplay effect and a separate trait specification before real addition. No Steam publication.
+
 **Author scope decision (2026-10-19):** Split only **backgrounds and traits** from the existing AMJ Culture. Other Culture subfeatures remain in the original Mod, with no broader decomposition authorized. The identity and game effect of all existing original Vanilla/MO BackstoryDef and TraitDef records must remain stable.
 
 ## Scope

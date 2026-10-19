@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- P3 focused Japan-period biographies. No fishing or irrigation gameplay Mod required. -->
+  <BackstoryDef>
+    <defName>AMJC_ShoreRaisedChild</defName>
+    <title>coastal village child</title>
+    <titleShort>coastal child</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>[PAWN_nameDef] grew up in a small coastal settlement, gathering shellfish from the shore, helping dry the catch, and mending fishing nets.</baseDesc>
+    <skillGains>
+      <Cooking>1</Cooking>
+      <Crafting>1</Crafting>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Civil</li>
+      <li>Tribal</li>
+      <li>Medieval</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_CanalRaisedChild</defName>
+    <title>irrigation village child</title>
+    <titleShort>waterway child</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>[PAWN_nameDef] grew up beside the channels that supplied the village fields, helping clear silt, watch the water flow, and repair small levees.</baseDesc>
+    <skillGains>
+      <Plants>2</Plants>
+      <Construction>1</Construction>
+    </skillGains>
+    <spawnCategories>
+      <li>Civil</li>
+      <li>Tribal</li>
+      <li>Medieval</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_InshoreFisherAdult</defName>
+    <title>coastal fisher</title>
+    <titleShort>fisher</titleShort>
+    <slot>Adulthood</slot>
+    <baseDesc>[PAWN_nameDef] worked the nearshore waters, tending nets, maintaining fishing gear, and preserving part of the catch by drying it. The work demanded patience and familiarity with changing coastal conditions.</baseDesc>
+    <skillGains>
+      <Cooking>3</Cooking>
+      <Crafting>2</Crafting>
+      <Plants>2</Plants>
+    </skillGains>
+    <spawnCategories>
+      <li>Civil</li>
+      <li>Tribal</li>
+      <li>Medieval</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_IrrigationKeeperAdult</defName>
+    <title>irrigation caretaker</title>
+    <titleShort>waterway keeper</titleShort>
+    <slot>Adulthood</slot>
+    <baseDesc>[PAWN_nameDef] helped maintain the channels bringing water to village fields, clearing ditches and repairing their banks. Sharing scarce water also required discussion with neighboring farmers.</baseDesc>
+    <skillGains>
+      <Plants>3</Plants>
+      <Construction>3</Construction>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Civil</li>
+      <li>Tribal</li>
+      <li>Medieval</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+</Defs>

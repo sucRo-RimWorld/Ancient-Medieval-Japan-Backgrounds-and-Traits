@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Same authored Japanese wording for source field and resolved description. -->
+  <AMJC_ShoreRaisedChild.title>浜育ち</AMJC_ShoreRaisedChild.title>
+  <AMJC_ShoreRaisedChild.titleShort>浜育ち</AMJC_ShoreRaisedChild.titleShort>
+  <AMJC_ShoreRaisedChild.baseDesc>[PAWN_nameDef]は海辺の村で育った。浜で貝を拾い、魚を干す手伝いや網の手入れをしてきた。</AMJC_ShoreRaisedChild.baseDesc>
+  <AMJC_ShoreRaisedChild.description>[PAWN_nameDef]は海辺の村で育った。浜で貝を拾い、魚を干す手伝いや網の手入れをしてきた。</AMJC_ShoreRaisedChild.description>
+  <AMJC_CanalRaisedChild.title>用水のほとり育ち</AMJC_CanalRaisedChild.title>
+  <AMJC_CanalRaisedChild.titleShort>用水育ち</AMJC_CanalRaisedChild.titleShort>
+  <AMJC_CanalRaisedChild.baseDesc>[PAWN_nameDef]は田畑へ水を送る用水路のそばで育った。水の流れを見守り、溝の泥さらいや畦の手入れを手伝ってきた。</AMJC_CanalRaisedChild.baseDesc>
+  <AMJC_CanalRaisedChild.description>[PAWN_nameDef]は田畑へ水を送る用水路のそばで育った。水の流れを見守り、溝の泥さらいや畦の手入れを手伝ってきた。</AMJC_CanalRaisedChild.description>
+  <AMJC_InshoreFisherAdult.title>浜の漁師</AMJC_InshoreFisherAdult.title>
+  <AMJC_InshoreFisherAdult.titleShort>漁師</AMJC_InshoreFisherAdult.titleShort>
+  <AMJC_InshoreFisherAdult.baseDesc>[PAWN_nameDef]は沿岸で網を扱い、傷んだ漁具を繕い、獲れた魚を干して暮らしてきた。浜の採集や天候の見極めにも慣れていた。</AMJC_InshoreFisherAdult.baseDesc>
+  <AMJC_InshoreFisherAdult.description>[PAWN_nameDef]は沿岸で網を扱い、傷んだ漁具を繕い、獲れた魚を干して暮らしてきた。浜の採集や天候の見極めにも慣れていた。</AMJC_InshoreFisherAdult.description>
+  <AMJC_IrrigationKeeperAdult.title>用水の世話役</AMJC_IrrigationKeeperAdult.title>
+  <AMJC_IrrigationKeeperAdult.titleShort>用水番</AMJC_IrrigationKeeperAdult.titleShort>
+  <AMJC_IrrigationKeeperAdult.baseDesc>[PAWN_nameDef]は村の田畑へ水を送る溝をさらい、傷んだ畦や取入口を直してきた。水が足りない時には村人と順番を相談し、争いを避けるよう努めた。</AMJC_IrrigationKeeperAdult.baseDesc>
+  <AMJC_IrrigationKeeperAdult.description>[PAWN_nameDef]は村の田畑へ水を送る溝をさらい、傷んだ畦や取入口を直してきた。水が足りない時には村人と順番を相談し、争いを避けるよう努めた。</AMJC_IrrigationKeeperAdult.description>
+</LanguageData>
