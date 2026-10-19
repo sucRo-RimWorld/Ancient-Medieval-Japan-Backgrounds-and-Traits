@@ -7,7 +7,7 @@
 - Vanilla/MO historically inappropriate **ordinary background generation** restrictions: adult **77** (76 XML + FerventResearcher72), children **58** (55 original Solid biographies gated via Harmony + 3 Shuffled XML); existing unique/nonordinary references remain.
 - **89** author-approved additional historical background rewrites and pre-existing **34** bilingual rewrites (total **123** existing DefNames rewritten, not newly generated backgrounds), matching English XML plus approved Japanese DefInjected.
 - Existing **23** historical starting-possession XML substitutions (keep their original item source and Def identities).
-- Trait generation such as **Transhumanist commonality 0**, with its related forced adult background restriction; trait redrafting/new culturally fitting TraitDefs remain **future work**, not approved as complete.
+- Trait generation: suppress ordinary Transhumanist, BodyPurist and DrugDesire plus known forced background entries; two author-approved alcohol-preference TraitDefs exist. Broader new traits remain future work.
 - Harmony 1.6/1.7 Solid childhood generation patch and a **separate** minimal bootstrap, assembled into `AMJ.Culture.Characters.dll` per game version.
 
 ## Explicit exclusions — stay in Culture
@@ -16,6 +16,14 @@
 - New Pawn chemical addiction/tolerance generation, DrugDesire/psychoactive supplies and chemical balance: owning effect is Culture **drugs**. Never copy InitialDrugAddictionGenerationPatch.
 - Entrance/no-shoes, chair meals, bedding, social Thought rules, other daily-life rules and their assemblies/assets.
 - Neither Mod is a mandatory runtime dependency of the other. Harmony is required. Medieval Overhaul remains optional.
+
+## Trait Stage 2 — artificial-body traits excluded (2026-10-19 author decision)
+
+**Outcome:** Neither `Transhumanist` (義体化願望) nor `BodyPurist` (義体化嫌悪) belongs to normal newly generated ancient/medieval Japanese pawns. Both old TraitDefs and their already saved pawn effects are preserved for compatibility; deleting a Def or retroactively stripping an existing pawn is not authorized.
+
+**Implementation:** `Patches/BodyPuristGeneration.xml` sets `BodyPurist.commonality=0` and conditionally removes its forced entries from `HunterOfTheKing53` and `TestSubject90`. `Patches/TranshumanistGeneration.xml` retains its previously approved commonality zero and `FerventResearcher72` category exclusion, and also conditionally removes that background's forced `Transhumanist`. Do not delete the backgrounds, their skills, other effects or Def IDs; their ordinary-generation exclusion remains. These explicit author decisions supersede the historical audit's proposed retention of BodyPurist. Unlisted third-party hard-coded forced trait paths are not automatically rewritten. Prosthetic/bionic mechanics and saved pawns are unaffected.
+
+**Acceptance:** XML source changed and original 1.6 test definition now also asserts `BodyPurist.commonality=0`; no fresh 1.6/1.7 loaded-game PASS or legacy-save compatibility claim. Later consolidated checks should verify the two original TraitDefs still exist, both have natural commonality zero, three original forced entries are absent, and ordinary new pawns get neither. No Steam release authorization.
 
 ## Trait Stage 2 — drug affinity removal and alcohol preferences (author direction, 2026-10-19)
 
