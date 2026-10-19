@@ -437,10 +437,10 @@ namespace AMJ.Culture.Test
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_LOADED_OK adult=" + Adult.Length
                     + " child=" + Child.Count);
 
-                Assembly culture = AppDomain.CurrentDomain.GetAssemblies()
-                    .FirstOrDefault(x => x.GetName().Name == "AMJ.Culture");
-                ctx.Require(culture != null, "Compiled Culture DLL not loaded");
-                Type gate = culture.GetType("AMJ.Culture.SolidChildBioGatePatch");
+                Assembly characters = AppDomain.CurrentDomain.GetAssemblies()
+                    .FirstOrDefault(x => x.GetName().Name == "AMJ.Culture.Characters");
+                ctx.Require(characters != null, "Compiled Characters DLL not loaded");
+                Type gate = characters.GetType("AMJ.Culture.Characters.SolidChildBioGatePatch");
                 ctx.Require(gate != null, "Solid child production gate missing");
                 MethodInfo method = gate.GetMethod("Postfix",
                     BindingFlags.Public | BindingFlags.Static);
@@ -470,10 +470,10 @@ namespace AMJ.Culture.Test
                     object owner = patch.GetType().GetField("owner")?.GetValue(patch);
                     if (owner == null)
                         owner = patch.GetType().GetProperty("owner")?.GetValue(patch, null);
-                    if ((owner as string) == "sucro.ancientmedievaljapan.culture.mealseat")
+                    if ((owner as string) == "sucro.ancientmedievaljapan.culture.characters.solidchild")
                         owned = true;
                 }
-                ctx.Require(owned, "Compiled Culture postfix was not registered");
+                ctx.Require(owned, "Compiled Characters postfix was not registered");
 
                 PawnBio blocked = SolidBioDatabase.allBios
                     .FirstOrDefault(x => x.childhood != null && Child.Contains(x.childhood.defName));
