@@ -9,9 +9,9 @@
   </Operation>
   <!-- Keep original backstory/trait IDs while removing its forced Transhumanist link. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/BackstoryDef[defName="FerventResearcher72"]/forcedTraits/li[traitDef="Transhumanist"]</xpath>
+    <xpath>Defs/BackstoryDef[defName="FerventResearcher72"]/forcedTraits/li[key="Transhumanist" or traitDef="Transhumanist"]</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs/BackstoryDef[defName="FerventResearcher72"]/forcedTraits/li[traitDef="Transhumanist"]</xpath>
+      <xpath>Defs/BackstoryDef[defName="FerventResearcher72"]/forcedTraits/li[key="Transhumanist" or traitDef="Transhumanist"]</xpath>
     </match>
   </Operation>
   <!-- This SF adult backstory is not suitable for ordinary period-Japanese generation.
