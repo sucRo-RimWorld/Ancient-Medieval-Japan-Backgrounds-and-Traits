@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Ancient &amp; Medieval Japan - Culture Characters（中世日本 - 文化・人物）</name>
+  <author>sucRo0629</author>
+  <packageId>sucro.ancientmedievaljapan.culture.characters</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>DankPyon.Medieval.Overhaul</li>
+  </loadAfter>
+  <modVersion>0.1.0-dev</modVersion>
+  <description>Ancient &amp; Medieval Japan - Culture Characters adapts pawn backgrounds and traits for ancient-to-medieval Japanese play. It rewrites existing backgrounds, restricts anachronistic ordinary pawn generation, and adjusts selected starting possessions while preserving existing BackstoryDef and TraitDef identities. Harmony is required. Medieval Overhaul is optional. A new game is recommended. Do not install alongside an unseparated AMJ Culture build: until the migration cutover, that build contains the same background and trait generation rules. This is a development source package, not a released or native-tested new Mod.
+
+中世日本に合わせて人物の背景・特性と通常生成を調整する。既存背景の名称・説明、時代に合わない背景・特性の通常生成制限、初期所持品の置換を扱い、既存のBackstoryDef・TraitDefの識別子は保持する。Harmony必須、Medieval Overhaul任意。新規ゲーム推奨。旧AMJ Cultureには同じ人物生成規則が含まれるため、移管が完了するまで同時導入しない。開発中のソース構成であり、新しい独立Modとしての実ゲーム検証・公開は未実施。</description>
+</ModMetaData>
