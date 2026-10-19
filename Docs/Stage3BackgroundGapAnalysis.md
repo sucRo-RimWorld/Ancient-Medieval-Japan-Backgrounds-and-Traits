@@ -1,6 +1,6 @@
 # Stage 3 — historical background diversity and replacement-gap assessment
 
-**Status:** proposal / candidate inventory, not author-approved new BackstoryDefs or runtime gameplay. Date: 2026-10-19. Owner: AMJ Culture – Characters. This is the first Stage 3 comparison against currently owned approved textual rewrites, not an exhaustive audit of 784 original Vanilla biographies. Do not infer that all 135 excluded backgrounds would otherwise spawn in the author's actual MO world, or that all 123 rewrites are ordinary-generation-eligible.
+**Status:** five author-continued candidate backgrounds have been added to production XML (2026-10-20), but have not yet passed native game acceptance or publication. Other future candidates in this inventory remain *unapproved*. Date: 2026-10-19. Owner: AMJ Culture – Characters. This is the first Stage 3 comparison against currently owned approved textual rewrites, not an exhaustive audit of 784 original Vanilla biographies. Do not infer that all 135 excluded backgrounds would otherwise spawn in the author's actual MO world, or that all 123 rewrites are ordinary-generation-eligible.
 
 ## Verified baseline and method
 
@@ -50,7 +50,9 @@ The author explicitly requests representation of 神道・神社祭祀関係者,
 
 **Historical reference anchors:** [神職（マイペディア）](https://kotobank.jp/word/神職-81980); [巫女（ジャパンサーチ）](https://jpsearch.go.jp/gallery/ndl-dKYRDz2Z2Yx); [木地屋研究（CiNii）](https://ci.nii.ac.jp/ncid/BN09021209); [狩猟習俗（文化庁）](https://online.bunka.go.jp/heritages/detail/203533); [狩猟と権力（書誌）](https://www.unp.or.jp/ISBN/ISBN978-4-8158-1106-8.html). They provide historically grounded *possibilities*, not a universal timeline or gameplay implementation proof.
 
-**Detailed next-step Japanese prose and explicit provisional skill numbers:** [Stage3BackgroundDrafts.md](Stage3BackgroundDrafts.md), five author-prioritized core candidates, **no approved new Def or gameplay change**. **2026-10-19 correction:** base-game Artistic is visual-making (such as sculpture), not kagura/dance. Withdrawn from both miko proposals; Shrine miko Social +4 only, itinerant miko Social +5 only. Dancing remains narrative. Older broad list below is thematic only.
+**2026-10-20 implementation update:** The five approved P3 additions are now defined in `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` and Japanese DefInjected, while the remaining broad candidate list below is NOT implemented. The two miko profiles have general nonfemale titles and female-title overrides, and only the shrine ritual attendant forces existing Nimble; no dance skill. Native generated-pawn/game acceptance remains open.
+
+**Actual five-Def product source / previously provisional Japanese prose and skill numbers:** [Stage3BackgroundDrafts.md](Stage3BackgroundDrafts.md), five author-prioritized core candidates, **no approved new Def or gameplay change**. **2026-10-19 correction:** base-game Artistic is visual-making (such as sculpture), not kagura/dance. Withdrawn from both miko proposals; Shrine miko Social +4 only, itinerant miko Social +5 only. Dancing remains narrative. Older broad list below is thematic only.
 
 ## Stage 3 priority candidates — new Defs not yet approved
 

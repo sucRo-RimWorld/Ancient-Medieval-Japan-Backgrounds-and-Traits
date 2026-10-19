@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Five approved Stage 3 original biographies. New IDs; do not alter core save identities.
+       Plain BackstoryDef; no new DLC/MO hard dependency or extra game behaviors.
+       titleFemale is a display override, not a gender-only generation filter. -->
+  <BackstoryDef>
+    <defName>AMJC_ShrineOfficiantAdult</defName>
+    <slot>Adulthood</slot>
+    <title>shrine officiant</title>
+    <titleShort>officiant</titleShort>
+    <description>[PAWN_nameDef] conducted ceremonies and organized offerings at a local shrine, listened to the requests of villagers and learned the customs and history of the shrine. When festivals approached, [PAWN_pronoun] helped organize the people preparing them.</description>
+    <skillGains>
+      <li><key>Social</key><value>4</value></li>
+      <li><key>Intellectual</key><value>2</value></li>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>Traveler</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_ShrineRitualAttendantAdult</defName>
+    <slot>Adulthood</slot>
+    <title>shrine ritual attendant</title>
+    <titleFemale>shrine miko</titleFemale>
+    <titleShort>ritual attendant</titleShort>
+    <titleShortFemale>miko</titleShortFemale>
+    <description>[PAWN_nameDef] served at a shrine, dancing kagura during festivals, preparing offerings and helping visitors. Repeated performance honed [PAWN_possessive] agility, while welcoming worshippers taught [PAWN_objective] to deal with unfamiliar people.</description>
+    <skillGains>
+      <li><key>Social</key><value>4</value></li>
+    </skillGains>
+    <forcedTraits>
+      <li><key>Nimble</key><value>0</value></li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>Traveler</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_ItinerantRitualistAdult</defName>
+    <slot>Adulthood</slot>
+    <title>itinerant ritualist</title>
+    <titleFemale>traveling miko</titleFemale>
+    <titleShort>ritualist</titleShort>
+    <titleShortFemale>traveling miko</titleShortFemale>
+    <description>[PAWN_nameDef] traveled between villages and markets, performing rites and purification ceremonies at the request of local people. [PAWN_pronoun] learned to speak with strangers and adapt to the customs of each community.</description>
+    <skillGains>
+      <li><key>Social</key><value>5</value></li>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Traveler</li>
+      <li>Trader</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_ItinerantWoodworkerAdult</defName>
+    <slot>Adulthood</slot>
+    <title>itinerant woodturner</title>
+    <titleShort>woodturner</titleShort>
+    <description>[PAWN_nameDef] traveled through the mountains in search of suitable timber, making wooden bowls, ladles and other utensils. [PAWN_pronoun] knew how to judge a tree and kept making tools while moving from place to place.</description>
+    <skillGains>
+      <li><key>Crafting</key><value>5</value></li>
+      <li><key>Plants</key><value>2</value></li>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>Traveler</li>
+      <li>Trader</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_HunterFamilyChild</defName>
+    <slot>Childhood</slot>
+    <title>hunter's child</title>
+    <titleShort>hunter's child</titleShort>
+    <description>[PAWN_nameDef] grew up in a family that lived by hunting, learning to recognize animal tracks and paths through the woods. [PAWN_pronoun] helped repair traps and carry game, and gradually learned to use a bow.</description>
+    <skillGains>
+      <li><key>Shooting</key><value>2</value></li>
+      <li><key>Animals</key><value>1</value></li>
+      <li><key>Plants</key><value>1</value></li>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>Traveler</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+</Defs>
