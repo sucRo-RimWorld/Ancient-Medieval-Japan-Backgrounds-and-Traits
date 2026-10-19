@@ -424,6 +424,24 @@ namespace AMJ.Culture.Test
                         !biography.spawnCategories.Contains("AMJ_CultureExcluded"),
                         "Reopened original biography is still restricted: " + reopened);
                 }
+                // Stage 3: verify the five newly authored Defs load with suitable
+                // period generation categories. Their actual per-Pawn occurrence
+                // and female-title / Nimble assignment need end-to-end acceptance.
+                foreach (string id in new[] {
+                    "AMJC_ShrineOfficiantAdult",
+                    "AMJC_ShrineRitualAttendantAdult",
+                    "AMJC_ItinerantRitualistAdult",
+                    "AMJC_ItinerantWoodworkerAdult",
+                    "AMJC_HunterFamilyChild"
+                })
+                {
+                    BackstoryDef added = DefDatabase<BackstoryDef>.GetNamedSilentFail(id);
+                    ctx.Require(added != null, "Stage3 historical background Def absent: " + id);
+                    ctx.Require(added.spawnCategories != null && added.spawnCategories.Contains("Tribal"),
+                        "Stage3 historical background lacks original MO Tribal route: " + id);
+                }
+                Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DEFS_OK");
+
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_TEXTS_OK count=" + AdaptedTitles.Count);
 
                 TraitDef trait = DefDatabase<TraitDef>.GetNamedSilentFail("Transhumanist");
