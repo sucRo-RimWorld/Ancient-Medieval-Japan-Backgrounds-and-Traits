@@ -7,7 +7,7 @@
 - Among the already approved 123 rewritten original biographies, `ApprenticeOracle83` = **神事見習いの子** (childhood), `SpaceHunter79` = **山野の猟師** (adulthood), `RunawayDancer35` = **旅芸人**, plus other traveling persons and tradespeople. These remain untouched. A generic second shrine child, adult hunter or generic itinerant person is redundant.
 - **Existing-Mod comparison scope (read-only):** Project's original Vanilla Core 1.6/1.7 metadata survey (784 original `BackstoryDef`, 43 traits); original Medieval Overhaul 1.6.2.2 (no extra `BackstoryDef` in audited files); [Medieval Backstories No HAR](https://steamcommunity.com/workshop/filedetails/?id=3128454510) and [Medieval Backstories](https://steamcommunity.com/sharedfiles/filedetails/?id=2794130067), offering European medieval monks/seers/hunters and many generic period vocations; original [Shavius's Medieval Flavour Pack](https://steamcommunity.com/sharedfiles/filedetails/?id=2767940226) and [Historical Backstories](https://steamcommunity.com/sharedfiles/filedetails/?id=3611930252) metadata audited by Project; VE [Vanilla Backstories Expanded](https://steamcommunity.com/workshop/filedetails/?id=2861806869) offers 150+ mixed-theme biographies (incl. Oracle, Troupe Child, Traveling Locksmith). These are **prior art**. No audited provider is proven to provide all five *precisely specified Japanese* occupations with acceptable whole-Mod content/load costs. No newly downloaded raw provider source or final load behavior audit in this step. This is **not** a completed VE/non-VE implementation entry gate: inspect realistic specific XML/Defs and package/dependency/patch interactions before a production implementation.
 - The original MO 1.6.2.2 faction/pawnkind crosswalk (Project `Docs/Research/MO16BackstoryFilterCrosswalk.md`) confirms `Tribal` in several original player and medieval faction/PawnKind selectors. Optional **Medieval Backstories Patch** can replace both sides with `Medieval`, `MedievalCommon`, `MedievalKnight` categories. **Candidate eligibility**: `Tribal` as original MO baseline, with optional `MedievalCommon` considered for the mod-patched configuration; these are *not finalized `spawnCategories`* because Vanilla/Core, MO, World Tech Level and other category filters require a resolved intersection. In particular do not automatically choose `MedievalKnight`, `Pirate`, `Offworld` for a village shrine or ordinary hunting household.
-- The only skills in these tables are existing Vanilla `SkillDef` names: `Social`, `Intellectual`, `Artistic`, `Crafting`, `Plants`, `Shooting`, `Animals`. No special `Ritual`, `Shinto`, `Fishing`, tracking or hunting skill exists here by assumption. `skillGains` are design numbers **added to** normal pawn skills, not Pawn final levels and not random passions.
+- The only skills used as actual draft bonuses are existing Vanilla `SkillDef` names: `Social`, `Intellectual`, `Crafting`, `Plants`, `Shooting`, `Animals`. **Do not treat `Artistic` as dancing, kagura or performing-arts proficiency:** it principally affects visual creative work such as sculptures in base RimWorld. No special `Dance`, `Performance`, `Ritual`, `Shinto`, `Fishing`, tracking or hunting skill exists in the current draft. `skillGains` are design numbers **added to** normal pawn skills, not Pawn final levels and not random passions.
 - **No forced traits, no disallowed traits, no work disables, no required work tags, no starting possessions, no psychic or Ideology-linked effects** for this initial set. Do not force religious traits or imply Gender/Mood/medical mechanics. Existing save and old Def IDs remain unchanged. No new DLL should be necessary if a later accepted slice uses only XML.
 
 ## Five initial profiles
@@ -25,7 +25,7 @@
 - **Proposed ID:** `AMJC_ShrineRitualAttendantAdult`; slot: `Adulthood`.
 - **title:** 社に仕える巫女 / **titleShort:** 巫女.
 - **description (proposal, Japanese):** [PAWN_nameDef]は社に仕え、祭礼で神楽を舞い、供え物の準備や参詣者の世話をしてきた。神事の作法を身につけ、人前で舞い歌うことにも慣れている。
-- **skills:** `Artistic +4`, `Social +2` (total +6). No additional psychic sensitivity or healing effect.
+- **skills (revised):** `Social +4` (total +4); this reflects dealing with visitors and helping coordinate shrine activity, **not** proficiency in kagura or dance. Original proposed `Artistic +4` is withdrawn: RimWorld Artistic supports visual production (e.g. sculpture), not performance. Do not add unrelated Crafting/Intellectual bonuses merely to reach a prior arbitrary total. No additional psychic sensitivity or healing effect.
 - **gender compatibility gate:** A prospective `BackstoryDef` might be selectable for **any** pawn gender. Before game integration, verify supported gender restrictions or propose a historically coherent gender-neutral alternative title/text for otherwise valid male assignments, with a female-specific translated label if the actual 1.6/1.7 Def supports it. A female-coded title alone is not a gender filter; do not introduce an unapproved C# selection patch.
 
 ### 3. 渡り巫女 — adult, itinerant ritual work
@@ -33,7 +33,7 @@
 - **Proposed ID:** `AMJC_ItinerantRitualistAdult`; slot: `Adulthood`.
 - **title:** 渡り巫女 / **titleShort:** 渡り巫女.
 - **description (proposal, Japanese):** [PAWN_nameDef]は各地の村や市を巡り、祭礼や祓いの依頼を受けて暮らしてきた。初対面の人々とも言葉を交わし、土地ごとの習わしに合わせて神事を行っていた。
-- **skills:** `Social +4`, `Artistic +2` (total +6). Unlike the settled shrine attendant, the emphasis is maintaining social contact in unfamiliar communities. Travel by itself does not grant a fictional survival skill.
+- **skills (revised):** `Social +5` (total +5); the larger Social emphasis models dealing with changing patrons and communities. Original proposed `Artistic +2` is withdrawn: itinerant kagura/performing is not a sculpting skill. Travel by itself does not grant a fictional survival skill or a Plants bonus.
 - **historical and generation gate:** Differentiate itinerant religious work from permanent shrine service and from 旅芸人, merchants or outcasts. Period/region context should not imply this form existed unchanged throughout every era. **The same gender-eligibility problem as the previous profile remains open**; defer active Def until a genuine supported title/description/eligibility solution is chosen.
 
 ### 4. 木地師 — adult, mobile woodenware craft
@@ -52,13 +52,17 @@
 - **skills:** `Shooting +2`, `Animals +1`, `Plants +1` (total +4); less adult-like than 山野の猟師, and no forced `Brawler` or an automatic work prohibition.
 - **historical gate:** Hunting as livelihood rather than simply sport; avoid making マタギ a generic title for all locales and periods. Distinctive **childhood** slot avoids creating a redundant new adult 狩人.
 
+## Dance / performance skill mapping correction (author feedback, 2026-10-19)
+
+Kagura and dancing remain credible elements of the shrine and itinerant-miko **narratives**, but base-game `Artistic` is not a dance/performance skill. The two older provisional `Artistic` boosts were **retracted**, rather than re-labeled as `Crafting` or `Intellectual` to manufacture a full +6 total. Shrine miko now proposes only `Social +4`, and traveling miko only `Social +5` for interactions and itinerant contacts. Their actual dancing competence is **flavor-only** in this background Mod. Their lower aggregate skill gains compared with adult craftsmen are intentional *pending author balance review*, not a stealth numerical compensation. A separate dancing job/recreation/performance system would be a new gameplay feature requiring its own need/design/Mod audit and is **not requested or implemented here**.
+
 ## Numeric/design parity and implementation gates
 
 | Proposed ID | Slot | Social | Intellectual | Artistic | Crafting | Plants | Shooting | Animals | Total |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | AMJC_ShrineOfficiantAdult | Adult | +4 | +2 | — | — | — | — | — | +6 |
-| AMJC_ShrineRitualAttendantAdult | Adult | +2 | — | +4 | — | — | — | — | +6 |
-| AMJC_ItinerantRitualistAdult | Adult | +4 | — | +2 | — | — | — | — | +6 |
+| AMJC_ShrineRitualAttendantAdult | Adult | +4 | — | — | — | — | — | — | +4 |
+| AMJC_ItinerantRitualistAdult | Adult | +5 | — | — | — | — | — | — | +5 |
 | AMJC_ItinerantWoodworkerAdult | Adult | — | — | — | +5 | +2 | — | — | +7 |
 | AMJC_HunterFamilyChild | Child | — | — | — | — | +1 | +2 | +1 | +4 |
 
