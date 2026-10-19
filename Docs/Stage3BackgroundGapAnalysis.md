@@ -34,7 +34,7 @@ The author explicitly requests representation of 神道・神社祭祀関係者,
 | Priority | Slot | Distinct candidate role | Main content difference from the 123 rewrites | Possible Vanilla skill focus (NOT final values) |
 |---|---|---|---|---|
 | High | Adult | 社の禰宜・祝 | Shrine ceremony and community service; distinct from 寺の学僧 and the child shrine novice | Social, Intellectual |
-| High | Adult | 社に仕える巫女 | Local festival rites and kagura distinct from temple medicine; dance has no Vanilla skill | Social (visitor contact only) |
+| High | Adult | 社に仕える巫女 | Local festival rites and kagura; dance has no Vanilla skill. One **tentative** existing `Nimble` degree 0 forced-Trait match expresses bodily agility but its actual effect is **melee dodge**, not dancing. | Social (visitor contact only) |
 | High | Adult | 渡り巫女 | Itinerant rites at festivals and markets: shrine and traveling roles; no dance stat | Social (itinerant contacts only) |
 | High | Adult | 木地師（山を渡る木工職人） | Moves in search of suitable wood to make utensils; not settled carpenter or generic wanderer | Crafting, Plants |
 | High | Child | 狩人の家の子 | Learns tracking and snares; different age slot from existing adult 山野の猟師 | Plants, Animals, modest Shooting |
