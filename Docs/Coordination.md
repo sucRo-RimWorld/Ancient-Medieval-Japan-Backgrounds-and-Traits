@@ -1,5 +1,9 @@
 # AMJ Culture – Characters Coordination
 
+## CHARACTERS-P3-FIVE-BACKGROUNDS-20261020 — new XML/JA source; runtime pending
+
+Following author continuation after reviewing shrine/miko/itinerant/hunter biography draft and the settled-miko `Nimble` proposal, five original `AMJC_*` BackstoryDefs have been added in owner `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` with paired Japanese DefInjected. Four adult, one child; two profiles use `titleFemale`/short female overrides to label women as 巫女 and use gender-neutral ritual-worker titles otherwise; this is a display override, **not an actual sex filter**. Only settled shrine ritual attendant forces `Nimble` degree 0 (melee dodge effect, not dancing). Keep 135 original source exclusions and 123 rewrites unchanged. Formal specifications in `Docs/Design.md`, draft details `Docs/Stage3BackgroundDrafts.md`. **1.6/1.7 native original-game loaded-Def/generation and old-save acceptance OPEN; no CI native/Steam action.**
+
 ## CHARACTERS-P2-FORCED-XPATH-CORRECTION-20261019 — source correction, native result open
 
 The original Culture 1.6 `FerventResearcher72` forced-Trait removal using only `li[traitDef="Transhumanist"]` produced a real missing-XPath ERROR. Current Characters P2 conditional operations accept both `li[key="NAME"]` and `li[traitDef="NAME"]` for BodyPurist (2 old backgrounds), Transhumanist (1) and previously suppressed DrugDesire (3). This is intended to avoid silent unmatched input format while retaining ordinary commonality-zero behavior, original Def identities and other forced traits. **No loaded-game recheck of authentic 1.6/1.7 forced-list results occurred.** Final behavior must not be called verified until that check. Canonical source: `Docs/Design.md` and the three `Patches/*Generation.xml` files.

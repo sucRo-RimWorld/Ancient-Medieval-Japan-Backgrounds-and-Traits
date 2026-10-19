@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Original Japanese copy approved for new Stage 3 background Defs.
+       Keep description/baseDesc translated identically where language resolution differs. -->
+  <AMJC_ShrineOfficiantAdult.title>社の神職</AMJC_ShrineOfficiantAdult.title>
+  <AMJC_ShrineOfficiantAdult.titleShort>神職</AMJC_ShrineOfficiantAdult.titleShort>
+  <AMJC_ShrineOfficiantAdult.baseDesc>[PAWN_nameDef]は社の祭礼や供え物を取り仕切り、村人の願いや相談を聞きながら神事を務めてきた。社の由緒や作法にも通じ、祭りの準備では周囲の人々をまとめていた。</AMJC_ShrineOfficiantAdult.baseDesc>
+  <AMJC_ShrineOfficiantAdult.description>[PAWN_nameDef]は社の祭礼や供え物を取り仕切り、村人の願いや相談を聞きながら神事を務めてきた。社の由緒や作法にも通じ、祭りの準備では周囲の人々をまとめていた。</AMJC_ShrineOfficiantAdult.description>
+  <AMJC_ShrineRitualAttendantAdult.title>社の神楽役</AMJC_ShrineRitualAttendantAdult.title>
+  <AMJC_ShrineRitualAttendantAdult.titleFemale>社に仕える巫女</AMJC_ShrineRitualAttendantAdult.titleFemale>
+  <AMJC_ShrineRitualAttendantAdult.titleShort>神楽役</AMJC_ShrineRitualAttendantAdult.titleShort>
+  <AMJC_ShrineRitualAttendantAdult.titleShortFemale>巫女</AMJC_ShrineRitualAttendantAdult.titleShortFemale>
+  <AMJC_ShrineRitualAttendantAdult.baseDesc>[PAWN_nameDef]は社に仕え、祭礼で神楽を舞い、供え物の準備や参詣者の世話をしてきた。繰り返し舞を務めて身のこなしを磨き、参詣者への応対にも慣れている。</AMJC_ShrineRitualAttendantAdult.baseDesc>
+  <AMJC_ShrineRitualAttendantAdult.description>[PAWN_nameDef]は社に仕え、祭礼で神楽を舞い、供え物の準備や参詣者の世話をしてきた。繰り返し舞を務めて身のこなしを磨き、参詣者への応対にも慣れている。</AMJC_ShrineRitualAttendantAdult.description>
+  <AMJC_ItinerantRitualistAdult.title>巡回する祭祀役</AMJC_ItinerantRitualistAdult.title>
+  <AMJC_ItinerantRitualistAdult.titleFemale>渡り巫女</AMJC_ItinerantRitualistAdult.titleFemale>
+  <AMJC_ItinerantRitualistAdult.titleShort>祭祀役</AMJC_ItinerantRitualistAdult.titleShort>
+  <AMJC_ItinerantRitualistAdult.titleShortFemale>渡り巫女</AMJC_ItinerantRitualistAdult.titleShortFemale>
+  <AMJC_ItinerantRitualistAdult.baseDesc>[PAWN_nameDef]は各地の村や市を巡り、祭礼や祓いの依頼を受けて暮らしてきた。初対面の人々とも言葉を交わし、土地ごとの習わしに合わせて神事を行っていた。</AMJC_ItinerantRitualistAdult.baseDesc>
+  <AMJC_ItinerantRitualistAdult.description>[PAWN_nameDef]は各地の村や市を巡り、祭礼や祓いの依頼を受けて暮らしてきた。初対面の人々とも言葉を交わし、土地ごとの習わしに合わせて神事を行っていた。</AMJC_ItinerantRitualistAdult.description>
+  <AMJC_ItinerantWoodworkerAdult.title>木地師</AMJC_ItinerantWoodworkerAdult.title>
+  <AMJC_ItinerantWoodworkerAdult.titleShort>木地師</AMJC_ItinerantWoodworkerAdult.titleShort>
+  <AMJC_ItinerantWoodworkerAdult.baseDesc>[PAWN_nameDef]は良い木材を求めて山々を渡り歩き、椀や杓子などの木製品を作って暮らしてきた。木の性質を見分け、土地を移りながら道具を作り続けていた。</AMJC_ItinerantWoodworkerAdult.baseDesc>
+  <AMJC_ItinerantWoodworkerAdult.description>[PAWN_nameDef]は良い木材を求めて山々を渡り歩き、椀や杓子などの木製品を作って暮らしてきた。木の性質を見分け、土地を移りながら道具を作り続けていた。</AMJC_ItinerantWoodworkerAdult.description>
+  <AMJC_HunterFamilyChild.title>狩人の家の子</AMJC_HunterFamilyChild.title>
+  <AMJC_HunterFamilyChild.titleShort>狩人の子</AMJC_HunterFamilyChild.titleShort>
+  <AMJC_HunterFamilyChild.baseDesc>[PAWN_nameDef]は狩猟を生業とする家に育ち、獣道や足跡の見分け方を教わった。罠の手入れや獲物の運搬を手伝い、弓の扱いも少しずつ覚えていった。</AMJC_HunterFamilyChild.baseDesc>
+  <AMJC_HunterFamilyChild.description>[PAWN_nameDef]は狩猟を生業とする家に育ち、獣道や足跡の見分け方を教わった。罠の手入れや獲物の運搬を手伝い、弓の扱いも少しずつ覚えていった。</AMJC_HunterFamilyChild.description>
+</LanguageData>
