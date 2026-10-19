@@ -7,9 +7,9 @@
   </Operation>
   <!-- Also prevent the two original Core backgrounds from forcing BodyPurist. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[traitDef="BodyPurist"]</xpath>
+    <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[key="BodyPurist" or traitDef="BodyPurist"]</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[traitDef="BodyPurist"]</xpath>
+      <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[key="BodyPurist" or traitDef="BodyPurist"]</xpath>
     </match>
   </Operation>
 </Patch>

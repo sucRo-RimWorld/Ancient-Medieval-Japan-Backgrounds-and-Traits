@@ -1,5 +1,9 @@
 # AMJ Culture – Characters Coordination
 
+## CHARACTERS-P2-FORCED-XPATH-CORRECTION-20261019 — source correction, native result open
+
+The original Culture 1.6 `FerventResearcher72` forced-Trait removal using only `li[traitDef="Transhumanist"]` produced a real missing-XPath ERROR. Current Characters P2 conditional operations accept both `li[key="NAME"]` and `li[traitDef="NAME"]` for BodyPurist (2 old backgrounds), Transhumanist (1) and previously suppressed DrugDesire (3). This is intended to avoid silent unmatched input format while retaining ordinary commonality-zero behavior, original Def identities and other forced traits. **No loaded-game recheck of authentic 1.6/1.7 forced-list results occurred.** Final behavior must not be called verified until that check. Canonical source: `Docs/Design.md` and the three `Patches/*Generation.xml` files.
+
 ## CHARACTERS-P2-BODYTRAIT-REMOVAL-20261019 — XML source complete, real-game acceptance open
 
 **Author decision:** stop generating both `BodyPurist` and `Transhumanist` in ordinary new characters. Both have commonality zero; in original Core `HunterOfTheKing53`, `TestSubject90` and `FerventResearcher72`, matching forced assignments are conditionally removed. All TraitDef/BackstoryDef IDs and old saved Pawn effects are preserved, other character behavior unchanged. Owner sources `Patches/BodyPuristGeneration.xml`, `Patches/TranshumanistGeneration.xml`, `Docs/Design.md` and updated original 1.6 test assertion. **No new native-game run**, product DLL unchanged (XML-only gameplay patch), no Steam release.
