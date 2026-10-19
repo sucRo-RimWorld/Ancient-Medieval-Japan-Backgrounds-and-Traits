@@ -424,23 +424,71 @@ namespace AMJ.Culture.Test
                         !biography.spawnCategories.Contains("AMJ_CultureExcluded"),
                         "Reopened original biography is still restricted: " + reopened);
                 }
-                // Stage 3: verify the five newly authored Defs load with suitable
-                // period generation categories. Their actual per-Pawn occurrence
-                // and female-title / Nimble assignment need end-to-end acceptance.
-                foreach (string id in new[] {
-                    "AMJC_ShrineOfficiantAdult",
-                    "AMJC_ShrineRitualAttendantAdult",
-                    "AMJC_ItinerantRitualistAdult",
-                    "AMJC_ItinerantWoodworkerAdult",
-                    "AMJC_HunterFamilyChild"
-                })
+                // P3 original-game loaded Def contract: five period professions,
+                // original RimWorld skill gains/traits and female-specific names.
+                // One consolidated existing Pickle scenario; no extra game runs.
+                var expectedP3 = new Dictionary<string, Dictionary<string, int>>
                 {
+                    { "AMJC_ShrineOfficiantAdult", new Dictionary<string, int> { { "Social", 4 }, { "Intellectual", 2 } } },
+                    { "AMJC_ShrineRitualAttendantAdult", new Dictionary<string, int> { { "Social", 4 } } },
+                    { "AMJC_ItinerantRitualistAdult", new Dictionary<string, int> { { "Social", 5 } } },
+                    { "AMJC_ItinerantWoodworkerAdult", new Dictionary<string, int> { { "Crafting", 5 }, { "Plants", 2 } } },
+                    { "AMJC_HunterFamilyChild", new Dictionary<string, int> { { "Shooting", 2 }, { "Animals", 1 }, { "Plants", 1 } } }
+                };
+                foreach (var expected in expectedP3)
+                {
+                    string id = expected.Key;
                     BackstoryDef added = DefDatabase<BackstoryDef>.GetNamedSilentFail(id);
-                    ctx.Require(added != null, "Stage3 historical background Def absent: " + id);
-                    ctx.Require(added.spawnCategories != null && added.spawnCategories.Contains("Tribal"),
-                        "Stage3 historical background lacks original MO Tribal route: " + id);
+                    ctx.Require(added != null, "Stage3 loaded Def absent: " + id);
+                    ctx.Require(added.spawnCategories != null &&
+                        added.spawnCategories.Contains("Tribal") &&
+                        added.spawnCategories.Contains("MedievalCommon"),
+                        "Stage3 selected ordinary/optional-Medieval categories missing: " + id);
+                    ctx.Require((id == "AMJC_HunterFamilyChild") ==
+                        (added.slot == BackstorySlot.Childhood),
+                        "Stage3 age slot mismatch: " + id);
+                    var gains = added.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                    ctx.Require(gains.Count == expected.Value.Count,
+                        "Stage3 skill gain count mismatch: " + id);
+                    foreach (var entry in expected.Value)
+                        ctx.Require(gains.TryGetValue(entry.Key, out int actual) && actual == entry.Value,
+                            "Stage3 skill mismatch: " + id + " skill=" + entry.Key);
+                    bool shrinePerformer = id == "AMJC_ShrineRitualAttendantAdult";
+                    ctx.Require((added.forcedTraits == null ? 0 : added.forcedTraits.Count) ==
+                        (shrinePerformer ? 1 : 0),
+                        "Stage3 unexpected forced Trait list: " + id);
+                    if (shrinePerformer)
+                        ctx.Require(added.forcedTraits[0].def != null &&
+                            added.forcedTraits[0].def.defName == "Nimble" &&
+                            added.forcedTraits[0].degree == 0,
+                            "Stage3 Nimble forced Trait did not load");
+                    if (japanese)
+                    {
+                        if (shrinePerformer)
+                        {
+                            ctx.Require(added.TitleFor(Gender.Male) == "社の神楽役" &&
+                                added.TitleFor(Gender.Female) == "社に仕える巫女" &&
+                                added.TitleShortFor(Gender.Female) == "巫女",
+                                "Stage3 shrine-miko Japanese gender titles wrong");
+                        }
+                        else if (id == "AMJC_ItinerantRitualistAdult")
+                        {
+                            ctx.Require(added.TitleFor(Gender.Male) == "巡回する祭祀役" &&
+                                added.TitleFor(Gender.Female) == "渡り巫女" &&
+                                added.TitleShortFor(Gender.Female) == "渡り巫女",
+                                "Stage3 itinerant-miko Japanese gender titles wrong");
+                        }
+                        ctx.Require(!string.IsNullOrWhiteSpace(LoadedText(added, "description")),
+                            "Stage3 Japanese biography has empty description: " + id);
+                    }
+                    else if (shrinePerformer)
+                        ctx.Require(added.TitleFor(Gender.Female) == "shrine miko" &&
+                            added.TitleFor(Gender.Male) == "shrine ritual attendant",
+                            "Stage3 English gender titles wrong");
                 }
                 Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DEFS_OK");
+                Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DETAIL_OK");
+
 
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_TEXTS_OK count=" + AdaptedTitles.Count);
 
