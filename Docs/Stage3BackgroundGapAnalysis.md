@@ -1,6 +1,6 @@
 # Stage 3 — historical background diversity and replacement-gap assessment
 
-**Status:** five author-continued candidate backgrounds have been added to production XML (2026-10-20), but have not yet passed native game acceptance or publication. Other future candidates in this inventory remain *unapproved*. Date: 2026-10-19. Owner: AMJ Culture – Characters. This is the first Stage 3 comparison against currently owned approved textual rewrites, not an exhaustive audit of 784 original Vanilla biographies. Do not infer that all 135 excluded backgrounds would otherwise spawn in the author's actual MO world, or that all 123 rewrites are ordinary-generation-eligible.
+**Status:** five user-continued original backgrounds are in product XML and passed focused original 1.6 Japanese and 1.7 English loaded-game checks on 2026-10-20 ([native acceptance record](Stage3NativeAcceptance.md)); Steam and MO/new-save distribution remain unverified. Other candidates in this inventory are proposals only. Date: 2026-10-19. Owner: AMJ Culture – Characters. This is the first Stage 3 comparison against currently owned approved textual rewrites, not an exhaustive audit of 784 original Vanilla biographies. Do not infer that all 135 excluded backgrounds would otherwise spawn in the author's actual MO world, or that all 123 rewrites are ordinary-generation-eligible.
 
 ## Verified baseline and method
 
