@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "feature": "P3 limited coastal and irrigation Japanese background additions",
+  "owner": "sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters",
+  "scope": "four new original 1.6/1.7 BackstoryDef records, two childhood and two adulthood, optional generation categories, no new Traits or dependencies",
+  "status": "ready",
+  "search": {
+    "date": "2026-10-19",
+    "queries": [
+      "RimWorld Japanese medieval backstories fisher irrigation",
+      "Vanilla Backstories Expanded 150 Steam",
+      "Medieval Backstories No HAR Net Fisher",
+      "中世 漁撈 網漁 用水 荘園"
+    ],
+    "ecosystems": [
+      "vanilla_mo",
+      "amj",
+      "ve",
+      "non_ve"
+    ],
+    "limitations": "Original GTF 1.5_1.6 XML and Project 2026-10-16 external metadata audited; full current 1.7 VE/No HAR raw XML and all exact in-game final filter resolutions not available, and no claim of global absence of similar stories. Narrow Japanese-specific practical role pair justified without wholesale dependency."
+  },
+  "evidence": [
+    {
+      "id": "p3note",
+      "path": "Docs/Research/P3BackgroundGapPriorArt.md",
+      "sha256": "625e5259cb0cd54dd946d741bb2b23982e239e58ae7eb20c6c05afcc71e6e96e"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Vanilla Core original backgrounds and Medieval Overhaul",
+      "ecosystem": "vanilla_mo",
+      "version": "original Core 1.6.4871 / 1.7.4977; MO 1.6.2.2",
+      "evidence": [
+        "p3note"
+      ],
+      "comparison": {
+        "function": "Existing 784 Core biographies and unchanged MO categories; MO adds zero independent BackstoryDefs.",
+        "historical_fit": "Farmers/seafarers available but no accepted AMJ coastal fish-processing / shared-water occupational names.",
+        "dependencies": "Base game is already required; MO remains optional.",
+        "retention": "Preserve all original compatible records and 123 accepted rewrites.",
+        "progression_balance": "Avoid introducing stronger combat/medical skills or extra forced traits.",
+        "reuse": "Retain vanilla as baseline; add four distinct light biographies only.",
+        "maintenance_license": "Owns original data; no third-party text is copied."
+      },
+      "outcome": "prior_art_only"
+    },
+    {
+      "name": "Existing AMJ Characters historical backstory rewrites",
+      "ecosystem": "amj",
+      "version": "Characters main reviewed 2026-10-19",
+      "evidence": [
+        "p3note"
+      ],
+      "comparison": {
+        "function": "123 approved former Core DefNames already rewritten to historical occupations.",
+        "historical_fit": "Broad crafts, temples, warriors and merchants represented; nearshore processing and shared canal care specifically underrepresented.",
+        "dependencies": "Existing Characters is owner; no additional load dependency.",
+        "retention": "Never rewrite or reclassify 123 accepted Japanese biographies for duplication.",
+        "progression_balance": "Add only four complementary skill profiles, not 135 arbitrary replacements.",
+        "reuse": "Keep existing rewrite identities and texts unchanged.",
+        "maintenance_license": "AMJ-owned sources; new original text and XML only."
+      },
+      "outcome": "prior_art_only"
+    },
+    {
+      "name": "Vanilla Backstories Expanded (VE content)",
+      "ecosystem": "ve",
+      "version": "Workshop 2861806869, search 2026-10-19",
+      "evidence": [
+        "p3note"
+      ],
+      "comparison": {
+        "function": "Advertises 150+ additional general RimWorld biographies.",
+        "historical_fit": "Modern and science-fiction RimWorld-world breadth; no verified Japan-specific net craft/canal caretaker pair.",
+        "dependencies": "VE content dependencies and large set excluded as AMJ required content by project policy.",
+        "retention": "Player may choose separately; not added or modified by AMJ.",
+        "progression_balance": "Additional broad pool affects spawn frequency beyond targeted goal.",
+        "reuse": "Prior art only; no redistributed items.",
+        "maintenance_license": "Authored third-party IP; current raw XML not independently checked."
+      },
+      "outcome": "prior_art_only"
+    },
+    {
+      "name": "Medieval Backstories No HAR / Medieval Backstories Patch / Historical Backstories",
+      "ecosystem": "non_ve",
+      "version": "No HAR Workshop 3128454510; Patch fixed 72af7af 1.5_1.6; Historical audited 2026-10-16",
+      "evidence": [
+        "p3note"
+      ],
+      "comparison": {
+        "function": "Generic Net Fisher and 52 medieval-categorized Defs from fixed GTF source; Historical adds 500 broad-epoch biographies.",
+        "historical_fit": "Fishing roles overlap in name but European/broad-epoch contexts; no confirmed same Japan-specific water maintenance pair.",
+        "dependencies": "Whole Mod contents and optional per-faction category patches change generation and load costs.",
+        "retention": "Legitimate optional alternate diversity rather than mandatory replacement of AMJ core.",
+        "progression_balance": "Importing all changes pool much more than four targeted biographies.",
+        "reuse": "Reuse generation-category XML pattern only; never copy prose.",
+        "maintenance_license": "Third-party authored content, original GTF XML publicly inspected, 1.7 current originals not fully confirmed."
+      },
+      "outcome": "prior_art_only"
+    }
+  ],
+  "decision": {
+    "kind": "independent",
+    "rationale": "The existing AMJ 123 reviewed historical rewrites and generic medieval providers do not provide the targeted Japanese coastal processing and shared rural irrigation labor histories without broad third-party content, category overrides or unnecessary dependencies.",
+    "specification": "Docs/Design.md",
+    "independent_gap": "Precisely four Japan-specific low-status shore- and water-caretaking childhood/adult biographies with balanced civilian skills, usable with vanilla and optionally MO, independent of a fishing or irrigation gameplay Mod."
+  },
+  "unresolved": []
+}
