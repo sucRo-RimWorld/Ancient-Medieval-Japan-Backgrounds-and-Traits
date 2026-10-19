@@ -1,5 +1,9 @@
 # AMJ Culture – Characters Coordination
 
+## CHARACTERS-WHITE-RICE-EXPECTATION-20261019 — background eligibility research OPEN
+
+Grains [PR #163](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Grains/pull/163) added white rice with costly paddy polishing and special white-rice meals. The author asked whether pawns of affluent backgrounds should dislike non-white rice. Decision pending: do not classify all wealthy-background characters as disliking unpolished rice; first identify specific already-approved backgrounds implying daily refined meals, life-long privilege and acquired expectations. No change to background skill/ID/translation/generation or trait state is approved in this handoff. Conditional food-related mood logic remains owned by Culture, not this Characters repository. Do not ask the author to carry lists between threads.
+
 ## CHARACTERS-REPO-TRANSFER-20261019
 
 **Owner provisioned by author:** `sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters`. This repo receives the exact source assets from Culture branch `candidate/culture-characters-source` commit `7448f290f2e1b0c0bdde93431c27662f0e066821`: six existing generation XML patches, two approved Japanese DefInjected files, the dedicated Solid-child C#/csproj, approved 34+89 background texts, 23 starting-possession substitutions, source review/audit and existing test sources. Initial new-repository `LICENSE` (MIT) is preserved.
