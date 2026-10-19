@@ -25,15 +25,15 @@ No new native tests, CI, package installs, pawn sampling, or generated Mod patch
 
 ## Trait assessment — 43-name working index
 
-Count and classifications are deliberately exclusive: **1 excluded for new generation + 4 effect-review + 38 provisionally retained = 43**. This is **not** a claim that every TraitDef in owned 1.6/1.7 was independently text-reviewed today. All generic traits retain their existing defName and save references.
+**Current accepted P2 outcome (2026-10-19; supersedes the historical 2026-10-17 provisional table): 3 ordinary-generation exclusions (Transhumanist / BodyPurist / DrugDesire), 2 contextually adapted Culture effects (Greedy / Jealous), and 38 provisionally retained = 43.** Existing TraitDefs and old saved-pawn references remain; new alcohol-preference traits are a separate addition. This is an updated design/classification, not new native game acceptance.
 
 | Action | TraitDef | Japanese historical/gameplay reason |
 |---|---|---|
 | NEW-GENERATION EXCLUSION | `Transhumanist` | The desire to mechanically transcend the human body is out-of-period; specifically affects artificial-body mood/opinion. Existing pawns retain trait/Thought references. |
-| EFFECT REVIEW, NOT REMOVAL | `BodyPurist` | Physical aversion to implants may be humanly plausible; existing behavior also treats low-tech prostheses such as a peg leg as artificial. Review historical meaning and penalty, not remove automatically. |
-| EFFECT REVIEW, NOT REMOVAL | `DrugDesire` (degrees 2/1/-1) | The three chemical-fascination/interest/abstention behaviors must be reconciled with historically appropriate usable intoxication and last-resort mood rescue; they are not interchangeable with sake preference or tolerance. |
-| EFFECT REVIEW, NOT REMOVAL | `Greedy` | Ambition/possessiveness is timeless; mandatory impressive **private bedroom** and associated mood expectation may not suit collective historical living patterns. |
-| EFFECT REVIEW, NOT REMOVAL | `Jealous` | Envy is timeless; comparing personally owned bedrooms needs cultural review independent of the underlying character trait. |
+| NEW-GENERATION EXCLUSION | `BodyPurist` | Author decision: disable ordinary rolling and remove its two known forced Core background assignments while retaining original Defs. |
+| NEW-GENERATION EXCLUSION | `DrugDesire` (degrees 2/1/-1) | Suppressed for normal new characters, with separate alcohol-only preference traits. |
+| CULTURE EFFECT ADAPTED | `Greedy` | Ambition/possessiveness is timeless; mandatory impressive **private bedroom** and associated mood expectation may not suit collective historical living patterns. |
+| CULTURE EFFECT ADAPTED | `Jealous` | Envy is timeless; comparing personally owned bedrooms needs cultural review independent of the underlying character trait. |
 | PROVISIONAL KEEP | `Ascetic`, `Nudist`, `Undergrounder` | Lifestyle/environmental preferences are not intrinsically SF; analyze cultural Thoughts separately if a concrete problem appears. |
 | PROVISIONAL KEEP | `Bloodlust`, `Psychopath`, `Cannibal`, `Masochist`, `Pyromaniac`, `Brawler`, `Wimp`, `Tough` | Temperament, conduct, combat and pain response can exist in any era. Keeping a trait is not an endorsement of behavior or its historical prevalence. |
 | PROVISIONAL KEEP | `Kind`, `Abrasive`, `DislikesMen`, `DislikesWomen`, `Gay`, `Asexual`, `Bisexual`, `AnnoyingVoice`, `CreepyBreathing` | Personality, interpersonal attitudes, orientation and voice/physiological properties are not tied to modern technology. Do not turn a setting audit into erasure of people. |
