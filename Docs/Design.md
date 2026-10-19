@@ -17,6 +17,18 @@
 - Entrance/no-shoes, chair meals, bedding, social Thought rules, other daily-life rules and their assemblies/assets.
 - Neither Mod is a mandatory runtime dependency of the other. Harmony is required. Medieval Overhaul remains optional.
 
+## Trait Stage 2 — drug affinity removal and alcohol preferences (author direction, 2026-10-19)
+
+**Approved exception:** Disable ordinary generation of all three `DrugDesire` degrees (chemical fascination, chemical interest, teetotaler), and introduce alcohol-only **酒好き** and **酒嫌い**. This explicit exception allows the two new TraitDefs during Stage 2, ahead of the general Stage 3 new-trait work.
+
+**Existing identity preservation:** `Patches/DrugDesireGeneration.xml` changes `DrugDesire.commonality` to 0; the Def and its three old degrees remain available for saves. The patch conditionally strips just `DrugDesire` from original `DischargedSoldier53`, `MechanoidHacker93` and `VideoGamer16` forcedTraits. The two latter childhoods are already ordinarily excluded. Other forced traits, original backstory IDs, skills, restrictions and possessions stay unchanged. Do not automatically convert the soldier's former drug affinity into fondness for alcohol. Third-party forced assignments and pre-existing saved pawns are not migrated.
+
+**New effective traits:** `AMJC_AlcoholLover` and `AMJC_AlcoholAverse` are two mutually exclusive, distinct TraitDefs (commonality 0.3 each; incompatible with legacy `DrugDesire`). Their `ThoughtWorker_Hediff` Thoughts activate only while original `AlcoholHigh` is present: Mood +2 or −2, respectively. Six identical stages cover original AlcoholHigh hediff stages 0–5 without increasing the reward for dangerous intoxication. No alcohol available or consumed means **no standing mood penalty or bonus**. Neither trait forces drinking, creates chemical need, overrides DrugPolicy, or changes addiction, tolerance, intoxication itself or withdrawal. 酒嫌い is a preference, **not** 下戸 (physical low tolerance).
+
+**Module boundary:** Vanilla Beer and original Medieval Overhaul Ale/Cider/Mead/Wine use AlcoholHigh; future sake can be recognized if its effects use the same hediff. New TraitDefs, trait-generation restrictions and their related Thoughts live exclusively in Characters. Culture still owns drug supply and initial addiction generation; no Culture C#/XML/DLL is modified. No new dependency on Culture or MO.
+
+**Acceptance:** XML source is the implementation, **not** a RimWorld 1.6/1.7 loaded-game PASS. Verify in a focused native game test: two loaded new TraitDefs, correctly gated alcohol-only Thoughts, no ordinary DrugDesire and no specified forced assignment, Beer+MO effect, and no unrelated old-def removal. Existing pre-change PASS is not evidence for this feature. Publication remains unauthorized.
+
 ## Transition and save rules — completed extraction (2026-10-19)
 
 Characters independent source and versioned DLLs are in its owner repository, built for RimWorld 1.6/1.7. The Culture extraction merged via [PR #160](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture/pull/160) to Culture main `52b16d398112a64b6f934dc0f5ea2ee0cc77c9e8`. Culture main removed the six transferred background/trait generation patches, two Japanese BackstoryDef localization files and Solid-child C# patch, and rebuilt its independent 1.6/1.7 DLLs. Characters therefore owns these generated rules **exclusively in current main**. Characters may optionally co-load with this cutover Culture version, **not an older unsplit Culture** containing duplicate XML/Harmony rules.

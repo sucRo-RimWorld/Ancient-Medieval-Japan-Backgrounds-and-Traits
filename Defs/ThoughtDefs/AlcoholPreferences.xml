@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- AlcoholHigh is shared by Vanilla beer and the original MO alcohol types. -->
+  <ThoughtDef>
+    <defName>AMJC_AlcoholEnjoyment</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AlcoholHigh</hediff>
+    <requiredTraits><li>AMJC_AlcoholLover</li></requiredTraits>
+    <stages>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>enjoying alcohol</label><description>Having a drink feels pleasant.</description><baseMoodEffect>2</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AMJC_AlcoholDiscomfort</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>AlcoholHigh</hediff>
+    <requiredTraits><li>AMJC_AlcoholAverse</li></requiredTraits>
+    <stages>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+      <li><label>unpleasant alcohol</label><description>I dislike this feeling from alcohol.</description><baseMoodEffect>-2</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+</Defs>
