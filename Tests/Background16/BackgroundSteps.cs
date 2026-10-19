@@ -432,8 +432,10 @@ namespace AMJ.Culture.Test
                 ctx.Require(trait != null && commonality != null &&
                     (float)commonality.GetValue(trait) == 0f,
                     "Loaded random Transhumanist commonality not suppressed");
-                ctx.Require(DefDatabase<TraitDef>.GetNamedSilentFail("BodyPurist") != null,
-                    "BodyPurist Def identity was lost");
+                TraitDef bodyPurist = DefDatabase<TraitDef>.GetNamedSilentFail("BodyPurist");
+                ctx.Require(bodyPurist != null && commonality != null &&
+                    (float)commonality.GetValue(bodyPurist) == 0f,
+                    "BodyPurist missing or new-generation commonality not suppressed");
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_LOADED_OK adult=" + Adult.Length
                     + " child=" + Child.Count);
 

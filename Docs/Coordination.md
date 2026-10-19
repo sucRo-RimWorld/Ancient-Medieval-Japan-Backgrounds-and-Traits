@@ -1,5 +1,9 @@
 # AMJ Culture – Characters Coordination
 
+## CHARACTERS-P2-BODYTRAIT-REMOVAL-20261019 — XML source complete, real-game acceptance open
+
+**Author decision:** stop generating both `BodyPurist` and `Transhumanist` in ordinary new characters. Both have commonality zero; in original Core `HunterOfTheKing53`, `TestSubject90` and `FerventResearcher72`, matching forced assignments are conditionally removed. All TraitDef/BackstoryDef IDs and old saved Pawn effects are preserved, other character behavior unchanged. Owner sources `Patches/BodyPuristGeneration.xml`, `Patches/TranshumanistGeneration.xml`, `Docs/Design.md` and updated original 1.6 test assertion. **No new native-game run**, product DLL unchanged (XML-only gameplay patch), no Steam release.
+
 ## CHARACTERS-CUTOVER-20261019 — completed extraction into both owner mains
 
 **Ownership:** Characters owns Vanilla/MO BackstoryDef historical rewrite and generation restrictions (77 adult, 55 Solid + 3 Shuffled), 34+89 background rewrites and Japanese text, 23 starting possessions, Trait generation suppression and the Solid-child Harmony gate. Culture keeps Greedy/Jealous lodging Thoughts, initial chemical addiction/tolerance, drug supply, entrance, dining, bedding and other daily-life behavior. Characters source import PR #1 main `6deefec90d74bd99e89045f1cfbaf8031b3c97e6`, independent DLLs PR #2 main `c7148fbc06a9b12c6e236988673afb715ff34c9f`, corrected full native test source PR #3 main `4c947fffa7bed55bf87a6df2815e778752512c54`. Original MIT license retained.

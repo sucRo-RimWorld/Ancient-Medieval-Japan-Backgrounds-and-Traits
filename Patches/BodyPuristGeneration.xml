@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Suppress naturally rolled BodyPurist; retain TraitDef and old saved pawns. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/TraitDef[defName="BodyPurist"]/commonality</xpath>
+    <value><commonality>0</commonality></value>
+  </Operation>
+  <!-- Also prevent the two original Core backgrounds from forcing BodyPurist. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[traitDef="BodyPurist"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[traitDef="BodyPurist"]</xpath>
+    </match>
+  </Operation>
+</Patch>
