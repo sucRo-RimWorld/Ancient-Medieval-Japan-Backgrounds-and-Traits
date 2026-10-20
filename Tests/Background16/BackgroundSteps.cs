@@ -676,6 +676,29 @@ namespace AMJ.Culture.Test
                 }
                 Log.Message("AMJ_CULTURE_P3_TWO_CRAFT_BACKSTORIES_OK");
 
+                // Approved coastal fisher: existing Animals skill, no new Fishing skill/job.
+                BackstoryDef fisher = DefDatabase<BackstoryDef>.GetNamedSilentFail("AMJC_CoastalFisherAdult");
+                ctx.Require(fisher != null, "P3 coastal fisher not loaded");
+                ctx.Require(fisher.slot == BackstorySlot.Adulthood &&
+                    fisher.spawnCategories != null &&
+                    fisher.spawnCategories.Contains("Outlander") &&
+                    fisher.spawnCategories.Contains("Tribal") &&
+                    fisher.spawnCategories.Contains("Civil") &&
+                    fisher.spawnCategories.Contains("MedievalCommon"),
+                    "P3 coastal fisher slot / categories mismatch");
+                var fisherGains = fisher.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                ctx.Require(fisherGains.Count == 1 &&
+                    fisherGains.TryGetValue("Animals", out int fishAnimals) && fishAnimals == 5,
+                    "P3 coastal fisher Animals+5 only mismatch");
+                ctx.Require(fisher.forcedTraits == null || fisher.forcedTraits.Count == 0,
+                    "P3 coastal fisher must not force Traits");
+                string fisherTitle = japanese ? "沿岸の漁師" : "coastal fisher";
+                ctx.Require(fisher.TitleFor(Gender.Male) == fisherTitle &&
+                    fisher.TitleFor(Gender.Female) == fisherTitle &&
+                    !string.IsNullOrWhiteSpace(LoadedText(fisher, "description")),
+                    "P3 coastal fisher translated title / description mismatch");
+                Log.Message("AMJ_CULTURE_P3_COASTAL_FISHER_OK");
+
                 Log.Message("AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK");
 
                 Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DEFS_OK");
