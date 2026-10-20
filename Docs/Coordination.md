@@ -1,5 +1,10 @@
 # AMJ Culture – Characters Coordination (main only)
 
+## P3 ten Japanese originals — 1.7 live localization PASS (2026-10-20)
+
+**Current accepted Japanese loaded game:** [Project Actions #39423122996](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39423122996), source-pinned Characters `741ee483d274267a8e3f4141c0cb655858831304`, Project runner `12e4e0aa2df42773251408b6a00a536fe8129132`, Culture `f071f0602e9989a011f431f30a961499dcd38ee7`: original 1.7 `Japanese (日本語)`, ten P3 approved full texts/titles and female variants, 89 Stage2 titles/descriptions, P3 ability/category/forced Trait, Solid filter and ordinary Pawn generation **PASS**; Pickle1/1, Unity/FMOD ERROR0, exit0, all required original log markers once. **Original first try [#39422291959](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39422291959) was FAIL** from mid-game language switching (No active language, camera errors, later missing SolidBio sample); Project [PR #852](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/pull/852) repaired *test runner only* by selecting Japanese in disposable Prefs before startup. Exact acceptance/pin/run artifact ID 12264577072 in [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md). **Open:** screenshot-visible JA glyph inspection, drawing each of ten via normal RNG and rate, latest 10 original MO, old saves/Steam. Avoid repeated native tests just to improve coverage.
+
+
 ## Current P3 ten-background original-game acceptance — 2026-10-20
 
 **Current owner product:** Characters main source `b37131dd61ed3a8712641a612b85a5a508d0adbc` contains **10** newly owned P3 histories (**8 adults, 2 childhoods**). The added adult three are 織物職人 Crafting+6, 焼き物師 Crafting+4/Artistic+2, 沿岸の漁師 Animals+5. All ten have `Outlander` and `Tribal` ordinary categories; no new fishing job or DLC dependency. Current accepted specification in [Design.md](Design.md), product XML and Japanese DefInjected; coastal fisher detail in [Stage3CoastalFisherDesign.md](Stage3CoastalFisherDesign.md).
