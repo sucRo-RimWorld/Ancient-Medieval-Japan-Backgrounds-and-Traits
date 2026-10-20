@@ -80,3 +80,30 @@ These are bounded candidate roles, **not final approved biography titles, histor
 5. Run one consolidated original loaded-game acceptance for added backgrounds and P2 corrections near the feature slice's completion. Do not automatically launch a game or multiply CI matrices; review generated-Pawn distribution across normal Vanilla/MO routes before claiming diversity improved.
 
 **Not done:** No candidate has an author-approved bio, skill profile or spawn weight; no additional BackstoryDef is currently implemented. The 135 restriction/123 rewrite numbers are verified owner scope totals, not measured diversity/distribution.
+
+## 2026-10-20 follow-on candidate review — 鷹匠 and 渡り職人の子 (not implemented)
+
+**Status: editorial/gameplay proposals ONLY.** The five previously approved P3 BackstoryDefs have already been implemented and accepted in scoped original-game profiles. This section does not authorize new BackstoryDefs, Japanese DefInjected, gameplay XML, random-selection rate changes or a test run. Final Japanese wording, skills and spawn-category applicability require author content judgment; they must not be silently promoted from this review into the production files. No existing 135 restrictions / 123 rewrites / five P3 additions are altered.
+
+### Candidate A — 鷹匠 (falconer, adulthood)
+
+- **Proposed DefName:** `AMJC_FalconerAdult`; `Adulthood`.
+- **Japanese title / short title draft:** 鷹匠 / 鷹匠. English *falconer*.
+- **Japanese description draft:** `[PAWN_nameDef]は鷹を捕らえて飼い慣らし、獲物を追わせる技を身につけた。鳥の体調や動きを見ながら訓練を重ね、鷹狩の支度と手入れを任されてきた。`
+- **Candidate skill gains:** `Animals +5`, `Plants +1` (total +6). `Animals` models animal handling and trained-hawk upkeep. The smaller Plants bonus represents outdoor knowledge, but **could be dropped** if judged too indirect. **No automatic Shooting bonus**: falconry is not personal archery and RimWorld has no innate falconry hunting job. No forced trait, special animal companion, bonded hawk, starting pet or DLC dependency.
+- **Overlap:** differs mechanically from original adult 山野の猟師 (`SpaceHunter79`) and newly added hunter-household childhood by relying on `Animals` rather than archery. Distinct from generic `DankPyon_Fighter`/`DankPyon_Veteran` and existing animal-training Traits. Do not grant a unique falconry ability that does not exist.
+- **Eligibility proposal, not a finalized filter:** `Civil`, `Tribal`, optional `MedievalCommon` are possible source-era labels, but exact original MO/VANILLA pawnkind intersections and frequency require evaluation **before** addition. Noble-service context must not imply every small village has an elite court falconer. Restricting the entire biography to upper class would require an actual available generation mechanism, not a prose claim.
+- **Historical bounds:** the cultural heritage register recognizes hawking as an early imported court hunting practice cited in the *Nihon Shoki*, with historically varied aristocratic/warrior and regional uses; Tokyo National Museum's surviving **Edo-period** `鷹匠心得の巻` cannot itself verify particular medieval techniques or high-ranking official positions. The profile is a general experienced bird trainer, not a universal Sengoku daimyō retainer. References: [Agency for Cultural Affairs — 狩猟習俗](https://kunishitei.bunka.go.jp/bsys/maindetails/312/168); [Tokyo National Museum material via Cultural Heritage Online — 鷹匠心得の巻](https://online.bunka.go.jp/heritages/detail/445727).
+
+### Candidate B — 渡り職人の子 (mobile artisan household, childhood)
+
+- **Proposed DefName:** `AMJC_TravelingArtisanChild`; `Childhood`.
+- **Japanese title / short title draft:** 渡り職人の子 / 職人の子. English *traveling artisan's child*.
+- **Japanese description draft:** `[PAWN_nameDef]は道具を持って土地を移る職人の家に育ち、各地で仕事をする家族を手伝ってきた。材料や道具の扱いを覚え、旅先で客や土地の人々と接することにも慣れていった。`
+- **Candidate skill gains:** `Crafting +2`, `Social +2` (total +4); deliberately small childhood advantages for basic handwork and varied customer contact, **not** adult-level `Crafting +5`, building, caravan speed or a new trade job. No forced Trait, work disable, special starting possession or fixed family/faction relation.
+- **Overlap:** distinct in age slot from `AMJC_ItinerantWoodworkerAdult` (adult 木地師). Unlike the already rewritten traveling performer / peddler's child / forge-raised child, the livelihood is **mobile practical manufacture**, not stage performance, commerce alone or a fixed forge. Does not assert that all mobile craftsmen were woodworkers, persecuted outcasts or a single hereditary group.
+- **Eligibility proposal:** `Tribal`, `Traveler`, optional `MedievalCommon`, possibly `Civil` only if actual base-game category selection warrants it; no spawn weight or category XML is accepted. The child may be selected independently of the adult family history under existing RimWorld generation; do not imply the game automatically creates matched families.
+- **Historical bounds:** the cultural heritage register describes mobile woodenware maker/ladle maker communities; that **evidence is about a particular craft tradition**, not proof that all medieval itinerant crafts shared one institution. A historical dictionary distinguishes medieval `轆轤師` from the later common `木地屋` name. This generic childhood biography is an abstraction of a craft household moving for work, not a claim of one universal mobile population. References: [Agency for Cultural Affairs — 木地屋の生活伝承](https://kunishitei.bunka.go.jp/heritage/detail/312/165); [Yamakawa history dictionary via Kotobank — 木地師](https://kotobank.jp/word/%E6%9C%A8%E5%9C%B0%E5%B8%AB-473503).
+
+**Decision still needed:** whether either role adds enough variety for production, plus final Japanese text, exact skill numbers and allowed categories. Keep both source and new native-game sampling unchanged until these are confirmed. The alcohol-only trait mood acceptance and random occurrence of the existing five backgrounds remain separately OPEN in `Docs/Design.md` and `Docs/Stage3NativeAcceptance.md`.
+
