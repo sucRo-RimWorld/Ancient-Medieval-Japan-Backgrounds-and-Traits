@@ -174,4 +174,21 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+  <!-- Approved coastal fishing livelihood: existing Animals skill, no new fishing mechanics. -->
+  <BackstoryDef>
+    <defName>AMJC_CoastalFisherAdult</defName>
+    <slot>Adulthood</slot>
+    <title>coastal fisher</title>
+    <titleShort>fisher</titleShort>
+    <description>[PAWN_nameDef] made a living fishing in a coastal village, watching the tides and finding the places where fish gathered. [PAWN_pronoun] caught fish using hooks and nets, kept fishing gear in good repair, and helped carry the catch ashore.</description>
+    <skillGains>
+      <Animals>5</Animals>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>
