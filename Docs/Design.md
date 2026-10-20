@@ -84,6 +84,21 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **Bounded evidence:** category intersections support ordinary Vanilla `Outlander` and original MO `Tribal` candidate eligibility; actual selection of every individual Def by random generation **is not demonstrated**, nor are appearance rates or fixed faction/quest routes. Prior native PASS runs used earlier XML and do not certify this new source until loaded-game acceptance. New game recommended; no DLC/Steam action.
 
+## P3 — 織物職人・焼き物師の追加（2026-10-20承認、実ゲーム検証未実施）
+
+既存の背景7件に加え、ユーザーが日本語本文・能力補正案を承認した成人背景2件を追加。P3新規背景合計**9件（成人7・幼少期2）**。新規ID・効果は以下。
+
+| DefName | 日本語名 | Slot | 実際の能力補正 | 生成カテゴリ |
+|---|---|---|---|---|
+| `AMJC_TextileWeaverAdult` | 織物職人 | Adulthood | `Crafting +6` | `Outlander`, `Tribal`, `Civil`, `MedievalCommon` |
+| `AMJC_PotterAdult` | 焼き物師 | Adulthood | `Crafting +4`, `Artistic +2` | `Outlander`, `Tribal`, `Civil`, `MedievalCommon` |
+
+**史実・ゲーム上の意味:** 古代から織物生産が存在し、奈良・平安期の織物、鎌倉・室町期の窯業にも前例がある。織物職人は糸紡ぎ・織機・布地と道具保守に熟練する `Crafting` 専門。焼き物師は日常生活用の壺や甕を製作する `Crafting` 主体で、形づくりの感覚を補助的に `Artistic` と表現する。**ArtisticはMO陶器の製作速度を直接上げると保証しない**。`MedievalCommon` は任意カテゴリ、MO導入を必要としない。新しい織物・陶器・窯・専用Job・特性・所持品は追加しない。前の7件、123改稿、135通常生成制限、およびCultureとの所有分担は保持。
+
+**日本語正本:** `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml` に承認済みの文章をそのまま収録（`description`／`baseDesc`）。同意された短縮名は通常名と同一で、男性・女性共通。英語原文は意味を合わせる。歴史的参照は日本工芸会の染織・陶芸の沿革と京都国立博物館の中世窯業解説。ゲーム挙動については製品XMLと既存単一Pickleシナリオに2件の存在・slot・能力・強制特性なし・生成カテゴリ・日英タイトル検査を追加した段階であり、**現時点ではRimWorld実起動PASSではない**。従来7件のPASSは新規2件の証明にならない。自然選択・出現率は別途未確認。
+
+**漁師候補の技能整理（未実装）:** Odysseyの釣りは `Animals` が Fishing Speed／Fishing Yield に作用する。Vanilla Fishing Expandedの釣りもAnimals技能基準である。漁師背景は **`Animals +5` を基本候補**とする。釣り専用 `SkillDef` はなく、Odyssey/釣りModを依存化しない（未導入時はAnimals技能の一般的用途のみ）。漁師の日本語本文・生成カテゴリ・最終技能補正の承認までは製品に追加しない。製塩は海水製塩とMOの採掘塩を同一視しないため未実装。
+
 ## Transition and save rules — completed extraction (2026-10-19)
 
 Characters independent source and versioned DLLs are in its owner repository, built for RimWorld 1.6/1.7. The Culture extraction merged via [PR #160](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture/pull/160) to Culture main `52b16d398112a64b6f934dc0f5ea2ee0cc77c9e8`. Culture main removed the six transferred background/trait generation patches, two Japanese BackstoryDef localization files and Solid-child C# patch, and rebuilt its independent 1.6/1.7 DLLs. Characters therefore owns these generated rules **exclusively in current main**. Characters may optionally co-load with this cutover Culture version, **not an older unsplit Culture** containing duplicate XML/Harmony rules.

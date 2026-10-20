@@ -6,6 +6,8 @@
 
 **2026-10-20 generation eligibility correction:** all seven implemented P3 BackstoryDefs now add `Outlander` in addition to their existing categories, because original Vanilla source has `Outlander` in 122 biographies but `Civil` in just one and `Traveler` in none. MO original `Tribal` routes stay intact. Source-category improvement is **not** proof of natural random appearance. Canonical details in [Design.md](Design.md).
 
+**2026-10-20 two more approved adults:** 織物職人 (`Crafting +6`) and 焼き物師 (`Crafting +4`, `Artistic +2`) are now in the production XML and Japanese DefInjected. They extend the seven earlier backgrounds to **nine**; real-game acceptance and natural distribution are still OPEN. The older pending-candidate rows below are historical planning notes, not their current status. Coastal fishing is still a candidate with `Animals +5` justified by Odyssey/VFE fishing productivity, but no final Japanese text/Def. Salt worker remains pending.
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.

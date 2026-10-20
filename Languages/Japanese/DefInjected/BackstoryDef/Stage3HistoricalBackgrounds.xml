@@ -36,4 +36,14 @@
   <AMJC_TravelingArtisanChild.titleShort>職人の子</AMJC_TravelingArtisanChild.titleShort>
   <AMJC_TravelingArtisanChild.baseDesc>[PAWN_nameDef]は道具を持って土地を移る職人の家に育ち、各地で仕事をする家族を手伝ってきた。材料や道具の扱いを覚え、旅先で客や土地の人々と接することにも慣れていった。</AMJC_TravelingArtisanChild.baseDesc>
   <AMJC_TravelingArtisanChild.description>[PAWN_nameDef]は道具を持って土地を移る職人の家に育ち、各地で仕事をする家族を手伝ってきた。材料や道具の扱いを覚え、旅先で客や土地の人々と接することにも慣れていった。</AMJC_TravelingArtisanChild.description>
+
+  <!-- Two 2026-10-20 author-approved Japanese adult craft histories. -->
+  <AMJC_TextileWeaverAdult.title>織物職人</AMJC_TextileWeaverAdult.title>
+  <AMJC_TextileWeaverAdult.titleShort>織物職人</AMJC_TextileWeaverAdult.titleShort>
+  <AMJC_TextileWeaverAdult.baseDesc>[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。</AMJC_TextileWeaverAdult.baseDesc>
+  <AMJC_TextileWeaverAdult.description>[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。</AMJC_TextileWeaverAdult.description>
+  <AMJC_PotterAdult.title>焼き物師</AMJC_PotterAdult.title>
+  <AMJC_PotterAdult.titleShort>焼き物師</AMJC_PotterAdult.titleShort>
+  <AMJC_PotterAdult.baseDesc>[PAWN_nameDef]は土を選び、器の形を整え、窯の火加減を見ながら焼き上げてきた。日々使われる壺や甕を作る中で、土の性質と焼成の技を身につけた。</AMJC_PotterAdult.baseDesc>
+  <AMJC_PotterAdult.description>[PAWN_nameDef]は土を選び、器の形を整え、窯の火加減を見ながら焼き上げてきた。日々使われる壺や甕を作る中で、土の性質と焼成の技を身につけた。</AMJC_PotterAdult.description>
 </LanguageData>

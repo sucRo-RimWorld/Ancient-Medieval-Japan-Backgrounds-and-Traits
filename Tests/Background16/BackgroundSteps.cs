@@ -642,6 +642,40 @@ namespace AMJ.Culture.Test
                     ctx.Require(!string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
                         "Follow-on P3 description missing: " + entry.Key);
                 }
+
+                // Next two author-approved adults: loaded game behavior, not a test of random rates.
+                var crafts = new Dictionary<string, Dictionary<string, int>>
+                {
+                    { "AMJC_TextileWeaverAdult", new Dictionary<string, int> { { "Crafting", 6 } } },
+                    { "AMJC_PotterAdult", new Dictionary<string, int> { { "Crafting", 4 }, { "Artistic", 2 } } }
+                };
+                foreach (var entry in crafts)
+                {
+                    BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(entry.Key);
+                    ctx.Require(bio != null, "P3 craft biography missing: " + entry.Key);
+                    ctx.Require(bio.slot == BackstorySlot.Adulthood &&
+                        bio.spawnCategories != null &&
+                        bio.spawnCategories.Contains("Outlander") &&
+                        bio.spawnCategories.Contains("Tribal") &&
+                        bio.spawnCategories.Contains("MedievalCommon"),
+                        "P3 craft adulthood/categories mismatch: " + entry.Key);
+                    var gains = bio.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                    ctx.Require(gains.Count == entry.Value.Count &&
+                        entry.Value.All(x => gains.TryGetValue(x.Key, out int amount) &&
+                            amount == x.Value),
+                        "P3 craft skill gains mismatch: " + entry.Key);
+                    ctx.Require(bio.forcedTraits == null || bio.forcedTraits.Count == 0,
+                        "P3 crafts should not force any Trait: " + entry.Key);
+                    string expectedTitle = japanese
+                        ? (entry.Key == "AMJC_TextileWeaverAdult" ? "織物職人" : "焼き物師")
+                        : (entry.Key == "AMJC_TextileWeaverAdult" ? "textile weaver" : "potter");
+                    ctx.Require(bio.TitleFor(Gender.Male) == expectedTitle &&
+                        bio.TitleFor(Gender.Female) == expectedTitle &&
+                        !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
+                        "P3 craft title/description missing: " + entry.Key);
+                }
+                Log.Message("AMJ_CULTURE_P3_TWO_CRAFT_BACKSTORIES_OK");
+
                 Log.Message("AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK");
 
                 Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DEFS_OK");
