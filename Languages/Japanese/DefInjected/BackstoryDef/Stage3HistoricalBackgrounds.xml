@@ -46,4 +46,9 @@
   <AMJC_PotterAdult.titleShort>焼き物師</AMJC_PotterAdult.titleShort>
   <AMJC_PotterAdult.baseDesc>[PAWN_nameDef]は土を選び、器の形を整え、窯の火加減を見ながら焼き上げてきた。日々使われる壺や甕を作る中で、土の性質と焼成の技を身につけた。</AMJC_PotterAdult.baseDesc>
   <AMJC_PotterAdult.description>[PAWN_nameDef]は土を選び、器の形を整え、窯の火加減を見ながら焼き上げてきた。日々使われる壺や甕を作る中で、土の性質と焼成の技を身につけた。</AMJC_PotterAdult.description>
+  <!-- Approved Japanese coastal fisher narrative. -->
+  <AMJC_CoastalFisherAdult.title>沿岸の漁師</AMJC_CoastalFisherAdult.title>
+  <AMJC_CoastalFisherAdult.titleShort>漁師</AMJC_CoastalFisherAdult.titleShort>
+  <AMJC_CoastalFisherAdult.baseDesc>[PAWN_nameDef]は海辺の村で漁を生業とし、潮の満ち引きや魚の集まる場所を見極めながら、釣りや網漁で魚を獲ってきた。網や釣具の手入れも欠かさず、漁獲を浜へ運ぶ仕事にも慣れていた。</AMJC_CoastalFisherAdult.baseDesc>
+  <AMJC_CoastalFisherAdult.description>[PAWN_nameDef]は海辺の村で漁を生業とし、潮の満ち引きや魚の集まる場所を見極めながら、釣りや網漁で魚を獲ってきた。網や釣具の手入れも欠かさず、漁獲を浜へ運ぶ仕事にも慣れていた。</AMJC_CoastalFisherAdult.description>
 </LanguageData>
