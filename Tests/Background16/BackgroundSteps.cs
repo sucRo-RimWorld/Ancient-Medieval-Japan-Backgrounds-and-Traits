@@ -272,8 +272,12 @@ namespace AMJ.Culture.Test
             ctx.Require(love != null && averse != null && legacy != null &&
                         alcohol != null && pleasure != null && discomfort != null,
                         "P2 alcohol preference Trait/Thought/Hediff is missing in loaded game");
-            ctx.Require(Math.Abs(love.commonality - 0.3f) < 0.0001f &&
-                        Math.Abs(averse.commonality - 0.3f) < 0.0001f,
+            // TraitDef.commonality is non-public in original RimWorld 1.6/1.7.
+            FieldInfo weight = typeof(TraitDef).GetField("commonality",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            ctx.Require(weight != null &&
+                        Math.Abs((float)weight.GetValue(love) - 0.3f) < 0.0001f &&
+                        Math.Abs((float)weight.GetValue(averse) - 0.3f) < 0.0001f,
                         "P2 alcohol-only Traits' generation weights changed");
             ctx.Require(love.conflictingTraits != null &&
                         averse.conflictingTraits != null &&
