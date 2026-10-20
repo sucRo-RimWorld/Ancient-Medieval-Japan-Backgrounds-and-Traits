@@ -139,4 +139,39 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+
+  <!-- Two additional 2026-10-20 author-approved adult craft backgrounds. -->
+  <BackstoryDef>
+    <defName>AMJC_TextileWeaverAdult</defName>
+    <slot>Adulthood</slot>
+    <title>textile weaver</title>
+    <titleShort>weaver</titleShort>
+    <description>[PAWN_nameDef] spent many years spinning thread and weaving cloth on a loom. [PAWN_pronoun] learned to judge thread tension, spot irregularities in the weave, and maintain the tools used in the work.</description>
+    <skillGains>
+      <Crafting>6</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_PotterAdult</defName>
+    <slot>Adulthood</slot>
+    <title>potter</title>
+    <titleShort>potter</titleShort>
+    <description>[PAWN_nameDef] learned to select clay, shape vessels and fire them while carefully tending the kiln. Making everyday jars and storage pots taught [PAWN_objective] how different clays behaved and how to control the firing process.</description>
+    <skillGains>
+      <Crafting>4</Crafting>
+      <Artistic>2</Artistic>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>
