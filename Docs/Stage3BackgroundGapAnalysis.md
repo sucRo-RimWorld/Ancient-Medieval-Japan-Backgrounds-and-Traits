@@ -4,6 +4,8 @@
 
 **Status:** five user-continued original backgrounds are in product XML and passed focused original 1.6 Japanese and 1.7 English loaded-game checks on 2026-10-20 ([native acceptance record](Stage3NativeAcceptance.md)); Steam and MO/new-save distribution remain unverified. Other candidates in this inventory are proposals only. Date: 2026-10-19. Owner: AMJ Culture – Characters. This is the first Stage 3 comparison against currently owned approved textual rewrites, not an exhaustive audit of 784 original Vanilla biographies. Do not infer that all 135 excluded backgrounds would otherwise spawn in the author's actual MO world, or that all 123 rewrites are ordinary-generation-eligible.
 
+**2026-10-20 generation eligibility correction:** all seven implemented P3 BackstoryDefs now add `Outlander` in addition to their existing categories, because original Vanilla source has `Outlander` in 122 biographies but `Civil` in just one and `Traveler` in none. MO original `Tribal` routes stay intact. Source-category improvement is **not** proof of natural random appearance. Canonical details in [Design.md](Design.md).
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.

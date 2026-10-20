@@ -562,6 +562,7 @@ namespace AMJ.Culture.Test
                     ctx.Require(added != null, "Stage3 loaded Def absent: " + id);
                     ctx.Require(added.spawnCategories != null &&
                         added.spawnCategories.Contains("Tribal") &&
+                        added.spawnCategories.Contains("Outlander") &&
                         added.spawnCategories.Contains("MedievalCommon"),
                         "Stage3 selected ordinary/optional-Medieval categories missing: " + id);
                     ctx.Require((id == "AMJC_HunterFamilyChild") ==
@@ -621,6 +622,7 @@ namespace AMJ.Culture.Test
                         "Follow-on P3 slot mismatch: " + entry.Key);
                     ctx.Require(bio.spawnCategories != null &&
                         bio.spawnCategories.Contains("Tribal") &&
+                        bio.spawnCategories.Contains("Outlander") &&
                         bio.spawnCategories.Contains("Civil") &&
                         bio.spawnCategories.Contains("MedievalCommon") &&
                         (!child || bio.spawnCategories.Contains("Traveler")),
