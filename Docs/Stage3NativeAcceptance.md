@@ -69,3 +69,22 @@ This later evidence **supersedes only the P2 forced-list and original MO 1.6 ent
 
 **Unproven, do not infer from PASS:** actual random selection of any particular new biography or relative spawning weights, Japanese title/description **loaded presentation of these two** (both runs were English), MO 1.7 and optional Medieval Backstories Patch, third-party forced Trait collisions, old-save addition/removal safety, alcohol-positive/negative mood values, original unmodified MO MP3 decoding, DLC and Steam/Workshop. Original five P3 Japanese display in earlier 1.6 JA runs remains a separate valid result. The old combined chair+background 1.7 failure remains independent of this accepted background-only profile.
 
+## 2026-10-20 consolidated original 1.7 acceptance — ten P3 backgrounds
+
+**PASS, one source-pinned real-game run:** [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528), retained artifact `culture17-native-39417930528` (ID **12262109871**), Project workflow main `dbbe67724f9aa0f482f162674ca9fb63cd1b2d36`, actual Characters source main `b37131dd61ed3a8712641a612b85a5a508d0adbc` and Culture product `f071f0602e9989a011f431f30a961499dcd38ee7`. **Original RimWorld `1.7.4977 rev1248` + separated Culture/Characters, Vanilla, English**. The original game files remained unchanged.
+
+**Explicit test premises and outcomes** (all in the *one existing* `Tests/Background16/BackgroundSteps.cs` Pickle scenario):
+
+| Feature | Loaded-game expected condition | Result |
+|---|---|---|
+| Original first five P3 | Existing biography, slot, skill gains, `Tribal`/`Outlander`/`MedievalCommon`, the single approved `Nimble` on shrine attendant only | PASS |
+| 鷹匠・渡り職人の子 | `Animals +5, Plants +1` / `Crafting +2, Social +2`, proper adult/child slot, no forced Trait, `Outlander` | PASS |
+| 織物職人 `AMJC_TextileWeaverAdult` | `Adulthood`, `Crafting +6` only, ordinary categories, no forced Trait, English `textile weaver` | PASS |
+| 焼き物師 `AMJC_PotterAdult` | `Adulthood`, `Crafting +4, Artistic +2`, ordinary categories, no forced Trait, English `potter` | PASS |
+| 沿岸の漁師 `AMJC_CoastalFisherAdult` | `Adulthood`, `Animals +5` **only**, `Outlander/Tribal/Civil/MedievalCommon`, no forced Trait, English `coastal fisher` | PASS |
+| Regressions | Six approved background-forced Trait removals, old `DrugDesire`/`Transhumanist`/`BodyPurist` commonality restrictions, alcohol preference moods while original `AlcoholHigh`, one ordinary Pawn | PASS |
+
+**Actual log:** `launcher.log` contains `AMJ_CULTURE_P3_TWO_CRAFT_BACKSTORIES_OK` **once**, `AMJ_CULTURE_P3_COASTAL_FISHER_OK` **once**, `AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK` **once**, `AMJ_CULTURE_P2_FORCED_TRAITS_STRIPPED_OK` **once** and `AMJ_CULTURE_ALCOHOL_PREFERENCE_MOOD_OK` **once**. Pickle summary `1/1 Passed`, failure/skipped/flaky `0`, exit `0`, `timed_out=false`, original Unity errors `[]`, original FMOD errors `[]`; background C# build `0 Warning(s), 0 Error(s)`. The pre-existing runner `result.json` summary strings `sample_count`/`scope` still describe **seven** P3 records; that text is an old static label, not the actually executed current Characters `BackgroundSteps.cs`. Proof of the newest three assertions is their exact **launcher log marker** and source-pinned compiled test; do not repeat the old sample-count label as a new current count.
+
+**Not tested by this profile:** direct Japanese in-game loaded display of the latest three biographies (Japanese XML static match is confirmed, but this run's language is **English**), random drawing of each of all ten backgrounds or their percentages, native MO1.6/1.7 for these newest three, Odyssey-specific fishing labor, DLC, third-party background patch intersections, existing-save reloading and Steam publishing. The earlier 1.6+MO accepted background seven records and the earlier 1.7 Vanilla P2/Alcohol runs retain their distinct, limited scopes; this new native test does not change them.
+

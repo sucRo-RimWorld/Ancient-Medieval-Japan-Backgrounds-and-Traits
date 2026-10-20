@@ -1,6 +1,12 @@
 # AMJ Culture – Characters Coordination (main only)
 
-## Active status — 2026-10-20 P3 seven backgrounds and P2 forced traits
+## Current P3 ten-background original-game acceptance — 2026-10-20
+
+**Current owner product:** Characters main source `b37131dd61ed3a8712641a612b85a5a508d0adbc` contains **10** newly owned P3 histories (**8 adults, 2 childhoods**). The added adult three are 織物職人 Crafting+6, 焼き物師 Crafting+4/Artistic+2, 沿岸の漁師 Animals+5. All ten have `Outlander` and `Tribal` ordinary categories; no new fishing job or DLC dependency. Current accepted specification in [Design.md](Design.md), product XML and Japanese DefInjected; coastal fisher detail in [Stage3CoastalFisherDesign.md](Stage3CoastalFisherDesign.md).
+
+**Consolidated English original RimWorld 1.7 loaded acceptance: PASS**, [Project #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528), Project runner main `dbbe67724f9aa0f482f162674ca9fb63cd1b2d36`, exact Characters source above, culture source `f071f0602e9989a011f431f30a961499dcd38ee7`. Pickle **1/1**, Unity/FMOD errors0, exit0. New craft two and coastal fisher validation markers **once each** in original launcher log (artifact ID **12262109871**); existing seven, P2 forced restrictions and AlcoholHigh mood checks passed in the same scenario. This supersedes previous *seven-only loaded acceptance* for original 1.7 English, but does not change its historical evidence. Exact test values and stale native report label correction in [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md). **Not verified:** natural selection of all ten, their rates, latest three in original MO 1.6, Japanese live glyphs/latest-three text, MO1.7, other background packs, legacy saves, publishing. No auto native testing or Steam action.
+
+## Historical P3 seven-background acceptance and P2 forced traits
 
 **Product owner source:** Characters [PR #21](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/21), main `a0022604affd644eeedb652226cfe58954f8edb8`. **Seven** original Japanese P3 BackstoryDefs (five adult, two child) now exist. Newly accepted: adult 鷹匠 Animals+5/Plants+1, childhood 渡り職人の子 Crafting+2/Social+2; exact Japanese drafts, no forced Traits. Original 135 restricted / 123 rewritten source IDs unchanged. Canonical design in [Design.md](Design.md), original profiles and exact acceptance premises in [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md), production XML in `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` and `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`.
 
