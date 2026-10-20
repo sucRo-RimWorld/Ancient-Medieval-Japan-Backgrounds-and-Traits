@@ -16,6 +16,7 @@
       <Intellectual>2</Intellectual>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>Traveler</li>
@@ -37,6 +38,7 @@
       <Nimble>0</Nimble>
     </forcedTraits>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>Traveler</li>
@@ -55,6 +57,7 @@
       <Social>5</Social>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Traveler</li>
       <li>Trader</li>
@@ -72,6 +75,7 @@
       <Plants>2</Plants>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>Traveler</li>
@@ -91,6 +95,7 @@
       <Plants>1</Plants>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>Traveler</li>
@@ -110,6 +115,7 @@
       <Plants>1</Plants>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>MedievalCommon</li>
@@ -126,6 +132,7 @@
       <Social>2</Social>
     </skillGains>
     <spawnCategories>
+      <li>Outlander</li>
       <li>Tribal</li>
       <li>Civil</li>
       <li>Traveler</li>
