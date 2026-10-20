@@ -502,6 +502,37 @@ namespace AMJ.Culture.Test
                 ctx.Require(bodyPurist != null && commonality != null &&
                     (float)commonality.GetValue(bodyPurist) == 0f,
                     "BodyPurist missing or new-generation commonality not suppressed");
+                // The shipped Core 1.6/1.7 BackstoryTrait XML uses named
+                // <BodyPurist>/<Transhumanist>/<DrugDesire> children, not
+                // <li key="...">. Verify actual loaded removals, not just
+                // a successful conditional no-op, and preserve other traits.
+                var forbiddenForced = new Dictionary<string, string>
+                {
+                    { "HunterOfTheKing53", "BodyPurist" },
+                    { "TestSubject90", "BodyPurist" },
+                    { "FerventResearcher72", "Transhumanist" },
+                    { "DischargedSoldier53", "DrugDesire" },
+                    { "MechanoidHacker93", "DrugDesire" },
+                    { "VideoGamer16", "DrugDesire" }
+                };
+                foreach (var pair in forbiddenForced)
+                {
+                    BackstoryDef original = DefDatabase<BackstoryDef>.GetNamedSilentFail(pair.Key);
+                    ctx.Require(original != null, "Original saved-history Def missing: " + pair.Key);
+                    ctx.Require(original.forcedTraits == null ||
+                        !original.forcedTraits.Any(t => t.def != null && t.def.defName == pair.Value),
+                        "P2 forced Trait still attached: " + pair.Key + "/" + pair.Value);
+                }
+                BackstoryDef soldier = DefDatabase<BackstoryDef>.GetNamedSilentFail("DischargedSoldier53");
+                ctx.Require(soldier != null && soldier.forcedTraits != null &&
+                    soldier.forcedTraits.Any(t => t.def != null && t.def.defName == "TooSmart"),
+                    "P2 accidentally removed soldier's unrelated original TooSmart Trait");
+                TraitDef drugDesire = DefDatabase<TraitDef>.GetNamedSilentFail("DrugDesire");
+                ctx.Require(drugDesire != null && commonality != null &&
+                    (float)commonality.GetValue(drugDesire) == 0f,
+                    "P2 DrugDesire ordinary commonality not suppressed");
+                Log.Message("AMJ_CULTURE_P2_FORCED_TRAITS_STRIPPED_OK count=6");
+
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_LOADED_OK adult=" + Adult.Length
                     + " child=" + Child.Count);
 
