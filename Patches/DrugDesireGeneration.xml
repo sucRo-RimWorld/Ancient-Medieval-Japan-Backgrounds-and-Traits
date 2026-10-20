@@ -6,10 +6,11 @@
     <value><commonality>0</commonality></value>
   </Operation>
   <!-- Zero commonality does not block historical forced traits; remove only DrugDesire. -->
+  <!-- Original Core BackstoryTrait uses <DrugDesire>degree</DrugDesire>, not li/key/value. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/li[key="DrugDesire" or traitDef="DrugDesire"]</xpath>
+    <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/DrugDesire</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/li[key="DrugDesire" or traitDef="DrugDesire"]</xpath>
+      <xpath>Defs/BackstoryDef[defName="DischargedSoldier53" or defName="MechanoidHacker93" or defName="VideoGamer16"]/forcedTraits/DrugDesire</xpath>
     </match>
   </Operation>
 </Patch>

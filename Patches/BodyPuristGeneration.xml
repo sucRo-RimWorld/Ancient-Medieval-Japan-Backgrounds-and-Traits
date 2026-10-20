@@ -6,10 +6,11 @@
     <value><commonality>0</commonality></value>
   </Operation>
   <!-- Also prevent the two original Core backgrounds from forcing BodyPurist. -->
+  <!-- Original Core BackstoryTrait uses <BodyPurist>0</BodyPurist>, not li/key/value. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[key="BodyPurist" or traitDef="BodyPurist"]</xpath>
+    <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/BodyPurist</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/li[key="BodyPurist" or traitDef="BodyPurist"]</xpath>
+      <xpath>Defs/BackstoryDef[defName="HunterOfTheKing53" or defName="TestSubject90"]/forcedTraits/BodyPurist</xpath>
     </match>
   </Operation>
 </Patch>
