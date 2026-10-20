@@ -486,6 +486,42 @@ namespace AMJ.Culture.Test
                             added.TitleFor(Gender.Male) == "shrine ritual attendant",
                             "Stage3 English gender titles wrong");
                 }
+                // Two additional approved P3 biographies: preserve the five-existing-profile contract.
+                var extraP3 = new Dictionary<string, Dictionary<string, int>>
+                {
+                    { "AMJC_FalconerAdult", new Dictionary<string, int> { { "Animals", 5 }, { "Plants", 1 } } },
+                    { "AMJC_TravelingArtisanChild", new Dictionary<string, int> { { "Crafting", 2 }, { "Social", 2 } } }
+                };
+                foreach (var entry in extraP3)
+                {
+                    BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(entry.Key);
+                    ctx.Require(bio != null, "Follow-on P3 Def absent: " + entry.Key);
+                    bool child = entry.Key == "AMJC_TravelingArtisanChild";
+                    ctx.Require((bio.slot == BackstorySlot.Childhood) == child,
+                        "Follow-on P3 slot mismatch: " + entry.Key);
+                    ctx.Require(bio.spawnCategories != null &&
+                        bio.spawnCategories.Contains("Tribal") &&
+                        bio.spawnCategories.Contains("Civil") &&
+                        bio.spawnCategories.Contains("MedievalCommon") &&
+                        (!child || bio.spawnCategories.Contains("Traveler")),
+                        "Follow-on P3 categories mismatch: " + entry.Key);
+                    var gains = bio.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                    ctx.Require(gains.Count == entry.Value.Count &&
+                        entry.Value.All(x => gains.ContainsKey(x.Key) && gains[x.Key] == x.Value),
+                        "Follow-on P3 skill bonuses mismatch: " + entry.Key);
+                    ctx.Require(bio.forcedTraits == null || bio.forcedTraits.Count == 0,
+                        "Follow-on P3 added unapproved forced Traits: " + entry.Key);
+                    string expectedTitle = japanese
+                        ? (child ? "渡り職人の子" : "鷹匠")
+                        : (child ? "traveling artisan's child" : "falconer");
+                    ctx.Require(bio.TitleFor(Gender.Male) == expectedTitle &&
+                        bio.TitleFor(Gender.Female) == expectedTitle,
+                        "Follow-on P3 JA/EN title mismatch: " + entry.Key);
+                    ctx.Require(!string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
+                        "Follow-on P3 description missing: " + entry.Key);
+                }
+                Log.Message("AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK");
+
                 Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DEFS_OK");
                 Log.Message("AMJ_CULTURE_P3_FIVE_BACKSTORY_DETAIL_OK");
 

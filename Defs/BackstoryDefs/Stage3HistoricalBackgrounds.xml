@@ -97,4 +97,39 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+
+  <!-- Two further Japanese historical backgrounds, approved 2026-10-20. -->
+  <BackstoryDef>
+    <defName>AMJC_FalconerAdult</defName>
+    <slot>Adulthood</slot>
+    <title>falconer</title>
+    <titleShort>falconer</titleShort>
+    <description>[PAWN_nameDef] learned to capture and train hawks to pursue prey. Watching the birds' condition and movements, [PAWN_pronoun] practiced their handling and was entrusted with preparations and care for falconry.</description>
+    <skillGains>
+      <Animals>5</Animals>
+      <Plants>1</Plants>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>AMJC_TravelingArtisanChild</defName>
+    <slot>Childhood</slot>
+    <title>traveling artisan's child</title>
+    <titleShort>artisan's child</titleShort>
+    <description>[PAWN_nameDef] grew up in a family of artisans who carried their tools from place to place, helping with work wherever the family stopped. [PAWN_pronoun] learned to handle materials and tools and grew accustomed to dealing with customers and local people on the road.</description>
+    <skillGains>
+      <Crafting>2</Crafting>
+      <Social>2</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>Traveler</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>

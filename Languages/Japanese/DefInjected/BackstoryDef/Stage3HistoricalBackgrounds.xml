@@ -26,4 +26,14 @@
   <AMJC_HunterFamilyChild.titleShort>狩人の子</AMJC_HunterFamilyChild.titleShort>
   <AMJC_HunterFamilyChild.baseDesc>[PAWN_nameDef]は狩猟を生業とする家に育ち、獣道や足跡の見分け方を教わった。罠の手入れや獲物の運搬を手伝い、弓の扱いも少しずつ覚えていった。</AMJC_HunterFamilyChild.baseDesc>
   <AMJC_HunterFamilyChild.description>[PAWN_nameDef]は狩猟を生業とする家に育ち、獣道や足跡の見分け方を教わった。罠の手入れや獲物の運搬を手伝い、弓の扱いも少しずつ覚えていった。</AMJC_HunterFamilyChild.description>
+
+  <!-- Two author-approved Japanese Stage3 histories. -->
+  <AMJC_FalconerAdult.title>鷹匠</AMJC_FalconerAdult.title>
+  <AMJC_FalconerAdult.titleShort>鷹匠</AMJC_FalconerAdult.titleShort>
+  <AMJC_FalconerAdult.baseDesc>[PAWN_nameDef]は鷹を捕らえて飼い慣らし、獲物を追わせる技を身につけた。鳥の体調や動きを見ながら訓練を重ね、鷹狩の支度と手入れを任されてきた。</AMJC_FalconerAdult.baseDesc>
+  <AMJC_FalconerAdult.description>[PAWN_nameDef]は鷹を捕らえて飼い慣らし、獲物を追わせる技を身につけた。鳥の体調や動きを見ながら訓練を重ね、鷹狩の支度と手入れを任されてきた。</AMJC_FalconerAdult.description>
+  <AMJC_TravelingArtisanChild.title>渡り職人の子</AMJC_TravelingArtisanChild.title>
+  <AMJC_TravelingArtisanChild.titleShort>職人の子</AMJC_TravelingArtisanChild.titleShort>
+  <AMJC_TravelingArtisanChild.baseDesc>[PAWN_nameDef]は道具を持って土地を移る職人の家に育ち、各地で仕事をする家族を手伝ってきた。材料や道具の扱いを覚え、旅先で客や土地の人々と接することにも慣れていった。</AMJC_TravelingArtisanChild.baseDesc>
+  <AMJC_TravelingArtisanChild.description>[PAWN_nameDef]は道具を持って土地を移る職人の家に育ち、各地で仕事をする家族を手伝ってきた。材料や道具の扱いを覚え、旅先で客や土地の人々と接することにも慣れていった。</AMJC_TravelingArtisanChild.description>
 </LanguageData>
