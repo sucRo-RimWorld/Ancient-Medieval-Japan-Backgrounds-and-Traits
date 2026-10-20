@@ -258,6 +258,122 @@ namespace AMJ.Culture.Test
             { "WarshipCaptain67", "naval captain" }
         };
 
+        // Isolated real-game acceptance of the already implemented alcohol-only Traits.
+        // Use fresh spawned test Pawns to avoid situational Thought cache carryover.
+        // None of the source-game saves or original pawns is modified.
+        private static void CheckAlcoholPreferenceMood(PickleContext ctx, PawnKindDef colonist)
+        {
+            TraitDef love = DefDatabase<TraitDef>.GetNamedSilentFail("AMJC_AlcoholLover");
+            TraitDef averse = DefDatabase<TraitDef>.GetNamedSilentFail("AMJC_AlcoholAverse");
+            TraitDef legacy = DefDatabase<TraitDef>.GetNamedSilentFail("DrugDesire");
+            HediffDef alcohol = DefDatabase<HediffDef>.GetNamedSilentFail("AlcoholHigh");
+            ThoughtDef pleasure = DefDatabase<ThoughtDef>.GetNamedSilentFail("AMJC_AlcoholEnjoyment");
+            ThoughtDef discomfort = DefDatabase<ThoughtDef>.GetNamedSilentFail("AMJC_AlcoholDiscomfort");
+            ctx.Require(love != null && averse != null && legacy != null &&
+                        alcohol != null && pleasure != null && discomfort != null,
+                        "P2 alcohol preference Trait/Thought/Hediff is missing in loaded game");
+            ctx.Require(Math.Abs(love.commonality - 0.3f) < 0.0001f &&
+                        Math.Abs(averse.commonality - 0.3f) < 0.0001f,
+                        "P2 alcohol-only Traits' generation weights changed");
+            ctx.Require(love.conflictingTraits != null &&
+                        averse.conflictingTraits != null &&
+                        love.conflictingTraits.Contains(averse) &&
+                        averse.conflictingTraits.Contains(love) &&
+                        love.conflictingTraits.Contains(legacy) &&
+                        averse.conflictingTraits.Contains(legacy),
+                        "P2 alcohol preference / legacy trait incompatibilities missing");
+            ctx.Require(pleasure.requiredTraits != null &&
+                        pleasure.requiredTraits.Count == 1 &&
+                        pleasure.requiredTraits[0] == love &&
+                        discomfort.requiredTraits != null &&
+                        discomfort.requiredTraits.Count == 1 &&
+                        discomfort.requiredTraits[0] == averse &&
+                        pleasure.hediff == alcohol && discomfort.hediff == alcohol,
+                        "P2 alcohol-only situational Thought requirements changed");
+            ctx.Require(pleasure.stages.Count == 6 && discomfort.stages.Count == 6 &&
+                        pleasure.stages.All(t => Math.Abs(t.baseMoodEffect - 2f) < 0.0001f) &&
+                        discomfort.stages.All(t => Math.Abs(t.baseMoodEffect + 2f) < 0.0001f),
+                        "P2 alcohol-only Thought stage values changed");
+
+            // Each sample is actually spawned before the game calculates current mood.
+            // Exactly the custom Thought's real MoodOffset is examined, rather than the
+            // pawn's total mood or just the XML/ThoughtWorker static definition.
+            AssertAlcoholMood(ctx, colonist, null, alcohol, null, pleasure, discomfort, 0f,
+                "no Trait / sober");
+            AssertAlcoholMood(ctx, colonist, love, alcohol, null, pleasure, discomfort, 0f,
+                "likes alcohol / sober");
+            AssertAlcoholMood(ctx, colonist, averse, alcohol, null, pleasure, discomfort, 0f,
+                "dislikes alcohol / sober");
+            AssertAlcoholMood(ctx, colonist, null, alcohol, 0.1f, pleasure, discomfort, 0f,
+                "no Trait / drinking");
+            AssertAlcoholMood(ctx, colonist, love, alcohol, 0.1f, pleasure, discomfort, 2f,
+                "likes alcohol / warm");
+            AssertAlcoholMood(ctx, colonist, averse, alcohol, 0.75f, pleasure, discomfort, -2f,
+                "dislikes alcohol / intoxicated");
+            Log.Message("AMJ_CULTURE_ALCOHOL_PREFERENCE_MOOD_OK");
+        }
+
+        private static void AssertAlcoholMood(PickleContext ctx, PawnKindDef colonist,
+            TraitDef preference, HediffDef alcohol, float? severity,
+            ThoughtDef pleasure, ThoughtDef discomfort, float expected, string label)
+        {
+            Map map = Find.CurrentMap;
+            ctx.Require(map != null, "Alcohol test Quickstart map unavailable");
+            Pawn sample = PawnGenerator.GeneratePawn(colonist, Faction.OfPlayer);
+            ctx.Require(sample != null && sample.story != null &&
+                        sample.story.traits != null && sample.needs != null &&
+                        sample.needs.mood != null,
+                        "Alcohol test pawn lacks story/traits/mood");
+            // This is a disposable test pawn, not an existing player pawn.
+            sample.story.traits.allTraits.Clear();
+            if (preference != null)
+                sample.story.traits.allTraits.Add(new Trait(preference, 0));
+            if (severity.HasValue)
+            {
+                sample.health.AddHediff(alcohol);
+                Hediff high = sample.health.hediffSet.GetFirstHediffOfDef(alcohol);
+                ctx.Require(high != null, "AlcoholHigh could not be added to the test Pawn");
+                high.Severity = severity.Value;
+            }
+            IntVec3 cell = IntVec3.Invalid;
+            for (int z = 6; z < map.Size.z - 6 && !cell.IsValid; z++)
+                for (int x = 6; x < map.Size.x - 6; x++)
+                {
+                    IntVec3 p = new IntVec3(x, 0, z);
+                    if (p.Standable(map) && p.GetEdifice(map) == null &&
+                        p.GetFirstPawn(map) == null)
+                    {
+                        cell = p;
+                        break;
+                    }
+                }
+            ctx.Require(cell.IsValid, "No free test cell for alcohol situational Thoughts");
+            GenSpawn.Spawn(sample, cell, map, WipeMode.Vanish);
+            ctx.Require(sample.Spawned, "Alcohol test Pawn was not spawned");
+            try
+            {
+                var moodThoughts = new List<Thought>();
+                sample.needs.mood.thoughts.GetAllMoodThoughts(moodThoughts);
+                var ours = moodThoughts.Where(t =>
+                    t.def == pleasure || t.def == discomfort).ToList();
+                if (expected == 0f)
+                    ctx.Require(ours.Count == 0, "Unexpected alcohol-only mood on " + label);
+                else
+                {
+                    ThoughtDef right = expected > 0f ? pleasure : discomfort;
+                    ctx.Require(ours.Count == 1 && ours[0].def == right &&
+                                Math.Abs(ours[0].MoodOffset() - expected) < 0.0001f,
+                        "Wrong actual alcohol-only Thought mood for " + label +
+                        ": found " + string.Join(", ", ours.Select(t =>
+                            t.def.defName + "=" + t.MoodOffset())));
+                }
+            }
+            finally
+            {
+                if (sample.Spawned) sample.DeSpawn();
+            }
+        }
+
         private static string LoadedText(BackstoryDef backstory, string fieldName)
         {
             const BindingFlags flags = BindingFlags.Instance | BindingFlags.Public |
@@ -638,6 +754,7 @@ namespace AMJ.Culture.Test
                     !Adult.Contains(pawn.story.Adulthood.defName),
                     "Generated adult biography is forbidden");
                 Log.Message("AMJ_CULTURE_BACKGROUNDS16_PAWN_OK");
+                CheckAlcoholPreferenceMood(ctx, colonist);
             });
         }
     }
