@@ -521,6 +521,68 @@ namespace AMJ.Culture.Test
                             "Canonical Japanese base description drift: " + id);
                     }
                     Log.Message("AMJ_CULTURE_BACKGROUNDS16_JAPANESE_OK count=89");
+
+                    // Confirm that all ten original P3 Japanese DefInjected translations
+                    // are loaded by the actual engine, not only present in XML.
+                    string p3Path = Environment.GetEnvironmentVariable("AMJ_P3_JAPANESE_SOURCE");
+                    ctx.Require(!string.IsNullOrEmpty(p3Path) &&
+                                System.IO.File.Exists(p3Path),
+                        "P3 Japanese source XML absent");
+                    var p3Xml = new System.Xml.XmlDocument();
+                    p3Xml.Load(p3Path);
+                    ctx.Require(p3Xml.DocumentElement != null &&
+                                p3Xml.DocumentElement.Name == "LanguageData",
+                        "P3 Japanese source root invalid");
+                    var p3Names = new HashSet<string> {
+                        "AMJC_ShrineOfficiantAdult", "AMJC_ShrineRitualAttendantAdult",
+                        "AMJC_ItinerantRitualistAdult", "AMJC_ItinerantWoodworkerAdult",
+                        "AMJC_HunterFamilyChild", "AMJC_FalconerAdult",
+                        "AMJC_TravelingArtisanChild", "AMJC_TextileWeaverAdult",
+                        "AMJC_PotterAdult", "AMJC_CoastalFisherAdult"
+                    };
+                    var p3Texts = new Dictionary<string, Dictionary<string, string>>();
+                    foreach (System.Xml.XmlNode node in p3Xml.DocumentElement.ChildNodes)
+                    {
+                        if (node.NodeType != System.Xml.XmlNodeType.Element) continue;
+                        int dot = node.Name.LastIndexOf('.');
+                        ctx.Require(dot > 0, "Invalid P3 Japanese XML key " + node.Name);
+                        string id = node.Name.Substring(0, dot);
+                        string key = node.Name.Substring(dot + 1);
+                        ctx.Require(p3Names.Contains(id), "Unaccounted P3 Japanese id " + id);
+                        if (!p3Texts.TryGetValue(id, out var values))
+                            p3Texts[id] = values = new Dictionary<string, string>();
+                        ctx.Require(!values.ContainsKey(key), "Duplicate P3 key " + node.Name);
+                        values.Add(key, node.InnerText);
+                    }
+                    ctx.Require(p3Texts.Count == 10, "P3 Japanese source ID count not ten");
+                    foreach (var entry in p3Texts)
+                    {
+                        string id = entry.Key;
+                        var entries = entry.Value;
+                        ctx.Require(entries.ContainsKey("title") &&
+                                    entries.ContainsKey("titleShort") &&
+                                    entries.ContainsKey("description") &&
+                                    entries.ContainsKey("baseDesc") &&
+                                    entries["description"] == entries["baseDesc"],
+                            "P3 Japanese approved text incomplete/drifted: " + id);
+                        BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(id);
+                        ctx.Require(bio != null &&
+                                    LoadedText(bio, "title") == entries["title"] &&
+                                    LoadedText(bio, "titleShort") == entries["titleShort"] &&
+                                    LoadedText(bio, "description") == entries["description"],
+                            "P3 Japanese loaded Def/title/body mismatch: " + id);
+                        ctx.Require(bio.TitleFor(Gender.Male) == entries["title"] &&
+                                    bio.TitleShortFor(Gender.Male) == entries["titleShort"],
+                            "P3 Japanese male title fallback mismatch: " + id);
+                        string femaleTitle = entries.TryGetValue("titleFemale", out var specificTitle)
+                            ? specificTitle : entries["title"];
+                        string femaleShort = entries.TryGetValue("titleShortFemale", out var specificShort)
+                            ? specificShort : entries["titleShort"];
+                        ctx.Require(bio.TitleFor(Gender.Female) == femaleTitle &&
+                                    bio.TitleShortFor(Gender.Female) == femaleShort,
+                            "P3 Japanese female title fallback mismatch: " + id);
+                    }
+                    Log.Message("AMJ_CULTURE_P3_TEN_JAPANESE_LOADED_OK");
                 }
                 else
                 {
