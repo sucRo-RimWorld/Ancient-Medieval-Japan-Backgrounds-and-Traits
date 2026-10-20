@@ -28,6 +28,6 @@
 
 ## 検証境界
 
-10件のXML定義の静的検証、今回の新規Defの実ゲームLoadedDef／日本語表示／自然抽選は別の証拠として区別する。以前の7件に対する実ゲームPASSは、織物職人・焼き物師・沿岸の漁師の新規3件のPASSではない。元セーブ、新規配布、Steamの承認は行っていない。
+**2026-10-20 実ゲーム受入：PASS。** [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) でRimWorld原本1.7 English + Culture/Charactersの1シナリオを実行。新規 `AMJC_CoastalFisherAdult` のLoadedDef、成人枠、`Animals +5`のみ、カテゴリ `Outlander/Tribal/Civil/MedievalCommon`、強制Traitなし、英語題名を確認（`AMJ_CULTURE_P3_COASTAL_FISHER_OK` 1回）。同時に既存7件、織物職人、焼き物師のLoadedDefもPASS。Pickle1/1、ERROR0、FMOD0、exit0。明細・原ログ出典は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md)。日本語原文はXML静的照合済みだが、**このEnglish 1.7テストは日本語画面表示の証拠ではない**。10件各々の自然抽選・頻度、MO側での最新3件、Odysseyの実釣り、元セーブ、Steamの承認は未実施。
 
 **先行文書との整合:** `Docs/Design.md` の「漁師候補の技能整理（未実装）」は、この2026-10-20承認と本製品XMLの実装により**置換された過去の状態**とする。製塩の働き手は引き続き保留。
