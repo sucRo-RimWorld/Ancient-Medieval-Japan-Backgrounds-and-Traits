@@ -16,6 +16,8 @@
 
 **2026-10-21 「杣人」承認・実装:** 従来の候補「山仕事の担い手」を `AMJC_WoodcutterAdult` （成人、表示名「杣人」、`Plants +6`）として新規P3に追加。現在の正式製品定義は14件（成人10・幼少期4）。伐採・造材を担い、既存の木地師（木製品製作）や山野の猟師（狩猟）、山里の大工（建築）と差別化。確定本文・対象時代・技能の実際の効果・カテゴリは `Docs/Design.md` に記載。上記を含む古い候補表は調査時点の履歴で、現在の未実装候補一覧ではない。ゲームロード未検証の新規4件は `AMJC_SaltMakerAdult`、`AMJC_FishingVillageChild`、`AMJC_WeaverChild`、`AMJC_WoodcutterAdult`。以前の10件のゲーム受入PASSを新規4件に流用しない。最終段階まで実ゲームテストは追加起動しない。
 
+**2026-10-21 原本職業への統合（作者承認・最新）:** 原本 `Logger16`／`Logger95`／`Weaver63` に日英の日本中世職業文を実装。原本の技能・所持品・IDを保持し、`Weaver63` へ `Outlander` のみ追加。`AMJC_WoodcutterAdult` と `AMJC_TextileWeaverAdult` はセーブ参照用にDefを保持するが `AMJ_CultureExcluded` とし通常候補から外す。Stage3英語XMLの14Def中、**通常生成候補は12件**（成人8・幼少4）。以前の「14件を通常生成」「2件の原本重複は保留」の文は履歴であり、新しい確定仕様は `Docs/Design.md`／各製品XML。1.7日本語で14件の古いカテゴリを読んだ検証PASSは本変更後の仕様のテストではない。製品DLLは変更なし。
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.
