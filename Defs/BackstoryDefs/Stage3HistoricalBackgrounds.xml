@@ -2,7 +2,8 @@
 <Defs>
   <!-- Verified vanilla-format skill/forcedTrait key elements against modern 1.6/1.7 period BackstoryDefs.
        <skillGains><Social>4</Social> and <forcedTraits><Nimble>0</Nimble> are Def dictionary keys.
-       Five approved Stage 3 original biographies. New IDs; do not alter core save identities.
+       Initial five Stage 3 biographies, followed by separately approved additions below.
+       Eleven new IDs in total; do not alter core save identities.
        Plain BackstoryDef; no new DLC/MO hard dependency or extra game behaviors.
        titleFemale is a display override, not a gender-only generation filter. -->
   <BackstoryDef>
