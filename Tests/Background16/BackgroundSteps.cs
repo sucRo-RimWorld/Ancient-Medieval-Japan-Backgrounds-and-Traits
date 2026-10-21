@@ -857,9 +857,16 @@ namespace AMJ.Culture.Test
                         ctx.Require(bio.TitleFor(Gender.Male) == expectedCoreTitles[expected.Key] &&
                                     bio.TitleFor(Gender.Female) == expectedCoreTitles[expected.Key],
                             "Original Core occupation Japanese title mismatch: " + expected.Key);
-                        ctx.Require(bio.spawnCategories.Contains("Tribal") ||
-                                    expected.Key == "Logger95",
-                            "Original Tribal occupational category lost: " + expected.Key);
+                        ctx.Require(
+                            expected.Key == "Logger95"
+                                ? bio.spawnCategories.Contains("Outlander") &&
+                                  bio.spawnCategories.Contains("Logger")
+                                : bio.spawnCategories.Contains("Tribal") &&
+                                  (expected.Key != "Logger16" ||
+                                   bio.spawnCategories.Contains("TribalLogger")),
+                            "Original occupational candidate categories changed: " + expected.Key);
+                        ctx.Require(!string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
+                            "Original Core Japanese occupation description absent: " + expected.Key);
                     }
                     var oldWeaver = DefDatabase<BackstoryDef>.GetNamedSilentFail("Weaver63");
                     ctx.Require(oldWeaver.spawnCategories.Contains("Tribal") &&
