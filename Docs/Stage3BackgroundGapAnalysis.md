@@ -10,6 +10,8 @@
 
 **2026-10-21 approved salt-maker follow-on:** `AMJC_SaltMakerAdult` (浜の塩焼き) is now the 11th implemented P3 biography (adult nine, childhood two), with `Crafting +3`, `Cooking +2`, four ordinary candidate categories and no forced Trait. The older pending `製塩の働き手` row is preserved as the historical candidate context, not an open implementation item. Canonical specification: `Docs/Design.md` and product XML. Earlier ten-Def original-game PASS does not include this 11th Def. **No automatic native test.**
 
+**2026-10-21 承認済み漁村育ち:** `AMJC_FishingVillageChild` は新規12件目（成人9件、幼少期3件）として製品XML・日本語翻訳に実装。`Animals +2`・`Crafting +1`、`Outlander / Tribal / Civil / MedievalCommon`、強制Traitなし。以前の候補一覧「漁村育ち」は現在は未承認候補ではなく実装済み。確定仕様は `Docs/Design.md` を参照。11件目「浜の塩焼き」とともに実ゲーム未検証、既存10件のPASSは流用しない。残る新規背景候補は別途個別の重複・承認審査を要する。
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.
