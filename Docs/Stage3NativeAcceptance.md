@@ -1,5 +1,26 @@
 # P3 five original backgrounds — real-game acceptance (2026-10-20)
 
+## 2026-10-21 — Four newly added Stage3 backgrounds: original RimWorld 1.7 Japanese PASS
+
+**Actual successful original-game run:** [Project Actions #39582470340](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39582470340), one explicitly requested manual original **RimWorld 1.7.4977 rev1248** Vanilla + extracted Culture/Characters, language **Japanese (日本語)** selected **before game initialization**. **PASS**: Pickle 1 scenario/1 pass, 0 fail/skip/flaky, original process exit **0**, Unity `errors=[]`, audio `fmod_errors=[]`, engine/input hashes preserved, `native_pass=true`; required `AMJ_CULTURE_P3_FOUR_NEW_LOADED_OK` logged **once**. Saved source/result artifact `culture17-four-new-native-39582470340` ID **12338660070**, game input log and compiled test assembly SHA-256 `4da6b8eef12ec5a5ca301ee7f6a5431b447672bd36ea3d70f77c264b6a173a36`.
+
+**Pinned and immutable acceptance inputs:** Characters source `53ba580c10d1fa5d4559f251e2853dce657fc419` with owner [test PR #41](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/41), original versioned Characters 1.7 compiled DLL SHA-256 `5e0802658c76e644c952223b2f35e67b206c34dde7f1ed4e30c2dc1fd5c0df4f`; separated Culture source `f071f0602e9989a011f431f30a961499dcd38ee7`, versioned Culture 1.7 DLL SHA-256 `d149fbab74f9abb0d59f899fb202bc69d7cb2cb09eddc60d881190d374b53ba2`. Project manually gated test runner commit `e3485dbc8bbbb40a7592940d24da138a9c61274c` ([PR #916](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/pull/916)), one-shot Issue #39 command `/amj culture-characters-p3-four-japanese-native-17`. No automatic push/PR RimWorld starts.
+
+**Exact accepted newly added owner data and game-loaded behavior:**
+
+| DefName | Slot | Skill gains | JA title/short-title | Required ordinary candidate categories | Forced Trait |
+|---|---|---|---|---|---|
+| `AMJC_SaltMakerAdult` | Adulthood | Crafting +3, Cooking +2 | 浜の塩焼き／塩焼き | Outlander, Tribal, Civil, MedievalCommon | none |
+| `AMJC_FishingVillageChild` | Childhood | Animals +2, Crafting +1 | 漁村育ち／漁村育ち | same four | none |
+| `AMJC_WeaverChild` | Childhood | Crafting +3 | 織屋の子／織屋の子 | same four | none |
+| `AMJC_WoodcutterAdult` | Adulthood | Plants +6 | 杣人／杣人 | same four | none |
+
+Original live loaded Defs were fetched from `DefDatabase<BackstoryDef>`; the fixture asserted exact slot, gain names/count/values, exact four category strings/count, zero forced Traits, Japanese `TitleFor` both genders, and nonempty loaded full text. All **14** P3 source Japanese DefInjected IDs were compared with loaded title/short-title/description plus source `baseDesc` equivalence, retaining existing male/female miko-specific alternatives. Earlier **ten** P3 entries, 89 Stage2 Japanese records, existing P2 restrictions/Solid/forced trait exclusions and **one ordinary generated pawn** also passed in this same scenario. Earlier ten's independent original-game PASS remains historical evidence, not replaced by this new four check.
+
+**Explicitly untested:** natural random drawing or quantitative rates for any *specific* P3 Def, actual attached biography on a pawn for each of the four (only a generic Pawn is generated), 1.6/MO latest-four acceptance, 1.7 MO and optional other backstory packs, Japanese glyph pixels/rendering, old saves or Steam publication. XML-only added biographies required **no rebuild** of unchanged production Characters and Culture assemblies; the Pickle fixture compiled as test-only. Do not re-launch unchanged native matrices to increase coverage. The 14 new P3 biographies are implementation-complete and **source-loaded accepted for this exact 1.7 Japanese Vanilla scope**, not generally certified for every profile.
+
+
+
 **Source under test:** Characters main `31543c19930b762c1729bec1f884aff2dec824af` (PR #16 custom-loader fix and expanded existing `Tests/Background16/BackgroundSteps.cs`), paired separated Culture source `f071f0602e9989a011f431f30a961499dcd38ee7`. Test runner/dispatch Project main `95229dcc70d38ee15eb0f8d6b6b22d6d0ca1bfba` (PR #806). No automated PR/push native trigger: manual private Project Issue #39 only. Exact product XML: `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml`, locale: `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`. Current original 1.6/1.7 source-backed test values below are the authoritative acceptance **premises**, not guesses based on PASS count.
 
 ## Actual native results
