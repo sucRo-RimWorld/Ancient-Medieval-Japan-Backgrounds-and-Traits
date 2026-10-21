@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- P3 occupational deduplication: reuse original Core Shuffled BackstoryDef
+       identities, skillGains, work tags, forcedTraits and starting possessions.
+       Original 1.6/1.7 Core source metadata verified for all three identities.
+       Logger16 = Tribal, Logger95 = Outlander among others; no category edits
+       needed for logging. These three rewrites affect text only. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger16"]/title</xpath>
+    <value>
+      <title>village woodcutter</title>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger16"]/titleShort</xpath>
+    <value>
+      <titleShort>woodcutter</titleShort>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger16"]/description</xpath>
+    <value>
+      <description>[PAWN_nameDef] felled trees with the people of [PAWN_possessive] village and hauled logs down from the hills to supply the settlement. Years of heavy work taught [PAWN_objective] to handle an axe with skill and strength.</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger95"]/title</xpath>
+    <value>
+      <title>mountain woodcutter</title>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger95"]/titleShort</xpath>
+    <value>
+      <titleShort>woodcutter</titleShort>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Logger95"]/description</xpath>
+    <value>
+      <description>[PAWN_nameDef] selected suitable trees in the mountains, felled them safely and brought the logs down from steep wooded slopes. [PAWN_pronoun] learned to watch the health of the forest as carefully as the direction of a falling tree.</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Weaver63"]/title</xpath>
+    <value>
+      <title>textile weaver</title>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Weaver63"]/titleShort</xpath>
+    <value>
+      <titleShort>weaver</titleShort>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/BackstoryDef[defName="Weaver63"]/description</xpath>
+    <value>
+      <description>[PAWN_nameDef] spent many years spinning thread and weaving cloth on a loom. [PAWN_pronoun] learned to judge thread tension, spot irregularities in the weave, and maintain the tools used in the work.</description>
+    </value>
+  </Operation>
+  <!-- Vanilla Outlander lacks the original Tribal-only weaver; extend just this
+       original existing Def's eligibility without removing Tribal or changing
+       any bonus, forced Trait, work tag or initial Cloth grant. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/BackstoryDef[defName="Weaver63"]/spawnCategories[li="Tribal" and not(li="Outlander")]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/BackstoryDef[defName="Weaver63"]/spawnCategories</xpath>
+      <value>
+        <li>Outlander</li>
+      </value>
+    </match>
+  </Operation>
+</Patch>
