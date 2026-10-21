@@ -66,3 +66,13 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 歴史資料：[福井県史・中世後期の衣料生産](https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-01-01-04.htm) は苧麻を含む中世の布生産、[古代日本の紡織体制](https://ndlsearch.ndl.go.jp/books/R000000004-I7201692) は古代の糸巻き・製織に関連する考古資料を扱う。この背景は個人の家業経験であり、近世の木綿の問屋制家内工業や近代工場を想定しない。
 
 決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
+
+## 2026-10-21 杣人 — 既存背景・VE/非VE代替の境界
+
+**不足職業と重複監査:** `AMJC_WoodcutterAdult` は山林で建築用の木を見極めて伐採・運び出す成人背景。既存P3 `AMJC_ItinerantWoodworkerAdult`（木地師）は木の器や道具の加工（`Crafting +5 / Plants +2`）、改稿済み `SpaceHunter79`（山野の猟師）は獣の狩猟、`FurnitureBuilder83`（山里の大工）は建築・木材加工を描く。承認済みの123改稿タイトル・現在の13件新規Defには「杣人」の専業名はなく、同じ役割の単純重複ではない。ただし未改稿の原本全BackstoryDefや第三者Modに近い伐採職が存在しないとは断定しない。
+
+**Vanilla・MO、VEと非VE:** 既存の根拠資料・比較先は原本Vanilla/MO、VE `Vanilla Backstories Expanded`、非VEの `Historical Backstories`、`Shavius's Medieval Flavour Pack`、`Medieval Backstories` 等。職人・木こりの汎用的な人物背景に類似例があっても、既存Charactersが所有する日本の杣人として、史実に沿う名前・確定済み本文と `Plants +6` を一件の通常BackstoryDefで表せる。大規模背景Modを依存化する必要はなく、新しい伐採Job／伐採効果／スキル／独自資材は追加しない。第三者との完全なテキスト・抽選経路・パッチ互換検証は範囲外。
+
+**歴史上の根拠:** [山川『日本史小辞典』・杣](https://www.historist.jp/word_j_so/entry/033959/) は杣山の用材採取・杣工を扱う。[平凡社『世界大百科事典』・杣工](https://kotobank.jp/word/%E6%9D%A3%E5%B7%A5-1181372) は古代・中世の伐木と造材を担った人々を説明する。[國學院大學万葉神事語辞典「そま」](https://jmapps.ne.jp/kokugakuin/det.html?data_id=32080) は建設用の木材を切り出す職として古代に用例を挙げる。特定の時代の寺社・荘園への帰属を全ポーンに強制しない。
+
+**決定:** `AMJC_WoodcutterAdult`、表示名「杣人」、成人、`Plants +6` のみ、候補カテゴリ `Outlander/Tribal/Civil/MedievalCommon`、強制Trait／仕事禁止／初期所持品なし。ゲームでは `Plants` の伐採・栽培等への汎用効果があるが、物流・伐採専用能力を増やさない。正本は製品XMLと `Docs/Design.md`。新規14件目は実ゲーム未検証。
