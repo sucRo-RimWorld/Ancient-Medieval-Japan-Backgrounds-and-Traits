@@ -476,6 +476,9 @@ namespace AMJ.Culture.Test
                     "Phase 2 accepted background mapping incomplete");
                 bool japanese = Environment.GetEnvironmentVariable("AMJ_BACKGROUND_JAPANESE") == "1";
                 bool newFour = Environment.GetEnvironmentVariable("AMJ_P3_FOUR_NEW_ACCEPTANCE") == "1";
+                bool moDedup = Environment.GetEnvironmentVariable("AMJ_P3_CORE_DEDUP_MO16") == "1";
+                ctx.Require(!moDedup || !japanese,
+                    "This focused MO 1.6 Core dedup acceptance runs with English original data");
                 ctx.Require(!newFour || japanese,
                     "Four-new P3 acceptance must use actual Japanese-loaded game");
                 if (japanese)
@@ -873,6 +876,91 @@ namespace AMJ.Culture.Test
                                 oldWeaver.spawnCategories.Contains("Outlander"),
                         "Original weaver lacks Tribal and added Vanilla Outlander routes");
                     Log.Message("AMJ_CULTURE_P3_FOUR_NEW_LOADED_OK");
+                }
+
+                if (moDedup)
+                {
+                    // Preserve one MO 1.6 original-game Pickle scenario. Check
+                    // the author-approved three existing Core roles and four
+                    // newer added Defs in real loaded DefDatabase.
+                    var originals = new Dictionary<string, Dictionary<string, int>>
+                    {
+                        { "Logger16", new Dictionary<string, int> { { "Plants", 6 }, { "Melee", 3 } } },
+                        { "Logger95", new Dictionary<string, int> { { "Plants", 8 } } },
+                        { "Weaver63", new Dictionary<string, int> { { "Crafting", 6 }, { "Plants", 2 } } }
+                    };
+                    var titles = new Dictionary<string, string>
+                    {
+                        { "Logger16", "village woodcutter" },
+                        { "Logger95", "mountain woodcutter" },
+                        { "Weaver63", "textile weaver" }
+                    };
+                    foreach (var entry in originals)
+                    {
+                        var record = DefDatabase<BackstoryDef>.GetNamedSilentFail(entry.Key);
+                        ctx.Require(record != null && record.slot == BackstorySlot.Adulthood,
+                            "MO Core trade unavailable/wrong slot: " + entry.Key);
+                        var gains = record.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                        ctx.Require(gains.Count == entry.Value.Count &&
+                            entry.Value.All(g => gains.TryGetValue(g.Key, out int n) && n == g.Value),
+                            "MO original Core skill changed: " + entry.Key);
+                        ctx.Require(record.TitleFor(Gender.Male) == titles[entry.Key] &&
+                                    record.TitleFor(Gender.Female) == titles[entry.Key] &&
+                                    !string.IsNullOrWhiteSpace(LoadedText(record, "description")),
+                            "MO original Core English biography not patched: " + entry.Key);
+                        ctx.Require(record.spawnCategories != null &&
+                            (entry.Key == "Logger95"
+                             ? record.spawnCategories.Contains("Outlander") &&
+                               record.spawnCategories.Contains("Logger")
+                             : record.spawnCategories.Contains("Tribal")),
+                            "MO original Core candidate route lost: " + entry.Key);
+                    }
+                    var weaver = DefDatabase<BackstoryDef>.GetNamedSilentFail("Weaver63");
+                    ctx.Require(weaver.spawnCategories.Contains("Outlander") &&
+                                weaver.spawnCategories.Contains("Tribal"),
+                        "MO original Weaver63 Outlander/Tribal category addition not loaded");
+                    var quartet = new Dictionary<string, Dictionary<string, int>>
+                    {
+                        { "AMJC_SaltMakerAdult", new Dictionary<string, int> {
+                            { "Crafting", 3 }, { "Cooking", 2 } } },
+                        { "AMJC_FishingVillageChild", new Dictionary<string, int> {
+                            { "Animals", 2 }, { "Crafting", 1 } } },
+                        { "AMJC_WeaverChild", new Dictionary<string, int> { { "Crafting", 3 } } },
+                        { "AMJC_WoodcutterAdult", new Dictionary<string, int> { { "Plants", 6 } } }
+                    };
+                    var quartetTitles = new Dictionary<string, string>
+                    {
+                        { "AMJC_SaltMakerAdult", "coastal salt maker" },
+                        { "AMJC_FishingVillageChild", "fishing village childhood" },
+                        { "AMJC_WeaverChild", "weaver's child" },
+                        { "AMJC_WoodcutterAdult", "woodcutter" }
+                    };
+                    foreach (var item in quartet)
+                    {
+                        string id = item.Key;
+                        var record = DefDatabase<BackstoryDef>.GetNamedSilentFail(id);
+                        ctx.Require(record != null &&
+                            record.slot == ((id == "AMJC_FishingVillageChild" ||
+                                           id == "AMJC_WeaverChild")
+                                        ? BackstorySlot.Childhood : BackstorySlot.Adulthood),
+                            "MO P3 source-added biography missing/wrong slot: " + id);
+                        var gains = record.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
+                        ctx.Require(gains.Count == item.Value.Count &&
+                            item.Value.All(g => gains.TryGetValue(g.Key, out int n) && n == g.Value),
+                            "MO source-added P3 skills mismatch: " + id);
+                        bool retired = id == "AMJC_WoodcutterAdult";
+                        ctx.Require(record.spawnCategories != null &&
+                            (retired ? record.spawnCategories.Count == 1 &&
+                                       record.spawnCategories.Contains("AMJ_CultureExcluded")
+                                     : record.spawnCategories.Count == 4 &&
+                                       new[] { "Tribal", "Outlander", "Civil", "MedievalCommon" }
+                                           .All(record.spawnCategories.Contains)),
+                            "MO source-added P3 ordinary/retired candidate mismatch: " + id);
+                        ctx.Require(record.TitleFor(Gender.Male) == quartetTitles[id] &&
+                                    !string.IsNullOrWhiteSpace(LoadedText(record, "description")),
+                            "MO source-added P3 English title/description mismatch: " + id);
+                    }
+                    Log.Message("AMJ_CULTURE_P3_CORE_DEDUP_MO16_OK");
                 }
 
                 Log.Message("AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK");
