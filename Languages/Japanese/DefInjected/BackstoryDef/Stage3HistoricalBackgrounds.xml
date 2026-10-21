@@ -51,4 +51,9 @@
   <AMJC_CoastalFisherAdult.titleShort>漁師</AMJC_CoastalFisherAdult.titleShort>
   <AMJC_CoastalFisherAdult.baseDesc>[PAWN_nameDef]は海辺の村で漁を生業とし、潮の満ち引きや魚の集まる場所を見極めながら、釣りや網漁で魚を獲ってきた。網や釣具の手入れも欠かさず、漁獲を浜へ運ぶ仕事にも慣れていた。</AMJC_CoastalFisherAdult.baseDesc>
   <AMJC_CoastalFisherAdult.description>[PAWN_nameDef]は海辺の村で漁を生業とし、潮の満ち引きや魚の集まる場所を見極めながら、釣りや網漁で魚を獲ってきた。網や釣具の手入れも欠かさず、漁獲を浜へ運ぶ仕事にも慣れていた。</AMJC_CoastalFisherAdult.description>
+  <!-- Author-approved 2026-10-21 Japanese biography. -->
+  <AMJC_SaltMakerAdult.title>浜の塩焼き</AMJC_SaltMakerAdult.title>
+  <AMJC_SaltMakerAdult.titleShort>塩焼き</AMJC_SaltMakerAdult.titleShort>
+  <AMJC_SaltMakerAdult.baseDesc>[PAWN_nameDef]は海辺で塩水を濃縮し、釜で煮詰めて塩を作ってきた。天候を見ながら浜仕事を進め、燃料の管理や火加減にも慣れていた。</AMJC_SaltMakerAdult.baseDesc>
+  <AMJC_SaltMakerAdult.description>[PAWN_nameDef]は海辺で塩水を濃縮し、釜で煮詰めて塩を作ってきた。天候を見ながら浜仕事を進め、燃料の管理や火加減にも慣れていた。</AMJC_SaltMakerAdult.description>
 </LanguageData>
