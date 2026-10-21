@@ -245,4 +245,21 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+  <!-- 2026-10-21 approved medieval Japanese woodcutting livelihood, plain adult background. -->
+  <BackstoryDef>
+    <defName>AMJC_WoodcutterAdult</defName>
+    <slot>Adulthood</slot>
+    <title>woodcutter</title>
+    <titleShort>woodcutter</titleShort>
+    <description>[PAWN_nameDef] worked in the mountains, selecting trees suitable for timber, felling them and hauling the logs out of the woods. [PAWN_pronoun] learned to judge slopes and the direction of a falling tree, working with others to bring the logs down from the mountains.</description>
+    <skillGains>
+      <Plants>6</Plants>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>
