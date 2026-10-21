@@ -122,6 +122,18 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 正本は英語 `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と日本語 `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。Vanilla/MO・VE/非VE比較は `Docs/Stage3ExistingModAudit.md`。XMLのみの追加でDLLの再ビルドは不要。新規背景の実ゲーム読込、日本語表示、抽選頻度、旧セーブ・MO同時導入は未確認。既存10件のPASSを新規2件へ拡張せず、新規背景がまとまってからまとめて実ゲーム確認する。
 
+## P3 — 織屋の子（2026-10-21実装）
+
+**背景と役割:** `AMJC_WeaverChild` は新規第13件の幼少期 `BackstoryDef`。日本語名・略称「織屋の子」、英語名・略称 `weaver's child`。家族が定住して織物を作る家庭で育ったという個人の経歴であり、職人身分の強制・職能を継承する親子生成ルールは含まない。成人の `AMJC_TextileWeaverAdult`（`Crafting +6`）や移動生活を描く `AMJC_TravelingArtisanChild`（`Crafting +2 / Social +2`）と区別し、幼少期の織物工程の見習いを `Crafting +3` のみで表す。新規P3は成人9件・幼少期4件、合計13件。
+
+**製品設定:** `defName = AMJC_WeaverChild`、`slot = Childhood`、`skillGains = Crafting +3`、通常候補カテゴリ `Outlander / Tribal / Civil / MedievalCommon`。強制Trait、作業禁止、専用初期所持品、性別制限、追加スキル、DLC／MO必須依存を設けない。家族関係・定住地域・生成確率は制御しない。元の通常生成除外135件と元Def名を改稿した123件、先行12件は変更しない。
+
+**日本語本文（製品のbaseDescとdescriptionは同文）:** [PAWN_nameDef]は布を織る家に育ち、糸を巻いたり、糸の張り具合を整えたりする手伝いをしてきた。織機の動きを見ながら簡単な織り仕事を覚え、道具を丁寧に扱うようになった。
+
+**歴史的境界:** 古代～中世の布づくりにおける麻・絹の製糸・製織に対応する個別の家庭像とする。特定の綿織物産地、江戸期の問屋制家内工業、近代的工場制、職人ギルド制度は前提にしない。根拠資料は [福井県史・中世の衣料生産](https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-01-01-04.htm) と [古代日本の紡織体制・考古資料（国会図書館）](https://ndlsearch.ndl.go.jp/books/R000000004-I7201692)。子どもの具体的な役割は一般法則ではなく、この背景の人物設定である。
+
+**所有と受入れ:** 日英の製品正本は `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。VE／非VEおよび職歴比較は [Stage3ExistingModAudit.md](Stage3ExistingModAudit.md)。XMLのみの追加で既存CharactersのC#／1.6・1.7 DLLは変更しない。**先行10件の原本ゲームPASSは新規の3件目（塩焼き・漁村育ち・織屋の子）には適用されない。** この3件のLoadedDef、技能、言語表示、選択率、元セーブ／MO互換は未確認。ゲーム起動は他の追加背景とまとめる。
+
 ## P3 — ten backgrounds original 1.7 runtime acceptance (2026-10-20)
 
 The **ten** newly owned P3 `BackstoryDef` records (eight adult, two child) now have a single consolidated, original-game **RimWorld 1.7 English/Vanilla + cutover Culture/Characters** loaded acceptance **PASS**. This covers the seven previously accepted biographies after their `Outlander` category addition, `AMJC_TextileWeaverAdult` (Crafting +6), `AMJC_PotterAdult` (Crafting +4 / Artistic +2) and `AMJC_CoastalFisherAdult` (Animals +5), with all intended ages/categories/forbidden forced Traits and translated *English* titles. An original Pawn can still be generated. The same scenario retained P2 old forced-trait removals and alcohol mood effects. [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) PASS, Pickle 1/1, Unity/FMOD error 0, exit 0, source SHA `b37131dd61ed3a8712641a612b85a5a508d0adbc`. See the owner [itemized acceptance and exact markers](Stage3NativeAcceptance.md) and [coastal fisher canonical design](Stage3CoastalFisherDesign.md). No new DLL was needed for XML-only biographies.

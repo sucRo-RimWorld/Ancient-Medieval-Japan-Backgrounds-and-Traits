@@ -61,4 +61,9 @@
   <AMJC_FishingVillageChild.titleShort>漁村育ち</AMJC_FishingVillageChild.titleShort>
   <AMJC_FishingVillageChild.baseDesc>[PAWN_nameDef]は海沿いの集落で育ち、家族の漁を手伝いながら潮の満ち引きや季節ごとの魚の動きを覚えた。網や釣具の手入れ、獲った魚の運搬も手伝ってきた。</AMJC_FishingVillageChild.baseDesc>
   <AMJC_FishingVillageChild.description>[PAWN_nameDef]は海沿いの集落で育ち、家族の漁を手伝いながら潮の満ち引きや季節ごとの魚の動きを覚えた。網や釣具の手入れ、獲った魚の運搬も手伝ってきた。</AMJC_FishingVillageChild.description>
+  <!-- 2026-10-21 weaving-household childhood; matched Japanese baseDesc and description. -->
+  <AMJC_WeaverChild.title>織屋の子</AMJC_WeaverChild.title>
+  <AMJC_WeaverChild.titleShort>織屋の子</AMJC_WeaverChild.titleShort>
+  <AMJC_WeaverChild.baseDesc>[PAWN_nameDef]は布を織る家に育ち、糸を巻いたり、糸の張り具合を整えたりする手伝いをしてきた。織機の動きを見ながら簡単な織り仕事を覚え、道具を丁寧に扱うようになった。</AMJC_WeaverChild.baseDesc>
+  <AMJC_WeaverChild.description>[PAWN_nameDef]は布を織る家に育ち、糸を巻いたり、糸の張り具合を整えたりする手伝いをしてきた。織機の動きを見ながら簡単な織り仕事を覚え、道具を丁寧に扱うようになった。</AMJC_WeaverChild.description>
 </LanguageData>

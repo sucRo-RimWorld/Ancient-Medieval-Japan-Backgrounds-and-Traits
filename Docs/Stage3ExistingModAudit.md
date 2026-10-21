@@ -56,3 +56,13 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 **参照Modの扱い:** 先行監査に含まれる原本Vanilla/MO、非VEのHistorical Backstories・Shavius Medieval Flavour Pack・Medieval Backstories、VEのVanilla Backstories Expandedはいずれも職歴の先行例。今回の承認済み日本語本文・技能の幼少期１件を得るために外部の大規模背景Modを前提化する必要はない。全第三者Modとの記述の非重複、抽選頻度、競合パッチ不在を証明したものではない。既存Charactersの純XML `BackstoryDef` だけを追加し、釣りの新Job・DLC・MO互換パッチ・特別な家族関係は実装しない。
 
 **技能・生成条件:** `Animals` はOdysseyや釣りModが存在する場合には既存の釣り技能と関係するが、それらのModがなくても普通の動物技能として機能する。漁村出身であることは海岸マップへの限定生成を意味しない。`Outlander / Tribal / Civil / MedievalCommon` は既存のP3幼少期と整合した候補カテゴリであり、自然抽選率の検証ではない。内容の正本は `Docs/Design.md` および日英製品XML。新規Defのネイティブ受入れは保留する。
+
+## 2026-10-21 織屋の子 — Vanilla/MO・VE/非VE比較と差別化
+
+`AMJC_WeaverChild`（`Childhood`、`Crafting +3`）は定住して織物を製作する家の幼少期を描く。既存の成人 `AMJC_TextileWeaverAdult` は専門技術に熟練した成人で `Crafting +6`、既存の `AMJC_TravelingArtisanChild` は移動職人の家で `Crafting +2 / Social +2`。原本改稿123件にも `窯場育ち` など別業種の職人家庭はあるが、同じ表示名・限定的な技能を持つ織物家庭の幼少期は承認済みの正本中に存在しない。原本全784件や第三者の似た幼少期の完全不在は断定しない。
+
+既に確認済みの原本Vanilla/MO、非VEのHistorical Backstories・Shavius' Medieval Flavour Pack・Medieval Backstories、およびVEのVanilla Backstories Expandedは広範な職歴の先行例だが、この日本語の織物家庭という具体的な経歴・年齢・技能値を得るために大規模Mod全体を必須化しない。原本VanillaのOutlanderとMOのTribalの候補カテゴリを含め、任意MedievalCommonにも対応する一件の通常BackstoryDefとする。他Modの歴史背景の抽選頻度・パッチ順・内容競合についての追加保証はない。
+
+歴史資料：[福井県史・中世後期の衣料生産](https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T2/T2-5-01-01-01-04.htm) は苧麻を含む中世の布生産、[古代日本の紡織体制](https://ndlsearch.ndl.go.jp/books/R000000004-I7201692) は古代の糸巻き・製織に関連する考古資料を扱う。この背景は個人の家業経験であり、近世の木綿の問屋制家内工業や近代工場を想定しない。
+
+決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
