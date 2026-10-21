@@ -112,6 +112,16 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **正本・検証境界:** 製品ソースは `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。新規一件だけのXML追加のためCharactersのC#／DLLは変更しない。前の十件の1.6/1.7実機PASSは維持するが、11件目の実機読込、表示、自然抽選、MO同時導入、既存セーブは未検証。実機テストを勝手に自動起動しない。VE/非VEおよび既存の沿岸漁師との比較は [Stage3ExistingModAudit.md](Stage3ExistingModAudit.md)。
 
+## P3 — 漁村育ち（2026-10-21 承認）
+
+新規12件目の `BackstoryDef` は `AMJC_FishingVillageChild`。幼少期 `Childhood`、日本語の表示名・略称は「漁村育ち」。英語は `fishing village childhood`／`fishing village child`。技能 `Animals +2`、`Crafting +1`。生成カテゴリは `Outlander`、`Tribal`、`Civil`、`MedievalCommon`。強制Trait、作業禁止、専用所持品、必須DLC・MO依存はない。新規背景12件の内訳は成人9件、幼少期3件。
+
+承認済み日本語本文（baseDescとdescriptionを同文にする）：[PAWN_nameDef]は海沿いの集落で育ち、家族の漁を手伝いながら潮の満ち引きや季節ごとの魚の動きを覚えた。網や釣具の手入れ、獲った魚の運搬も手伝ってきた。
+
+成人の沿岸の漁師（Animals +5）とは年齢・能力を分ける。狩人の家の子（Shooting +2／Animals +1／Plants +1）とは海辺の生活・道具の手入れを重視する点で異なる。漁村の子全般の普遍的習慣ではなく一個人の経歴とする。専用の釣りJob・道具・建造物・特殊な生成規則は追加しない。元の通常生成制限135件、既存改稿123件、先行新規11件の効果は変えない。
+
+正本は英語 `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と日本語 `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。Vanilla/MO・VE/非VE比較は `Docs/Stage3ExistingModAudit.md`。XMLのみの追加でDLLの再ビルドは不要。新規背景の実ゲーム読込、日本語表示、抽選頻度、旧セーブ・MO同時導入は未確認。既存10件のPASSを新規2件へ拡張せず、新規背景がまとまってからまとめて実ゲーム確認する。
+
 ## P3 — ten backgrounds original 1.7 runtime acceptance (2026-10-20)
 
 The **ten** newly owned P3 `BackstoryDef` records (eight adult, two child) now have a single consolidated, original-game **RimWorld 1.7 English/Vanilla + cutover Culture/Characters** loaded acceptance **PASS**. This covers the seven previously accepted biographies after their `Outlander` category addition, `AMJC_TextileWeaverAdult` (Crafting +6), `AMJC_PotterAdult` (Crafting +4 / Artistic +2) and `AMJC_CoastalFisherAdult` (Animals +5), with all intended ages/categories/forbidden forced Traits and translated *English* titles. An original Pawn can still be generated. The same scenario retained P2 old forced-trait removals and alcohol mood effects. [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) PASS, Pickle 1/1, Unity/FMOD error 0, exit 0, source SHA `b37131dd61ed3a8712641a612b85a5a508d0adbc`. See the owner [itemized acceptance and exact markers](Stage3NativeAcceptance.md) and [coastal fisher canonical design](Stage3CoastalFisherDesign.md). No new DLL was needed for XML-only biographies.

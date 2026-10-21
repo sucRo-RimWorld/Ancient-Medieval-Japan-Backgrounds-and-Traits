@@ -210,4 +210,22 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+  <!-- 2026-10-21 approved fishing-village childhood; no fishing job or DLC requirement. -->
+  <BackstoryDef>
+    <defName>AMJC_FishingVillageChild</defName>
+    <slot>Childhood</slot>
+    <title>fishing village childhood</title>
+    <titleShort>fishing village child</titleShort>
+    <description>[PAWN_nameDef] grew up in a coastal settlement, helping [PAWN_possessive] family with fishing and learning the tides and seasonal movements of fish. [PAWN_pronoun] also helped maintain nets and fishing tackle and carry the catch ashore.</description>
+    <skillGains>
+      <Animals>2</Animals>
+      <Crafting>1</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>

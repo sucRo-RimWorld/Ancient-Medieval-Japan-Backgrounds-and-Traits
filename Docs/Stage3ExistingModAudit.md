@@ -48,3 +48,11 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 **Historical limits:** The [Japan Heritage Akō salt story](https://japan-heritage.bunka.go.jp/ja/stories/story077/) distinguishes early earthenware boiling from medieval salt fields; the [Salt Industry Center history](https://www.shiojigyo.com/siohyakka/made/history.html) documents the development of salt fields and different boiling vessels. Approved copy describes generic seawater concentration and boiling, not one modern, late-period salt-field or iron-cauldron mechanism universal to ancient/medieval Japan.
 
 **Approved content:** `AMJC_SaltMakerAdult` / 浜の塩焼き / 塩焼き; adulthood; `Crafting +3`, `Cooking +2`; `Outlander`, `Tribal`, `Civil`, `MedievalCommon`; no forced trait, special possession, work restriction, new skill, salt recipe, job or dependency. Canonical `Docs/Design.md` and the product XML control final wording. 1.6/1.7 native acceptance of this **new** ID is not yet established.
+
+## 2026-10-21 漁村育ち — 既存Mod・背景との重複監査
+
+**対象:** 追加する幼少期 `AMJC_FishingVillageChild` は日本沿岸の家庭で漁具の手入れと漁獲物の運搬を手伝った個人の経歴。技能は `Animals +2 / Crafting +1`。成人の既存 `AMJC_CoastalFisherAdult`（Animals+5）とは年齢枠を分け、既存幼少期 `AMJC_HunterFamilyChild`（Shooting+2／Animals+1／Plants+1）とも射撃・山野知識ではなく漁具の扱いを重視する点で区別する。改稿済み123件には `田畑育ち` 等の家業由来の幼少期もあるが、承認済みの「漁村育ち」と同じ題名・技能組合せではない。未改稿のVanilla Def全体から同類の背景が存在しないとの主張ではない。
+
+**参照Modの扱い:** 先行監査に含まれる原本Vanilla/MO、非VEのHistorical Backstories・Shavius Medieval Flavour Pack・Medieval Backstories、VEのVanilla Backstories Expandedはいずれも職歴の先行例。今回の承認済み日本語本文・技能の幼少期１件を得るために外部の大規模背景Modを前提化する必要はない。全第三者Modとの記述の非重複、抽選頻度、競合パッチ不在を証明したものではない。既存Charactersの純XML `BackstoryDef` だけを追加し、釣りの新Job・DLC・MO互換パッチ・特別な家族関係は実装しない。
+
+**技能・生成条件:** `Animals` はOdysseyや釣りModが存在する場合には既存の釣り技能と関係するが、それらのModがなくても普通の動物技能として機能する。漁村出身であることは海岸マップへの限定生成を意味しない。`Outlander / Tribal / Civil / MedievalCommon` は既存のP3幼少期と整合した候補カテゴリであり、自然抽選率の検証ではない。内容の正本は `Docs/Design.md` および日英製品XML。新規Defのネイティブ受入れは保留する。
