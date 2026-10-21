@@ -3,7 +3,7 @@
   <!-- Verified vanilla-format skill/forcedTrait key elements against modern 1.6/1.7 period BackstoryDefs.
        <skillGains><Social>4</Social> and <forcedTraits><Nimble>0</Nimble> are Def dictionary keys.
        Initial five Stage 3 biographies, followed by separately approved additions below.
-       Eleven new IDs in total; do not alter core save identities.
+       Fourteen P3 IDs exist, two retained only for saved-pawn compatibility; do not remove IDs.
        Plain BackstoryDef; no new DLC/MO hard dependency or extra game behaviors.
        titleFemale is a display override, not a gender-only generation filter. -->
   <BackstoryDef>
@@ -152,10 +152,9 @@
       <Crafting>6</Crafting>
     </skillGains>
     <spawnCategories>
-      <li>Outlander</li>
-      <li>Tribal</li>
-      <li>Civil</li>
-      <li>MedievalCommon</li>
+      <!-- Save-compatible Def retained; ordinary category intentionally disabled.
+           Existing Core Logger16/Logger95 or Weaver63 owns this role. -->
+      <li>AMJ_CultureExcluded</li>
     </spawnCategories>
   </BackstoryDef>
   <BackstoryDef>
@@ -256,10 +255,9 @@
       <Plants>6</Plants>
     </skillGains>
     <spawnCategories>
-      <li>Outlander</li>
-      <li>Tribal</li>
-      <li>Civil</li>
-      <li>MedievalCommon</li>
+      <!-- Save-compatible Def retained; ordinary category intentionally disabled.
+           Existing Core Logger16/Logger95 or Weaver63 owns this role. -->
+      <li>AMJ_CultureExcluded</li>
     </spawnCategories>
   </BackstoryDef>
 </Defs>

@@ -67,6 +67,16 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
 
+## 2026-10-21 承認済み重複解消 — 既存Core IDへの職業統合（製品正本）
+
+**過去の比較・候補検討を上書きする確定方針:** Vanilla `Logger16`、`Logger95`、`Weaver63` を歴史的な名称・説明へ英日改稿する。通常生成は「村の杣人」（Logger16: Tribal）、「山の杣人」（Logger95: Outlander等）、「織物職人」（Weaver63: Tribal、必要最小限のOutlander追加）が担当する。既存の技能・作業タグ・強制Trait・初期所持品・IDは原本通り。織物職人を普通のVanilla Outlanderにも供給できるよう原本 `Weaver63.spawnCategories` に **Outlanderのみ**追加する。他の既存カテゴリは保持する。
+
+**重複Defのセーブ互換性:** `AMJC_WoodcutterAdult` と `AMJC_TextileWeaverAdult` は**削除せず**、`spawnCategories` のみ `AMJ_CultureExcluded` 1件に変更する。ゲームが普通に選択する新規P3は**14定義中12件**（成人8・幼少期4）。元の14定義の表示名・本文・能力、原本他職、原本135生成制限、123改稿、23初期所持品を変更しない。2件の非候補化は原本制限135件の加算ではない。初期木材10・布10は原本での対応する所持品であり、新規P3の制約なし所持品へ引き継ぐのではない。
+
+**ゲーム上の利害:** 同じ職業が新規DefとVanilla Defの双方から生成される問題は抑える。新規P3を無制限に維持した場合と比べ、`Logger16` のMelee+3、`Logger95` のPlants+8、`Weaver63` のPlants+2が実際の強化として付く。原本にあった木材/布も残る。原本には `PlantWork`／`Crafting` の必須作業タグがある。旧新規Defの `Civil/MedievalCommon` 候補は現状引き継がず、通常VanillaとMOに必要なカテゴリだけを用いるためその候補数は縮む。職業の存在意義を技能セットの変更や新規Jobで無理に作らない。
+
+**根拠と検証:** 現行原本のスロット、技能、カテゴリ、所持品は下表と[Project Actions #38797500765](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/38797500765)（同値1.6/1.7）で確認済み。Vanilla/MOの一般候補カテゴリとの交差も既存[MO Crosswalk](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/Research/MO16BackstoryFilterCrosswalk.md)に準拠。職業の選択確率、ゲームロードされた新しいPatched Def、既存セーブの再読込、ほかのBackstoryModの同名タイトルは未検証。旧14定義での1.7実ゲームPASSは新しい候補カテゴリへ流用しない。製品仕様は `Docs/Design.md` および `Patches/Stage3CoreOccupationRewrites.xml`、日本語DefInjected、`Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` に反映。
+
 ## 2026-10-21 原本Vanilla 1.6/1.7の4職業：生成・技能・重複の実データ監査
 
 **重大な訂正／方針判断待ち:** 先行の新規「杣人」「織物職人」の必要性監査は未改稿Vanilla Core背景を調べ切れていなかった。過去の旧英語注記だけではなく、作者所有の**オリジナルCore 1.6.4871 rev598／1.7.4977 rev1248**から作成した784 BackstoryDef+43 TraitDefの `amj-core-character-defs-metadata-v2` で4件の現行Def値を照合した。両版の全CSV SHA-256は**同一 `5699065686d4d6bebd59a8244b88a4f5707c57a0d16b0300cadab09ef331228d`**。Project [原本の完全性監査・Actions #38797500765](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/38797500765)、保存Artifact **`vanilla-core-character-defs-16-17-38797500765` ID `12002927488`**、および[Project原本調査](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/Research/VanillaCoreCharacterDefsSourceAudit20261016.md)。先行した古い原文内容については[Ludeon公式翻訳リポの英語注記](https://github.com/Ludeon/RimWorld-Finnish/blob/master/Backstories/Backstories.xml)。現行ゲーム版の4行は**全フィールドで1.6/1.7一致**する。

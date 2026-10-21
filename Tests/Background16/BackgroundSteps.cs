@@ -724,12 +724,16 @@ namespace AMJ.Culture.Test
                 {
                     BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(entry.Key);
                     ctx.Require(bio != null, "P3 craft biography missing: " + entry.Key);
+                    bool retiredWeaver = entry.Key == "AMJC_TextileWeaverAdult";
                     ctx.Require(bio.slot == BackstorySlot.Adulthood &&
                         bio.spawnCategories != null &&
-                        bio.spawnCategories.Contains("Outlander") &&
-                        bio.spawnCategories.Contains("Tribal") &&
-                        bio.spawnCategories.Contains("MedievalCommon"),
-                        "P3 craft adulthood/categories mismatch: " + entry.Key);
+                        (retiredWeaver
+                            ? bio.spawnCategories.Count == 1 &&
+                              bio.spawnCategories.Contains("AMJ_CultureExcluded")
+                            : bio.spawnCategories.Contains("Outlander") &&
+                              bio.spawnCategories.Contains("Tribal") &&
+                              bio.spawnCategories.Contains("MedievalCommon")),
+                        "P3 craft save-retention/categories mismatch: " + entry.Key);
                     var gains = bio.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
                     ctx.Require(gains.Count == entry.Value.Count &&
                         entry.Value.All(x => gains.TryGetValue(x.Key, out int amount) &&
@@ -801,11 +805,15 @@ namespace AMJ.Culture.Test
                         ctx.Require(bio.slot == (child ? BackstorySlot.Childhood :
                                                       BackstorySlot.Adulthood),
                             "Newest P3 slot mismatch: " + id);
+                        bool retiredWoodcutter = id == "AMJC_WoodcutterAdult";
                         ctx.Require(bio.spawnCategories != null &&
-                            bio.spawnCategories.Count == 4 &&
-                            new[] { "Outlander", "Tribal", "Civil", "MedievalCommon" }
-                                .All(bio.spawnCategories.Contains),
-                            "Newest P3 ordinary categories mismatch: " + id);
+                            (retiredWoodcutter
+                                ? bio.spawnCategories.Count == 1 &&
+                                  bio.spawnCategories.Contains("AMJ_CultureExcluded")
+                                : bio.spawnCategories.Count == 4 &&
+                                  new[] { "Outlander", "Tribal", "Civil", "MedievalCommon" }
+                                      .All(bio.spawnCategories.Contains)),
+                            "Newest P3 ordinary/retired categories mismatch: " + id);
                         var bonuses = bio.skillGains.ToDictionary(x => x.skill.defName,
                                                                   x => x.amount);
                         ctx.Require(bonuses.Count == expected.Value.Count &&
@@ -820,6 +828,50 @@ namespace AMJ.Culture.Test
                                     !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
                             "Newest P3 Japanese loaded title/body mismatch: " + id);
                     }
+                    // The three original Core identities now own occupational generation.
+                    // Verify the actual patched names/skills/categories, not new P3 Defs.
+                    var originalTrades = new Dictionary<string, Dictionary<string, int>> {
+                        { "Logger16", new Dictionary<string, int> {
+                            { "Plants", 6 }, { "Melee", 3 } } },
+                        { "Logger95", new Dictionary<string, int> {
+                            { "Plants", 8 } } },
+                        { "Weaver63", new Dictionary<string, int> {
+                            { "Crafting", 6 }, { "Plants", 2 } } }
+                    };
+                    var expectedCoreTitles = new Dictionary<string, string> {
+                        { "Logger16", "村の杣人" },
+                        { "Logger95", "山の杣人" },
+                        { "Weaver63", "織物職人" }
+                    };
+                    foreach (var expected in originalTrades)
+                    {
+                        BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(expected.Key);
+                        ctx.Require(bio != null && bio.slot == BackstorySlot.Adulthood,
+                            "Original Core occupation missing or wrong slot: " + expected.Key);
+                        var skillBonuses = bio.skillGains.ToDictionary(v => v.skill.defName,
+                                                                      v => v.amount);
+                        ctx.Require(skillBonuses.Count == expected.Value.Count &&
+                                    expected.Value.All(v => skillBonuses.TryGetValue(v.Key, out int n)
+                                                            && n == v.Value),
+                            "Original Core occupation skills changed: " + expected.Key);
+                        ctx.Require(bio.TitleFor(Gender.Male) == expectedCoreTitles[expected.Key] &&
+                                    bio.TitleFor(Gender.Female) == expectedCoreTitles[expected.Key],
+                            "Original Core occupation Japanese title mismatch: " + expected.Key);
+                        ctx.Require(
+                            expected.Key == "Logger95"
+                                ? bio.spawnCategories.Contains("Outlander") &&
+                                  bio.spawnCategories.Contains("Logger")
+                                : bio.spawnCategories.Contains("Tribal") &&
+                                  (expected.Key != "Logger16" ||
+                                   bio.spawnCategories.Contains("TribalLogger")),
+                            "Original occupational candidate categories changed: " + expected.Key);
+                        ctx.Require(!string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
+                            "Original Core Japanese occupation description absent: " + expected.Key);
+                    }
+                    var oldWeaver = DefDatabase<BackstoryDef>.GetNamedSilentFail("Weaver63");
+                    ctx.Require(oldWeaver.spawnCategories.Contains("Tribal") &&
+                                oldWeaver.spawnCategories.Contains("Outlander"),
+                        "Original weaver lacks Tribal and added Vanilla Outlander routes");
                     Log.Message("AMJ_CULTURE_P3_FOUR_NEW_LOADED_OK");
                 }
 
