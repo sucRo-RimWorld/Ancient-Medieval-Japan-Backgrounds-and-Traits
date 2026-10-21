@@ -2,7 +2,8 @@
 <Defs>
   <!-- Verified vanilla-format skill/forcedTrait key elements against modern 1.6/1.7 period BackstoryDefs.
        <skillGains><Social>4</Social> and <forcedTraits><Nimble>0</Nimble> are Def dictionary keys.
-       Five approved Stage 3 original biographies. New IDs; do not alter core save identities.
+       Initial five Stage 3 biographies, followed by separately approved additions below.
+       Eleven new IDs in total; do not alter core save identities.
        Plain BackstoryDef; no new DLC/MO hard dependency or extra game behaviors.
        titleFemale is a display override, not a gender-only generation filter. -->
   <BackstoryDef>
@@ -183,6 +184,24 @@
     <description>[PAWN_nameDef] made a living fishing in a coastal village, watching the tides and finding the places where fish gathered. [PAWN_pronoun] caught fish using hooks and nets, kept fishing gear in good repair, and helped carry the catch ashore.</description>
     <skillGains>
       <Animals>5</Animals>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
+  <!-- Author-approved 2026-10-21 salt-making livelihood; no custom gameplay Job. -->
+  <BackstoryDef>
+    <defName>AMJC_SaltMakerAdult</defName>
+    <slot>Adulthood</slot>
+    <title>coastal salt maker</title>
+    <titleShort>salt maker</titleShort>
+    <description>[PAWN_nameDef] worked on the coast, concentrating seawater and boiling down brine in a cauldron to make salt. [PAWN_pronoun] learned to plan coastal work around the weather, tend the fuel supply and control the heat.</description>
+    <skillGains>
+      <Crafting>3</Crafting>
+      <Cooking>2</Cooking>
     </skillGains>
     <spawnCategories>
       <li>Outlander</li>

@@ -99,6 +99,19 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **漁師候補の技能整理（未実装）:** Odysseyの釣りは `Animals` が Fishing Speed／Fishing Yield に作用する。Vanilla Fishing Expandedの釣りもAnimals技能基準である。漁師背景は **`Animals +5` を基本候補**とする。釣り専用 `SkillDef` はなく、Odyssey/釣りModを依存化しない（未導入時はAnimals技能の一般的用途のみ）。漁師の日本語本文・生成カテゴリ・最終技能補正の承認までは製品に追加しない。製塩は海水製塩とMOの採掘塩を同一視しないため未実装。
 
+
+## P3 — 浜の塩焼き（2026-10-21承認、XML実装）
+
+**確定内容:** 新規11件目の成人 `BackstoryDef` は `AMJC_SaltMakerAdult`。日本語の表示名「浜の塩焼き」、略称「塩焼き」。英語名 `coastal salt maker`、略称 `salt maker`。技能は `Crafting +3`, `Cooking +2`、`Adulthood`、カテゴリ `Outlander / Tribal / Civil / MedievalCommon`、強制Trait・作業禁止・専用初期所持品なし。男女共通。以前からの十件と、制限した通常背景135件および既存IDを改稿した123件は変更しない。
+
+**承認済み日本語本文（`baseDesc` と `description` が一致）:** [PAWN_nameDef]は海辺で塩水を濃縮し、釜で煮詰めて塩を作ってきた。天候を見ながら浜仕事を進め、燃料の管理や火加減にも慣れていた。
+
+`Crafting` は製塩の道具・工程、`Cooking` は煮詰めと火加減の経験を既存技能で抽象化したもの。製塩の新Job・設備・レシピ・海水取得・塩ThingDef・専用スキル・製塩速度補正は**追加しない**。MOの採掘塩と海水製塩は別の生産行為であり、MO・DLCを必須にしない。4つのカテゴリは通常生成候補の設定で、海岸や特定の派閥で必ず選ばれることは保証しない。
+
+**史実上の幅:** 古代には海藻・製塩土器などを用いる方法があり、中世には塩浜による採かんと釜による煮詰めが発達する。参考は [たばこと塩の博物館（古代）](https://www.tabashio.jp/collection/salt/s9/index.html)、[同（時代別）](https://www.tabashio.jp/collection/salt/s8/index.html)、[塩事業センター](https://www.shiojigyo.com/siohyakka/made/history.html)。特定の鉄釜・揚浜／入浜設備を古代を含む全員に固定しない。この背景は史実を踏まえた広い職業描写であり、全時代・全沿岸地域の画一的な製法を意味しない。
+
+**正本・検証境界:** 製品ソースは `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。新規一件だけのXML追加のためCharactersのC#／DLLは変更しない。前の十件の1.6/1.7実機PASSは維持するが、11件目の実機読込、表示、自然抽選、MO同時導入、既存セーブは未検証。実機テストを勝手に自動起動しない。VE/非VEおよび既存の沿岸漁師との比較は [Stage3ExistingModAudit.md](Stage3ExistingModAudit.md)。
+
 ## P3 — ten backgrounds original 1.7 runtime acceptance (2026-10-20)
 
 The **ten** newly owned P3 `BackstoryDef` records (eight adult, two child) now have a single consolidated, original-game **RimWorld 1.7 English/Vanilla + cutover Culture/Characters** loaded acceptance **PASS**. This covers the seven previously accepted biographies after their `Outlander` category addition, `AMJC_TextileWeaverAdult` (Crafting +6), `AMJC_PotterAdult` (Crafting +4 / Artistic +2) and `AMJC_CoastalFisherAdult` (Animals +5), with all intended ages/categories/forbidden forced Traits and translated *English* titles. An original Pawn can still be generated. The same scenario retained P2 old forced-trait removals and alcohol mood effects. [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) PASS, Pickle 1/1, Unity/FMOD error 0, exit 0, source SHA `b37131dd61ed3a8712641a612b85a5a508d0adbc`. See the owner [itemized acceptance and exact markers](Stage3NativeAcceptance.md) and [coastal fisher canonical design](Stage3CoastalFisherDesign.md). No new DLL was needed for XML-only biographies.

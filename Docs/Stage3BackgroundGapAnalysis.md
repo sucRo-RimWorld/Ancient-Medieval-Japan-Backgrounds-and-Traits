@@ -8,6 +8,8 @@
 
 **2026-10-20 two more approved adults:** 織物職人 (`Crafting +6`) and 焼き物師 (`Crafting +4`, `Artistic +2`) are now in the production XML and Japanese DefInjected. They extend the seven earlier backgrounds to **nine**; real-game acceptance and natural distribution are still OPEN. The older pending-candidate rows below are historical planning notes, not their current status. Coastal fishing is still a candidate with `Animals +5` justified by Odyssey/VFE fishing productivity, but no final Japanese text/Def. Salt worker remains pending.
 
+**2026-10-21 approved salt-maker follow-on:** `AMJC_SaltMakerAdult` (浜の塩焼き) is now the 11th implemented P3 biography (adult nine, childhood two), with `Crafting +3`, `Cooking +2`, four ordinary candidate categories and no forced Trait. The older pending `製塩の働き手` row is preserved as the historical candidate context, not an open implementation item. Canonical specification: `Docs/Design.md` and product XML. Earlier ten-Def original-game PASS does not include this 11th Def. **No automatic native test.**
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.
