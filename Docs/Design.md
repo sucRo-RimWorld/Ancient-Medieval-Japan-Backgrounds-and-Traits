@@ -4,6 +4,10 @@
 
 ## Stage 3 原本職業への統合 — 2026-10-21 作者承認・実装
 
+**変更後の原本日本語1.7ネイティブ受入（2026-10-21）:** [Project Actions #39587913897](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39587913897) はCharacters [PR #45](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/45) を指定した**実際のOriginal 1.7.4977日本語Vanilla環境でPASS**。Pickle1/1、Unity/FMOD ERROR0、exit0、原本3背景の年齢区分・完全な既存技能セット・必要な生成カテゴリ・日本語タイトル、元の新規2Defの読み込み維持と `AMJ_CultureExcluded` 1件のみのカテゴリを確認。新規P3の通常候補12件はコード上・ロード済み定義上の状態であって、全12件が実際に自然抽選された事実ではない。過去の「新しいPatchのゲーム受入未検証」という段落は検証**前**の履歴であり、最新の証拠は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) の「Approved Core occupational consolidation」節に整理。現在も **原本3件の日本語説明全文を厳密一致検査したものではなく**、既存セーブ/MO1.6/描画/個別自然抽選/初期所持品の実際の付与は未検証。製品C#・DLL変更なし、Steam公開は別途承認。
+
+
+
 **最新の確定方針（先行の14件すべて通常生成候補という記述を上書き）:** 重複する新規成人 `AMJC_WoodcutterAdult`（杣人）・`AMJC_TextileWeaverAdult`（織物職人）の `spawnCategories` は `AMJ_CultureExcluded` **1件のみ**とし、**通常生成から除外する**。両 `BackstoryDef`、従来のtitle/titleShort/description、技能、旧セーブIDは保持する。残る新規12件は従来のカテゴリ・技能・本文を変更しない。現在のStage3 XMLは **14件存在・うち通常候補12件**（成人8・幼少4）。これは既存Core通常生成制限135件に加える**独立した新規Def2件の除外**であり、Core135件の数は変えない。
 
 **職能の所有:** Vanilla 1.6/1.7原本 `Logger16`、`Logger95`、`Weaver63` のIDを維持したまま、PatchOperationReplaceで `title`／`titleShort`／`description` **だけ**を改稿する。日本語は `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml` の各 `title`、`titleShort`、`baseDesc`、`description` に対応。原本の `slot`、`skillGains`、`requiredWorkTags`、`forcedTraits`、`workDisables`、`startingPossessions` 等は変更しない。原本のゲーム技能は次表の通りで、**廃止した新規P3の数値へ置換しない**。
