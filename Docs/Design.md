@@ -4,6 +4,10 @@
 
 ## Stage 3 原本職業への統合 — 2026-10-21 作者承認・実装
 
+**変更後のMO 1.6原本ゲーム受入（2026-10-21）:** [Project Actions #39590687182](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39590687182) **PASS**。RimWorld 1.6.4871 + MO 1.6.2.2 + 必須Framework + Culture/Characters（**Characters `ec5b93991664e320ba5f245f8fee8ea900c25a00` をソース固定**）、英語1シナリオのPickle 1/1、Unityエラー0、終了コード0。原本Logger16/Logger95/Weaver63の年齢・元の技能・改稿英名と必要なカテゴリ、新規4件の年齢・技能・候補カテゴリ、除外する新規杣人と織物職人のDef保持・通常生成除外をLoadedDefで照合。MOの派閥・PawnKind・一般的ポーン生成も従来のチェックを通過。専用 `AMJ_CULTURE_P3_CORE_DEDUP_MO16_OK` =1。詳細の正本と旧テストの無効判定は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) を参照。**個別背景の自然抽選、原本職業の初期所持品の実際の付与、旧セーブ、MO 1.7、日本語表示、元MP3の音声再生は対象外。** 既存の1.7日本語Vanilla受入結果はその版の構成に限定して維持する。C#製品とDLLの変更なし、Steam公開未承認。
+
+
+
 **変更後の原本日本語1.7ネイティブ受入（2026-10-21）:** [Project Actions #39587913897](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39587913897) はCharacters [PR #45](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/45) を指定した**実際のOriginal 1.7.4977日本語Vanilla環境でPASS**。Pickle1/1、Unity/FMOD ERROR0、exit0、原本3背景の年齢区分・完全な既存技能セット・必要な生成カテゴリ・日本語タイトル、元の新規2Defの読み込み維持と `AMJ_CultureExcluded` 1件のみのカテゴリを確認。新規P3の通常候補12件はコード上・ロード済み定義上の状態であって、全12件が実際に自然抽選された事実ではない。過去の「新しいPatchのゲーム受入未検証」という段落は検証**前**の履歴であり、最新の証拠は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) の「Approved Core occupational consolidation」節に整理。現在も **原本3件の日本語説明全文を厳密一致検査したものではなく**、既存セーブ/MO1.6/描画/個別自然抽選/初期所持品の実際の付与は未検証。製品C#・DLL変更なし、Steam公開は別途承認。
 
 
