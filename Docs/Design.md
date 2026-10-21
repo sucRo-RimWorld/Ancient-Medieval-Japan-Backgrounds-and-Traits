@@ -20,7 +20,7 @@
 - `Logger95`：「[PAWN_nameDef]は山林で材木に適した木を見極め、斜面の木を安全に伐り倒して運び出してきた。木の倒れる方向だけでなく、山林の状態にも気を配っていた。」
 - `Weaver63`：「[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。」（従来承認済み織物職人から同文を再利用）
 
-**追加しないもの:** 木地師 `AMJC_ItinerantWoodworkerAdult` や板材加工 `PlankCutter72` の技能・名前・生成カテゴリは現状維持。原本の特殊カテゴリや保存済みポーンは削除しない。任意の `Civil`・`MedievalCommon` を原本3件へ一律追加することは承認対象外（通常の Vanilla Outlander / MO Tribal の不足だけを補正）。新規P3の `AMJC_CoastalFisherAdult` 等12件にも干渉しない。既存Core127件ほかの生成制限増減なし。
+**追加しないもの:** 木地師 `AMJC_ItinerantWoodworkerAdult` や板材加工 `PlankCutter72` の技能・名前・生成カテゴリは現状維持。原本の特殊カテゴリや保存済みポーンは削除しない。任意の `Civil`・`MedievalCommon` を原本3件へ一律追加することは承認対象外（通常の Vanilla Outlander / MO Tribal の不足だけを補正）。新規P3の `AMJC_CoastalFisherAdult` 等12件にも干渉しない。既存Coreの通常生成制限135件の集合・計数は変更しない。
 
 **所有ファイル:** 新規英語Core改稿 `Patches/Stage3CoreOccupationRewrites.xml`、日本語 `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml`、新規P3の生成カテゴリ `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml`。Core原本は1.6/1.7同一値として[原本照合](Stage3ExistingModAudit.md)で確認済み。Patchは両版に同じ定義を当て、C#・独立Characters DLLを変更しない。元の新規14件LoadedDef受入[2026-10-21 Actions #39582470340](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39582470340)は**変更前ソースでのPASS**であり、原本3件の現在の新しい翻訳・生成カテゴリ変更や、新規2件の非抽選をまだ確認していない。旧テストでの新規2件通常カテゴリ期待値は失効。テストはまとめて変更分だけ確認する。通常候補入りが特定Defの自然抽選を保証するものではない。製品の公開・Steam更新は未承認。
 
