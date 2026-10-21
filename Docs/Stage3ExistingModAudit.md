@@ -67,20 +67,38 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
 
-## 2026-10-21 原本Vanillaの未改稿背景との重複再監査（重要訂正・仕様変更なし）
+## 2026-10-21 原本Vanilla 1.6/1.7の4職業：生成・技能・重複の実データ監査
 
-**結論:** 以前の「杣人」「織物職人」新規実装時の差別化監査は、改稿済み123件と初期の新規P3定義を重点確認し、**未改稿の原本Core BackstoryDefに同じ職業があることを見落としていた**。新規Defの史実・実ロードPASSと、他に存在しない職業として追加する必要性は別の問題である。現行の14件・既存IDはこの監査では変更しない。追加・削除・原本IDへの統合・技能変更はゲーム設計と既存セーブ互換性へ影響するため、作者の再判断なしに行わない。
+**重大な訂正／方針判断待ち:** 先行の新規「杣人」「織物職人」の必要性監査は未改稿Vanilla Core背景を調べ切れていなかった。過去の旧英語注記だけではなく、作者所有の**オリジナルCore 1.6.4871 rev598／1.7.4977 rev1248**から作成した784 BackstoryDef+43 TraitDefの `amj-core-character-defs-metadata-v2` で4件の現行Def値を照合した。両版の全CSV SHA-256は**同一 `5699065686d4d6bebd59a8244b88a4f5707c57a0d16b0300cadab09ef331228d`**。Project [原本の完全性監査・Actions #38797500765](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/38797500765)、保存Artifact **`vanilla-core-character-defs-16-17-38797500765` ID `12002927488`**、および[Project原本調査](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/Research/VanillaCoreCharacterDefsSourceAudit20261016.md)。先行した古い原文内容については[Ludeon公式翻訳リポの英語注記](https://github.com/Ludeon/RimWorld-Finnish/blob/master/Backstories/Backstories.xml)。現行ゲーム版の4行は**全フィールドで1.6/1.7一致**する。
 
-| Core既存DefName | 原本での既知の職歴（古いLudeon公認翻訳ファイルのEN注記） | P3で重なる実装 | 現状の確認 |
-|---|---|---|---|
-| `Logger16` | 木を伐り、集落へ材木を運ぶ伐採者 | `AMJC_WoodcutterAdult`（杣人） | **直接重複**。原本はCharacters通常生成除外／史実改稿パッチの対象外 |
-| `Logger95` | 山間の伐採・木材収集・森林管理 | `AMJC_WoodcutterAdult`（杣人） | **直接重複**。同上 |
-| `PlankCutter72` | 木材を丈夫な板に加工して木造建築へ供給 | 杣人・木地師・大工と近接 | **部分重複**（伐採後の製材は別工程）。同上 |
-| `Weaver63` | 羊毛・植物繊維・自然染料を加工して衣類を製織、集落間取引 | `AMJC_TextileWeaverAdult`（織物職人） | **直接重複**。同上 |
+| 現行Core `BackstoryDef` | Slot | `skillGains` | `spawnCategories`（完全リスト） | `requiredWorkTags` | `forcedTraits` | 初期所持品 |
+|---|---|---|---|---|---|---|
+| `Logger16`（伐採） | Adulthood | `Plants +6; Melee +3` | `Tribal; TribalLogger` | `PlantWork` | なし | `WoodLog ×10` |
+| `Logger95`（伐採） | Adulthood | `Plants +8` | `Offworld; Outlander; Pirate; Scientist; Logger` | `PlantWork` | なし | `WoodLog ×10` |
+| `PlankCutter72`（板材加工） | Adulthood | `Plants +6; Melee +3` | `Tribal; TribalLogger` | `PlantWork` | なし | なし |
+| `Weaver63`（織物） | Adulthood | `Crafting +6; Plants +2` | `Tribal` | `Crafting` | なし | `Cloth ×10` |
 
-**出典と証拠の限界:** [Ludeon公式翻訳リポジトリの旧EN原文注記](https://github.com/Ludeon/RimWorld-Finnish/blob/master/Backstories/Backstories.xml)（個別ID `Logger16`/`Logger95`/`PlankCutter72`/`Weaver63` の内容）と本リポの `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv` に原本1.6/1.7 IDを照合。4件はいずれも暫定 `NO_EVIDENT_CONFLICT_ARCHIVE / KEEP_UNLESS_CURRENT_DEF_DISAGREES`、既存の `Patches/AnachronisticAdultBackstories.xml`、`Patches/HistoricalOccupationBackstories.xml`、`Patches/Stage2HistoricalBackstories.xml` にこれらのIDへの改稿・除外はない。ただし**現在の1.6/1.7原本Defのslot、技能、強制Trait、spawnCategories、抽選経路まで照合した証拠ではない**。昔の英語注記の史実的職業内容は確認できても、現在の出現率や技能補正を推定してはならない。原本ゲーム受入済み14件は新規14 Defの読み込みが成功した証拠であり、その独自性の証明ではない。
+原本対応ファイルは `BackstoryDefs/Shuffled/Tribal_Adult.xml`（Logger16 / PlankCutter72 / Weaver63、SHA-256 `2e12b1429a12238e57d99d1d1e1e5cb6d23586053f32666d6b19e7bef53f9926`）と `BackstoryDefs/Shuffled/Offworld_Nonspecific_Adult.xml`（Logger95、SHA-256 `d28af7623f20b2eeadf69080919d488aa8fa9e889f9e4701647ecfe568c03520`）。4件はいずれも `Shuffled` の実原Defで、固有ポーン専用の `Solid` ではなく、現行Charactersの歴史改稿・生成制限パッチには列挙されない。
 
-**次の判断に必要な最小比較:** 現行Core `Logger16` / `Logger95` / `PlankCutter72` / `Weaver63` の現行原Defにおける実スロット、`skillGains`、`forcedTraits`、カテゴリを取得し、特にMO `Tribal` とVanilla `Outlander` で自然候補となるか確定する。実装を維持する理由が「日本史向けの別の役割・能力値・派閥適格性」で十分か、その後に作者判断を得る。既存Defが同じ職業・能力で普通に出現するなら、重複した新規Defの必要性を優先的に見直す。製品XML・DLL・既存セーブIDは現状維持、追加実ゲームテストは始めない。
+### 新規P3との実際のゲーム上の差
+
+| 新規P3 `BackstoryDef` | 既存Coreとの比較 | 判断材料 |
+|---|---|---|
+| `AMJC_WoodcutterAdult`「杣人」 | `Plants +6` だけ。候補 `Outlander / Tribal / Civil / MedievalCommon`、強制Trait・専用アイテム・`requiredWorkTags`なし | 既存の `Logger16` は同じPlants+6にMelee+3・木材10を加える。 `Logger95` はPlants+8・木材10。**OutlanderとTribal両経路に既存伐採背景がある**ため「伐採役が存在しない」は誤り。日本語の杣人名・4カテゴリの広さは差分 |
+| `AMJC_TextileWeaverAdult`「織物職人」 | `Crafting +6` のみ。候補 `Outlander / Tribal / Civil / MedievalCommon`、初期布なし、`requiredWorkTags`なし | `Weaver63` はCrafting+6にPlants+2・布10を加え、`Tribal` に存在。新規背景はVanilla `Outlander` 等への生成カテゴリ拡大と和文が差分。**Tribal内では職業が重複** |
+| `AMJC_ItinerantWoodworkerAdult`「木地師」 | `Crafting +5 / Plants +2`、木の器・道具を作る職人 | `PlankCutter72` は板材加工、`Logger16/95` は伐採。**この3者は直接同じ加工物・技能構成とは限らない**。木地師まで同時に廃止する根拠とはしない |
+
+原本の `spawnCategories` とProject [MO 1.6 Tribal faction/PawnKindフィルタ照合](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/Research/MO16BackstoryFilterCrosswalk.md)から、Logger16・PlankCutter72・Weaver63はMOの `Tribal` 候補カテゴリ、Logger95はVanilla `Outlander` 候補カテゴリと**文字列上は交差**する。ただし `requiredWorkTags` とPawn側の仕事条件等の追加選考を経るため、これだけで特定Defが抽選された事実、遭遇頻度、通常出現保証とはならない。
+
+**関連する別の確定事実:** 背景Phase2で「田畑育ち」と改稿済みの `ArtisanFarmer23` は原本 `Solid_Child`、`spawnCategories=Farmer` のみ、`Plants+7 / Intellectual−2 / Cooking+2`、Violent作業不可（原本実データ）。`Outlander`／`Tribal` という通常のカテゴリー名は持たない。これも「荘園の農家の子」新規Defを無条件で正当化しないが、以前の「田畑育ち」の存在のみから一般的な抽選適格性を推定できないことを裏づける。
+
+### 解決候補と意思決定境界
+
+**推奨:** 重複を減らすことを優先するなら、**既存原本IDを保持して英日本文・表示名だけ歴史的な職名へ改稿し、元の技能・生成カテゴリ・必要作業タグ・初期所持品を維持する方式**を先に評価する。候補は `Logger16/Logger95` を「杣人」系、`Weaver63` を「織物職人」系にする方法。ただしこれだけでは新規P3が広げた `Outlander/Civil/MedievalCommon` の同一カテゴリ機会をすべて代替できず、既存CoreのPlankCutterは加工職である。
+
+**代替案:** 新規Defを維持しつつ、重複するカテゴリだけ抑制する（例：杣人新規DefのOutlander/Tribal、織物職人新規DefのTribal）ことで独自の職業出現機会を残す。この案は、いずれも**現在の承認済み新規14件の生成仕様を変更**し、追加済みの新規Def名を存続させるため、作者承認なしには実装しない。自然生成分布への影響は予測できても実測未実施。
+
+**実装保留:** 14件目までの新規製品Def/元Core Def/技能は変更しない。新規P3を削除・置換すると、そのIDを参照した既存のPawn・セーブに影響し得る。実際にSteam公開されたという証拠はなくても利用中のローカルセーブは保証できない。**統合・削除・技能／生成カテゴリ変更は作者の方針判断待ち**。1.7日本語の14件ロードテストPASSは継続して有効だが、独立職業の必要性を証明しない。追加実ゲームテストは起動しない。
 
 ## 2026-10-21 杣人 — 既存背景・VE/非VE代替の境界
 
