@@ -14,6 +14,8 @@
 
 **2026-10-21 織屋の子の実装:** 候補欄「織屋の子」は新規 `AMJC_WeaverChild`（`Childhood`、`Crafting +3`）として製品英語Def・日本語DefInjectedへ反映。新規P3は13件（成人9・幼少期4）。定住の織物家庭での成長であり、成人織物職人や移動する職人の子と異なる。具体的な本文と4カテゴリは `Docs/Design.md`。表の過去の候補行は検討履歴であり、現在の未実装候補ではない。前の10件の1.6/1.7ネイティブPASSは新規3件（製塩・漁村・織屋）を証明しない。新規Defの実ゲーム検証は最後にまとめる。
 
+**2026-10-21 「杣人」承認・実装:** 従来の候補「山仕事の担い手」を `AMJC_WoodcutterAdult` （成人、表示名「杣人」、`Plants +6`）として新規P3に追加。現在の正式製品定義は14件（成人10・幼少期4）。伐採・造材を担い、既存の木地師（木製品製作）や山野の猟師（狩猟）、山里の大工（建築）と差別化。確定本文・対象時代・技能の実際の効果・カテゴリは `Docs/Design.md` に記載。上記を含む古い候補表は調査時点の履歴で、現在の未実装候補一覧ではない。ゲームロード未検証の新規4件は `AMJC_SaltMakerAdult`、`AMJC_FishingVillageChild`、`AMJC_WeaverChild`、`AMJC_WoodcutterAdult`。以前の10件のゲーム受入PASSを新規4件に流用しない。最終段階まで実ゲームテストは追加起動しない。
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.
