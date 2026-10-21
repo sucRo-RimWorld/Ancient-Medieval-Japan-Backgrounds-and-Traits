@@ -67,6 +67,21 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
 
+## 2026-10-21 原本Vanillaの未改稿背景との重複再監査（重要訂正・仕様変更なし）
+
+**結論:** 以前の「杣人」「織物職人」新規実装時の差別化監査は、改稿済み123件と初期の新規P3定義を重点確認し、**未改稿の原本Core BackstoryDefに同じ職業があることを見落としていた**。新規Defの史実・実ロードPASSと、他に存在しない職業として追加する必要性は別の問題である。現行の14件・既存IDはこの監査では変更しない。追加・削除・原本IDへの統合・技能変更はゲーム設計と既存セーブ互換性へ影響するため、作者の再判断なしに行わない。
+
+| Core既存DefName | 原本での既知の職歴（古いLudeon公認翻訳ファイルのEN注記） | P3で重なる実装 | 現状の確認 |
+|---|---|---|---|
+| `Logger16` | 木を伐り、集落へ材木を運ぶ伐採者 | `AMJC_WoodcutterAdult`（杣人） | **直接重複**。原本はCharacters通常生成除外／史実改稿パッチの対象外 |
+| `Logger95` | 山間の伐採・木材収集・森林管理 | `AMJC_WoodcutterAdult`（杣人） | **直接重複**。同上 |
+| `PlankCutter72` | 木材を丈夫な板に加工して木造建築へ供給 | 杣人・木地師・大工と近接 | **部分重複**（伐採後の製材は別工程）。同上 |
+| `Weaver63` | 羊毛・植物繊維・自然染料を加工して衣類を製織、集落間取引 | `AMJC_TextileWeaverAdult`（織物職人） | **直接重複**。同上 |
+
+**出典と証拠の限界:** [Ludeon公式翻訳リポジトリの旧EN原文注記](https://github.com/Ludeon/RimWorld-Finnish/blob/master/Backstories/Backstories.xml)（個別ID `Logger16`/`Logger95`/`PlankCutter72`/`Weaver63` の内容）と本リポの `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv` に原本1.6/1.7 IDを照合。4件はいずれも暫定 `NO_EVIDENT_CONFLICT_ARCHIVE / KEEP_UNLESS_CURRENT_DEF_DISAGREES`、既存の `Patches/AnachronisticAdultBackstories.xml`、`Patches/HistoricalOccupationBackstories.xml`、`Patches/Stage2HistoricalBackstories.xml` にこれらのIDへの改稿・除外はない。ただし**現在の1.6/1.7原本Defのslot、技能、強制Trait、spawnCategories、抽選経路まで照合した証拠ではない**。昔の英語注記の史実的職業内容は確認できても、現在の出現率や技能補正を推定してはならない。原本ゲーム受入済み14件は新規14 Defの読み込みが成功した証拠であり、その独自性の証明ではない。
+
+**次の判断に必要な最小比較:** 現行Core `Logger16` / `Logger95` / `PlankCutter72` / `Weaver63` の現行原Defにおける実スロット、`skillGains`、`forcedTraits`、カテゴリを取得し、特にMO `Tribal` とVanilla `Outlander` で自然候補となるか確定する。実装を維持する理由が「日本史向けの別の役割・能力値・派閥適格性」で十分か、その後に作者判断を得る。既存Defが同じ職業・能力で普通に出現するなら、重複した新規Defの必要性を優先的に見直す。製品XML・DLL・既存セーブIDは現状維持、追加実ゲームテストは始めない。
+
 ## 2026-10-21 杣人 — 既存背景・VE/非VE代替の境界
 
 **不足職業と重複監査:** `AMJC_WoodcutterAdult` は山林で建築用の木を見極めて伐採・運び出す成人背景。既存P3 `AMJC_ItinerantWoodworkerAdult`（木地師）は木の器や道具の加工（`Crafting +5 / Plants +2`）、改稿済み `SpaceHunter79`（山野の猟師）は獣の狩猟、`FurnitureBuilder83`（山里の大工）は建築・木材加工を描く。承認済みの123改稿タイトル・現在の13件新規Defには「杣人」の専業名はなく、同じ役割の単純重複ではない。ただし未改稿の原本全BackstoryDefや第三者Modに近い伐採職が存在しないとは断定しない。
