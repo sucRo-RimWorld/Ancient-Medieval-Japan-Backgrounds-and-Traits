@@ -81,9 +81,9 @@ These are bounded candidate roles, **not final approved biography titles, histor
 | Medium | Adult | 山仕事の担い手 | Mountain childhood/hunters exist but forest resource harvesting is different | Plants, logging, hauling; avoid duplicating the existing hunter |
 | Medium | Child | 漁村育ち | Existing coastal smuggling/orphan/ship titles differ from ordinary fishing-village household work | Seasonal food work and shore knowledge, without adult mastery |
 | Medium | Child | 織屋の子 | Existing workshops/kitchens/blacksmith childhoods differ from textile household work | Small skill familiarity in craft and household work |
-| Medium | Child | 荘園の農家の子 | 田畑育ち already exists; use only if the exact family obligation/seasonal labor provides a distinct gameplay/effects role | Plants, hauling, household work; risk of duplication is high |
+| Hold (reviewed 2026-10-21) | Child | 荘園の農家の子 | 「田畑育ち」(ArtisanFarmer23) が既存の百姓家庭の農作業を表現。荘園特有の年貢・公事・夫役は社会的負担であり、現状の技能では別Defの差が成立しない | **No new Def or numeric skills**; existing backstory’s natural generation eligibility remains unverified |
 
-**Explicit overlap gate:** `荘園の農家の子` is a *conditional* candidate because `田畑育ち` is present. Do not implement it without proving different role and skill profile. Similarly no new generic swordsman, doctor, trader, monk, scholar, carpenter or merchant by default.
+**2026-10-21 overlap decision:** `荘園の農家の子` has been reviewed and is **on hold / not implemented**. Stage2 `ArtisanFarmer23` = 「田畑育ち」 already describes a peasant household working fields. Manorial taxes, service and tribute are historically distinct social obligations but do not demonstrate a different childhood Plants/Hauling/Cooking skill profile; Hauling itself is not a levelled skill. The 14 implemented P3 Defs remain unchanged. **Important outstanding check:** ordinary Vanilla/MO candidate eligibility of `ArtisanFarmer23` has not been proven and should be reviewed if a real gameplay gap is observed, before adding a duplicate Def. Full rationale and references in [Design.md](Design.md). Similarly no new generic swordsman, doctor, trader, monk, scholar, carpenter or merchant by default.
 
 ## Proposed implementation sequence and protection
 
