@@ -146,6 +146,14 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **正本と検証限界:** 製品XMLは `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。Vanilla/MOとVE・非VEの代替背景の範囲は `Docs/Stage3ExistingModAudit.md` に追記。XMLのみの変更でCharacters 1.6／1.7 DLLは変更しない。従来10件の原本ゲーム受入PASSはこの4件の追加背景（浜の塩焼き・漁村育ち・織屋の子・杣人）を対象にしていない。4件のLoadedDef・日本語ローカライズ・自然抽選・MO同時導入・旧セーブ挙動の実ゲーム検証は最終段階まで未実施。既存10件の変更なし部分を不要に再試験しない。
 
+## P3候補監査 — 荘園の農家の子（2026-10-21、追加見送り）
+
+**今回の評価:** 新規幼少期 `BackstoryDef`「荘園の農家の子」は**現時点では追加しない**。既存原本ID `ArtisanFarmer23` は Stage2 で「田畑育ち」に改稿済み。日本語正本 `Languages/Japanese/DefInjected/BackstoryDef/Stage2HistoricalBackstories.xml` の本文は「百姓の家に生まれ、幼いうちから田畑の仕事を手伝う」「作物の世話・炊事に慣れる」。英語本文も `Patches/Stage2HistoricalBackstories.xml` で改稿済みであり、元のDefName・slot・skillGains・生成カテゴリは改変しない。この原本は、荘園所属か否かを限定しない農家の子として表現できる。
+
+**歴史的な違い:** 荘園の百姓には年貢・公事・夫役などの義務があり、負担形態や現地の組織は地域・時期により異なる。参照：[千葉県「日本の税の歴史」](https://www.pref.chiba.lg.jp/zeimu/aramashi/gakushuu/rekishi.html)、[『世界大百科事典』等「荘園」](https://kotobank.jp/word/%E8%8D%98%E5%9C%92-78844)、[兵庫県立歴史博物館・大部荘年貢米送状](https://rekihaku.pref.hyogo.lg.jp/database/shiryo/detail/?id=14453)。ただし、その差は主に社会的負担・土地支配の関係で、子どもの農作業技能に新たな `Plants` 等の数値差を設ける独立の根拠ではない。「年貢の運搬」「納入準備」は物語要素にはなるが、RimWorldの `Hauling` には個別の成長技能がなく、`Social`／`Intellectual` を加点する職歴根拠も不足する。新しい税・荘園管理メカニクスはこの人物背景の対象外。
+
+**再評価条件:** `ArtisanFarmer23` が実際の Vanilla Outlander／MO Tribal 候補経路で選ばれるかは**未検証**。生成カテゴリ不一致が確認された場合には既存Defの候補適格性・パッチの修正要否を先に検討し、同内容の新規Defを追加することで迂回しない。現行14件のP3、135件の通常生成制限、123件の歴史的改稿、元Defの技能や出生背景は変更しない。候補保留はユーザーが将来具体的な追加効果・別の歴史的職能を認めた場合にのみ再検討する。これは原本ゲームのテスト結果ではなく、既存資料に基づく設計監査。
+
 ## P3 — ten backgrounds original 1.7 runtime acceptance (2026-10-20)
 
 The **ten** newly owned P3 `BackstoryDef` records (eight adult, two child) now have a single consolidated, original-game **RimWorld 1.7 English/Vanilla + cutover Culture/Characters** loaded acceptance **PASS**. This covers the seven previously accepted biographies after their `Outlander` category addition, `AMJC_TextileWeaverAdult` (Crafting +6), `AMJC_PotterAdult` (Crafting +4 / Artistic +2) and `AMJC_CoastalFisherAdult` (Animals +5), with all intended ages/categories/forbidden forced Traits and translated *English* titles. An original Pawn can still be generated. The same scenario retained P2 old forced-trait removals and alcohol mood effects. [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) PASS, Pickle 1/1, Unity/FMOD error 0, exit 0, source SHA `b37131dd61ed3a8712641a612b85a5a508d0adbc`. See the owner [itemized acceptance and exact markers](Stage3NativeAcceptance.md) and [coastal fisher canonical design](Stage3CoastalFisherDesign.md). No new DLL was needed for XML-only biographies.
