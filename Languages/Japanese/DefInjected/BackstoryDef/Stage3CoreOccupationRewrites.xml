@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Japanese Stage 3 corrections for EXISTING original Core identifiers.
+       Original ID mechanics, initial possessions and save references remain. -->
+  <Logger16.title>村の杣人</Logger16.title>
+  <Logger16.titleShort>杣人</Logger16.titleShort>
+  <Logger16.baseDesc>[PAWN_nameDef]は集落で使う材木を得るため、仲間と木を伐り、山から丸太を運んできた。斧の扱いに長け、力仕事でも頼りにされていた。</Logger16.baseDesc>
+  <Logger16.description>[PAWN_nameDef]は集落で使う材木を得るため、仲間と木を伐り、山から丸太を運んできた。斧の扱いに長け、力仕事でも頼りにされていた。</Logger16.description>
+  <Logger95.title>山の杣人</Logger95.title>
+  <Logger95.titleShort>杣人</Logger95.titleShort>
+  <Logger95.baseDesc>[PAWN_nameDef]は山林で材木に適した木を見極め、斜面の木を安全に伐り倒して運び出してきた。木の倒れる方向だけでなく、山林の状態にも気を配っていた。</Logger95.baseDesc>
+  <Logger95.description>[PAWN_nameDef]は山林で材木に適した木を見極め、斜面の木を安全に伐り倒して運び出してきた。木の倒れる方向だけでなく、山林の状態にも気を配っていた。</Logger95.description>
+  <Weaver63.title>織物職人</Weaver63.title>
+  <Weaver63.titleShort>織物職人</Weaver63.titleShort>
+  <Weaver63.baseDesc>[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。</Weaver63.baseDesc>
+  <Weaver63.description>[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。</Weaver63.description>
+</LanguageData>
