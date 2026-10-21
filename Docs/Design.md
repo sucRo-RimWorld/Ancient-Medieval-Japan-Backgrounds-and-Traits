@@ -2,6 +2,28 @@
 
 **Author scope decision (2026-10-19):** Split only **backgrounds and traits** from the existing AMJ Culture. Other Culture subfeatures remain in the original Mod, with no broader decomposition authorized. The identity and game effect of all existing original Vanilla/MO BackstoryDef and TraitDef records must remain stable.
 
+## Stage 3 原本職業への統合 — 2026-10-21 作者承認・実装
+
+**最新の確定方針（先行の14件すべて通常生成候補という記述を上書き）:** 重複する新規成人 `AMJC_WoodcutterAdult`（杣人）・`AMJC_TextileWeaverAdult`（織物職人）の `spawnCategories` は `AMJ_CultureExcluded` **1件のみ**とし、**通常生成から除外する**。両 `BackstoryDef`、従来のtitle/titleShort/description、技能、旧セーブIDは保持する。残る新規12件は従来のカテゴリ・技能・本文を変更しない。現在のStage3 XMLは **14件存在・うち通常候補12件**（成人8・幼少4）。これは既存Core通常生成制限135件に加える**独立した新規Def2件の除外**であり、Core135件の数は変えない。
+
+**職能の所有:** Vanilla 1.6/1.7原本 `Logger16`、`Logger95`、`Weaver63` のIDを維持したまま、PatchOperationReplaceで `title`／`titleShort`／`description` **だけ**を改稿する。日本語は `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml` の各 `title`、`titleShort`、`baseDesc`、`description` に対応。原本の `slot`、`skillGains`、`requiredWorkTags`、`forcedTraits`、`workDisables`、`startingPossessions` 等は変更しない。原本のゲーム技能は次表の通りで、**廃止した新規P3の数値へ置換しない**。
+
+| 原本ID | 日本語表示名／短縮名 | 既存技能（維持） | 生成カテゴリの扱い | 初期所持品（維持） |
+|---|---|---|---|---|
+| `Logger16` | 村の杣人／杣人 | Plants +6, Melee +3 | `Tribal / TribalLogger` **不変** | WoodLog ×10 |
+| `Logger95` | 山の杣人／杣人 | Plants +8 | `Offworld / Outlander / Pirate / Scientist / Logger` **不変** | WoodLog ×10 |
+| `Weaver63` | 織物職人／織物職人 | Crafting +6, Plants +2 | 原本 `Tribal` を維持し、**Vanillaの `Outlander` だけ追加** | Cloth ×10 |
+
+**既存の日本語内容を活用した正本:**
+
+- `Logger16`：「[PAWN_nameDef]は集落で使う材木を得るため、仲間と木を伐り、山から丸太を運んできた。斧の扱いに長け、力仕事でも頼りにされていた。」
+- `Logger95`：「[PAWN_nameDef]は山林で材木に適した木を見極め、斜面の木を安全に伐り倒して運び出してきた。木の倒れる方向だけでなく、山林の状態にも気を配っていた。」
+- `Weaver63`：「[PAWN_nameDef]は糸を紡ぎ、織機を使って布を作る仕事に長く携わってきた。糸の張り具合や布目の乱れを見分け、道具の手入れも自ら行っていた。」（従来承認済み織物職人から同文を再利用）
+
+**追加しないもの:** 木地師 `AMJC_ItinerantWoodworkerAdult` や板材加工 `PlankCutter72` の技能・名前・生成カテゴリは現状維持。原本の特殊カテゴリや保存済みポーンは削除しない。任意の `Civil`・`MedievalCommon` を原本3件へ一律追加することは承認対象外（通常の Vanilla Outlander / MO Tribal の不足だけを補正）。新規P3の `AMJC_CoastalFisherAdult` 等12件にも干渉しない。既存Core127件ほかの生成制限増減なし。
+
+**所有ファイル:** 新規英語Core改稿 `Patches/Stage3CoreOccupationRewrites.xml`、日本語 `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml`、新規P3の生成カテゴリ `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml`。Core原本は1.6/1.7同一値として[原本照合](Stage3ExistingModAudit.md)で確認済み。Patchは両版に同じ定義を当て、C#・独立Characters DLLを変更しない。元の新規14件LoadedDef受入[2026-10-21 Actions #39582470340](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39582470340)は**変更前ソースでのPASS**であり、原本3件の現在の新しい翻訳・生成カテゴリ変更や、新規2件の非抽選をまだ確認していない。旧テストでの新規2件通常カテゴリ期待値は失効。テストはまとめて変更分だけ確認する。通常候補入りが特定Defの自然抽選を保証するものではない。製品の公開・Steam更新は未承認。
+
 ## Scope
 
 - Vanilla/MO historically inappropriate **ordinary background generation** restrictions: adult **77** (76 XML + FerventResearcher72), children **58** (55 original Solid biographies gated via Harmony + 3 Shuffled XML); existing unique/nonordinary references remain.
