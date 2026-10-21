@@ -134,6 +134,18 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **所有と受入れ:** 日英の製品正本は `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。VE／非VEおよび職歴比較は [Stage3ExistingModAudit.md](Stage3ExistingModAudit.md)。XMLのみの追加で既存CharactersのC#／1.6・1.7 DLLは変更しない。**先行10件の原本ゲームPASSは新規の3件目（塩焼き・漁村育ち・織屋の子）には適用されない。** この3件のLoadedDef、技能、言語表示、選択率、元セーブ／MO互換は未確認。ゲーム起動は他の追加背景とまとめる。
 
+## P3 — 杣人（2026-10-21承認、14件目）
+
+**確定仕様:** `AMJC_WoodcutterAdult`、`Adulthood`、日本語名・略称「杣人（そまびと）」、英語 `woodcutter`。能力補正 `Plants +6` のみ。通常生成候補 `Outlander`、`Tribal`、`Civil`、`MedievalCommon`。強制Trait、仕事禁止、初期所持品、独自Job、製材設備、伐採速度への追加パッチ、DLC・MO必須依存は設けない。新規P3合計14件（成人10件・幼少期4件）。元の通常生成制限135件・元Defの改稿123件・先行新規13件は不変。
+
+**承認済み日本語本文（baseDesc／description同文）:** [PAWN_nameDef]は山林で材木に適した木を見極め、伐り倒して運び出す仕事をしてきた。斜面の状態や木の倒れる方向を読み、仲間と協力して丸太を山から下ろしていた。
+
+**差別化とゲーム内効果:** 木材用の立木選定・伐採と山からの搬出が専門。既存の `AMJC_ItinerantWoodworkerAdult`（木地師、`Crafting +5 / Plants +2`）は木製品製作、改稿済み山野の猟師は狩猟、山里の大工は建築・加工を描く。RimWorldの既存 `Plants` 技能は伐採のほか栽培・収穫にも影響するが、職歴専用の伐採スキルは追加せず、`Plants +6` を汎用技能の抽象化として許容する。造材・運材を特別なスキルやHauling速度の上昇へ変換しない。薪炭生産、炭焼き、林業設備・森林管理メカニクスは対象外。
+
+**史実上の根拠と限界:** [山川日本史小辞典・杣](https://www.historist.jp/word_j_so/entry/033959/) は古代の寺社・国家造営用材の杣と杣工を記述し、[平凡社世界大百科事典・杣工](https://kotobank.jp/word/%E6%9D%A3%E5%B7%A5-1181372) は古代中世の伐木・造材従事者を定義する。[國學院大學「そま」](https://jmapps.ne.jp/kokugakuin/det.html?data_id=32080) も万葉集の杣人を説明する。用語が時代や地域によって必ず同じ意味・地位・統制組織を指したとは仮定しない。伐採場の所有者、身分、特定寺社の配下や特殊な祭礼参加を固定しない。
+
+**正本と検証限界:** 製品XMLは `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。Vanilla/MOとVE・非VEの代替背景の範囲は `Docs/Stage3ExistingModAudit.md` に追記。XMLのみの変更でCharacters 1.6／1.7 DLLは変更しない。従来10件の原本ゲーム受入PASSはこの4件の追加背景（浜の塩焼き・漁村育ち・織屋の子・杣人）を対象にしていない。4件のLoadedDef・日本語ローカライズ・自然抽選・MO同時導入・旧セーブ挙動の実ゲーム検証は最終段階まで未実施。既存10件の変更なし部分を不要に再試験しない。
+
 ## P3 — ten backgrounds original 1.7 runtime acceptance (2026-10-20)
 
 The **ten** newly owned P3 `BackstoryDef` records (eight adult, two child) now have a single consolidated, original-game **RimWorld 1.7 English/Vanilla + cutover Culture/Characters** loaded acceptance **PASS**. This covers the seven previously accepted biographies after their `Outlander` category addition, `AMJC_TextileWeaverAdult` (Crafting +6), `AMJC_PotterAdult` (Crafting +4 / Artistic +2) and `AMJC_CoastalFisherAdult` (Animals +5), with all intended ages/categories/forbidden forced Traits and translated *English* titles. An original Pawn can still be generated. The same scenario retained P2 old forced-trait removals and alcohol mood effects. [Project Actions #39417930528](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39417930528) PASS, Pickle 1/1, Unity/FMOD error 0, exit 0, source SHA `b37131dd61ed3a8712641a612b85a5a508d0adbc`. See the owner [itemized acceptance and exact markers](Stage3NativeAcceptance.md) and [coastal fisher canonical design](Stage3CoastalFisherDesign.md). No new DLL was needed for XML-only biographies.
