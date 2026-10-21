@@ -12,6 +12,8 @@
 
 **2026-10-21 承認済み漁村育ち:** `AMJC_FishingVillageChild` は新規12件目（成人9件、幼少期3件）として製品XML・日本語翻訳に実装。`Animals +2`・`Crafting +1`、`Outlander / Tribal / Civil / MedievalCommon`、強制Traitなし。以前の候補一覧「漁村育ち」は現在は未承認候補ではなく実装済み。確定仕様は `Docs/Design.md` を参照。11件目「浜の塩焼き」とともに実ゲーム未検証、既存10件のPASSは流用しない。残る新規背景候補は別途個別の重複・承認審査を要する。
 
+**2026-10-21 織屋の子の実装:** 候補欄「織屋の子」は新規 `AMJC_WeaverChild`（`Childhood`、`Crafting +3`）として製品英語Def・日本語DefInjectedへ反映。新規P3は13件（成人9・幼少期4）。定住の織物家庭での成長であり、成人織物職人や移動する職人の子と異なる。具体的な本文と4カテゴリは `Docs/Design.md`。表の過去の候補行は検討履歴であり、現在の未実装候補ではない。前の10件の1.6/1.7ネイティブPASSは新規3件（製塩・漁村・織屋）を証明しない。新規Defの実ゲーム検証は最後にまとめる。
+
 ## Verified baseline and method
 
 - Original Core 1.6/1.7 metadata screen: **784** Vanilla BackstoryDefs and **43** Vanilla TraitDefs (owner `Docs/Data/VanillaMOBackgroundTraitStage1Screen.csv`, Project primary metadata audit); MO adds two separate TraitDefs in the audited package, not additional BackstoryDefs in its audited 1.6 files.
