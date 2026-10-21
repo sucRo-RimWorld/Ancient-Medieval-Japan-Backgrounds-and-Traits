@@ -191,4 +191,22 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+  <!-- Author-approved 2026-10-21 salt-making livelihood; no custom gameplay Job. -->
+  <BackstoryDef>
+    <defName>AMJC_SaltMakerAdult</defName>
+    <slot>Adulthood</slot>
+    <title>coastal salt maker</title>
+    <titleShort>salt maker</titleShort>
+    <description>[PAWN_nameDef] worked on the coast, concentrating seawater and boiling down brine in a cauldron to make salt. [PAWN_pronoun] learned to plan coastal work around the weather, tend the fuel supply and control the heat.</description>
+    <skillGains>
+      <Crafting>3</Crafting>
+      <Cooking>2</Cooking>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>
