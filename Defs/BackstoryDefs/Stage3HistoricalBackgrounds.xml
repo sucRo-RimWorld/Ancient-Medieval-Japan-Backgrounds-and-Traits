@@ -228,4 +228,21 @@
       <li>MedievalCommon</li>
     </spawnCategories>
   </BackstoryDef>
+  <!-- 2026-10-21 approved weaving-household childhood; existing Crafting skill only. -->
+  <BackstoryDef>
+    <defName>AMJC_WeaverChild</defName>
+    <slot>Childhood</slot>
+    <title>weaver's child</title>
+    <titleShort>weaver's child</titleShort>
+    <description>[PAWN_nameDef] grew up in a household that wove cloth, helping wind yarn and keep threads properly tensioned. Watching the loom at work, [PAWN_pronoun] learned simple weaving tasks and how to handle the tools with care.</description>
+    <skillGains>
+      <Crafting>3</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+      <li>Civil</li>
+      <li>MedievalCommon</li>
+    </spawnCategories>
+  </BackstoryDef>
 </Defs>
