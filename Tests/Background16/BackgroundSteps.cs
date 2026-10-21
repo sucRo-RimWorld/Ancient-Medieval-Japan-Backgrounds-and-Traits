@@ -475,6 +475,9 @@ namespace AMJ.Culture.Test
                 ctx.Require(AdaptedTitles.Count == 89,
                     "Phase 2 accepted background mapping incomplete");
                 bool japanese = Environment.GetEnvironmentVariable("AMJ_BACKGROUND_JAPANESE") == "1";
+                bool newFour = Environment.GetEnvironmentVariable("AMJ_P3_FOUR_NEW_ACCEPTANCE") == "1";
+                ctx.Require(!newFour || japanese,
+                    "Four-new P3 acceptance must use actual Japanese-loaded game");
                 if (japanese)
                 {
                     string sourcePath = Environment.GetEnvironmentVariable("AMJ_BACKGROUND_JAPANESE_SOURCE");
@@ -540,6 +543,11 @@ namespace AMJ.Culture.Test
                         "AMJC_TravelingArtisanChild", "AMJC_TextileWeaverAdult",
                         "AMJC_PotterAdult", "AMJC_CoastalFisherAdult"
                     };
+                    if (newFour)
+                        p3Names.UnionWith(new[] {
+                            "AMJC_SaltMakerAdult", "AMJC_FishingVillageChild",
+                            "AMJC_WeaverChild", "AMJC_WoodcutterAdult"
+                        });
                     var p3Texts = new Dictionary<string, Dictionary<string, string>>();
                     foreach (System.Xml.XmlNode node in p3Xml.DocumentElement.ChildNodes)
                     {
@@ -554,7 +562,8 @@ namespace AMJ.Culture.Test
                         ctx.Require(!values.ContainsKey(key), "Duplicate P3 key " + node.Name);
                         values.Add(key, node.InnerText);
                     }
-                    ctx.Require(p3Texts.Count == 10, "P3 Japanese source ID count not ten");
+                    ctx.Require(p3Texts.Count == (newFour ? 14 : 10),
+                         "P3 Japanese source ID count differs from selected ten/fourteen scope");
                     foreach (var entry in p3Texts)
                     {
                         string id = entry.Key;
@@ -760,6 +769,59 @@ namespace AMJ.Culture.Test
                     !string.IsNullOrWhiteSpace(LoadedText(fisher, "description")),
                     "P3 coastal fisher translated title / description mismatch");
                 Log.Message("AMJ_CULTURE_P3_COASTAL_FISHER_OK");
+
+                // New quartet: same original-game loaded-Def Pickle scenario.
+                // No extra original game launch or Pawn-sampling matrix.
+                if (newFour)
+                {
+                    var addedFour = new Dictionary<string, Dictionary<string, int>>
+                    {
+                        { "AMJC_SaltMakerAdult", new Dictionary<string, int> {
+                            { "Crafting", 3 }, { "Cooking", 2 } } },
+                        { "AMJC_FishingVillageChild", new Dictionary<string, int> {
+                            { "Animals", 2 }, { "Crafting", 1 } } },
+                        { "AMJC_WeaverChild", new Dictionary<string, int> {
+                            { "Crafting", 3 } } },
+                        { "AMJC_WoodcutterAdult", new Dictionary<string, int> {
+                            { "Plants", 6 } } }
+                    };
+                    var expectedJaTitles = new Dictionary<string, string> {
+                        { "AMJC_SaltMakerAdult", "浜の塩焼き" },
+                        { "AMJC_FishingVillageChild", "漁村育ち" },
+                        { "AMJC_WeaverChild", "織屋の子" },
+                        { "AMJC_WoodcutterAdult", "杣人" }
+                    };
+                    foreach (var expected in addedFour)
+                    {
+                        string id = expected.Key;
+                        BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(id);
+                        ctx.Require(bio != null, "Newest P3 biography absent: " + id);
+                        bool child = id == "AMJC_FishingVillageChild" ||
+                                     id == "AMJC_WeaverChild";
+                        ctx.Require(bio.slot == (child ? BackstorySlot.Childhood :
+                                                      BackstorySlot.Adulthood),
+                            "Newest P3 slot mismatch: " + id);
+                        ctx.Require(bio.spawnCategories != null &&
+                            bio.spawnCategories.Count == 4 &&
+                            new[] { "Outlander", "Tribal", "Civil", "MedievalCommon" }
+                                .All(bio.spawnCategories.Contains),
+                            "Newest P3 ordinary categories mismatch: " + id);
+                        var bonuses = bio.skillGains.ToDictionary(x => x.skill.defName,
+                                                                  x => x.amount);
+                        ctx.Require(bonuses.Count == expected.Value.Count &&
+                            expected.Value.All(v => bonuses.TryGetValue(v.Key, out int n)
+                                                   && n == v.Value),
+                            "Newest P3 skill bonuses mismatch: " + id);
+                        ctx.Require(bio.forcedTraits == null ||
+                                    bio.forcedTraits.Count == 0,
+                            "Newest P3 unexpectedly forces a Trait: " + id);
+                        ctx.Require(bio.TitleFor(Gender.Male) == expectedJaTitles[id] &&
+                                    bio.TitleFor(Gender.Female) == expectedJaTitles[id] &&
+                                    !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
+                            "Newest P3 Japanese loaded title/body mismatch: " + id);
+                    }
+                    Log.Message("AMJ_CULTURE_P3_FOUR_NEW_LOADED_OK");
+                }
 
                 Log.Message("AMJ_CULTURE_P3_TWO_ADDITIONAL_BACKSTORIES_OK");
 
