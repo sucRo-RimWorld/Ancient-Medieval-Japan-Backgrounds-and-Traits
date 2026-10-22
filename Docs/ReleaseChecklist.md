@@ -41,7 +41,7 @@ Preserve the Mod-relative directory structure. Use the chosen upload tool's norm
 
 ## HOLD before Steam/2game publication
 
-- [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. Follow the [Characters Preview creation/QA/approval procedure](GoldenPaths/WorkshopPreview.md). Documented rules or generated drafts are not acceptance. No unrelated image is to be substituted automatically.
+- [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. Follow the [Characters Preview creation/QA/approval procedure](GoldenPaths/WorkshopPreview.md), including the Project-approved fixed-left 960×540 common master and masking. Documented rules or generated drafts are not acceptance. No unrelated image is to be substituted automatically.
 - [ ] Confirm the actual Mod folder is accepted directly by the selected uploader (no distribution ZIP).
 - [ ] Verify current source folder includes 1.6/1.7 DLLs and matching About/Manifest/Changelog versions.
 - [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Characters-specific publisher/Workshop ID**, and no instruction to create/upload one.
