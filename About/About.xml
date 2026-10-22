@@ -17,7 +17,21 @@
     <li>DankPyon.Medieval.Overhaul</li>
   </loadAfter>
   <modVersion>0.1.0-dev</modVersion>
-  <description>Ancient &amp; Medieval Japan - Culture Characters adapts pawn backgrounds and traits for ancient-to-medieval Japanese play. It rewrites existing backgrounds, restricts anachronistic ordinary pawn generation, and adjusts selected starting possessions while preserving existing BackstoryDef and TraitDef identities. Harmony is required. Medieval Overhaul is optional. A new game is recommended. Do not co-install with an older unsplit AMJ Culture build, which duplicates generation rules. With current separated Culture, scoped RimWorld Vanilla 1.6 and 1.7 game tests passed. This is unpublished development software; original MO combination and legacy-save compatibility remain unverified.
+  <description>Ancient &amp; Medieval Japan - Culture Characters adapts pawn backgrounds and traits for ancient-to-medieval Japanese play.
 
-中世日本に合わせて人物の背景・特性と通常生成を調整する。既存背景の名称・説明、時代に合わない背景・特性の通常生成制限、初期所持品の置換を扱い、既存のBackstoryDef・TraitDefの識別子は保持する。Harmony必須、Medieval Overhaul任意。新規ゲーム推奨。分離前の旧Cultureには同じ人物生成規則が含まれるため同時導入しない。分離済みの現行Cultureとは任意に併用可能で、RimWorld Vanilla 1.6・1.7の限定実ゲーム検証を通過。MO同時導入・旧セーブ互換は未検証。公開前の開発版。</description>
+Existing backgrounds rewritten: 126 (123 earlier historical rewrites + 3 original Core occupations; names/descriptions adjusted without adding new biographies).
+New backgrounds eligible for ordinary generation: 12 (8 adulthood, 4 childhood). There are 14 new BackstoryDef IDs in total, but 2 duplicate roles are kept only for save compatibility and are not normal generation candidates.
+Existing backgrounds excluded from ordinary generation: 135 (preserved, not deleted).
+New traits: 2 (alcohol lover / alcohol averse). 23 historical starting-possession substitutions are separate changes.
+
+Harmony required. Medieval Overhaul optional; current separated AMJ Culture optional. Do not co-install with older unsplit Culture builds. RimWorld 1.6/1.7 focused native acceptance completed, including the original 1.6 MO + Culture + Characters combination. New game recommended; existing-save compatibility and MO 1.7 remain unverified. This is an unpublished development build.
+
+中世日本に合わせて人物の背景・特性を調整する。
+
+既存背景の改稿：126件（既存の123件＋Core職業背景3件）。名称・説明文を改稿するもので、新規背景の追加ではない。
+新規背景：通常生成対象12件（成人8件・幼少期4件）。新規定義自体は14件だが、重複する2件は旧セーブとの識別子互換のため保持し、通常生成から除外。
+既存背景の通常生成制限：135件（削除はしない）。
+新規特性：2件（酒好き・酒嫌い）。既存の初期所持品変更23件は別項目。
+
+Harmony必須。Medieval Overhaul・分離済みの現行AMJ Cultureは任意。分離前の旧Cultureとは併用不可。1.6／1.7で限定的な実ゲーム検証済み（1.6 MO併用を含む）。新規ゲーム推奨。旧セーブ互換・MO 1.7は未検証。未公開の開発版。</description>
 </ModMetaData>
