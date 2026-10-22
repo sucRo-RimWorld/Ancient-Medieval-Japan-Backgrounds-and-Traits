@@ -1,11 +1,11 @@
-# Culture Characters — Workshop Preview制作・採用手順
+# Backgrounds & Traits — Workshop Preview制作・採用手順
 
 ## 共通構図（2026-10-04承認済み）
 
-このModは **AMJ共通シリーズの表紙** を使う。Projectの [WorkshopCoverStyle](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/WorkshopCoverStyle.md) と [WorkshopCoverPipeline](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/GoldenPaths/WorkshopCoverPipeline.md) が共通フォーマットの正本であり、本書はCharactersの固有要素だけを補足する。
+このModは **AMJ共通シリーズの表紙** を使う。Projectの [WorkshopCoverStyle](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/WorkshopCoverStyle.md) と [WorkshopCoverPipeline](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/GoldenPaths/WorkshopCoverPipeline.md) が共通フォーマットの正本であり、本書はBackgrounds & Traitsの固有要素だけを補足する。
 
-- **左約40％：変更不可。** 承認済み共通の薄い和紙色の背景、`Ancient & / Medieval / Japan` のタイトル、区切り線・花飾りを原本から**画素ごと**再使用する。Mod名だけ指定スロットに `Characters` を入れる。
-- **右約60％：Characters固有の絵。** **作者承認の人のシルエット**（顔・表情・個人の描き込みがない人影）をモチーフに使ってよい。生活歴を象徴する道具は補助的に使える。人物の肖像画・立ち絵・職業カード・架空のゲームUIは描かない。人数・配置・持ち物は候補ごとの監査対象であり、採用前に固定しない。
+- **左約40％：変更不可。** 承認済み共通の薄い和紙色の背景、`Ancient & / Medieval / Japan` のタイトル、区切り線・花飾りを原本から**画素ごと**再使用する。Mod名は指定スロット内で **`Backgrounds` / `& Traits` の2行・中央揃え**とする。共通ラベル枠・マスクは変更せず、文字の可読性を確保する。正式名は `Ancient & Medieval Japan - Backgrounds & Traits（中世日本 - 背景と特性）`。
+- **右約60％：Backgrounds & Traits固有の絵。** **作者承認の人のシルエット**（顔・表情・個人の描き込みがない人影）をモチーフに使ってよい。生活歴を象徴する道具は補助的に使える。人物の肖像画・立ち絵・職業カード・架空のゲームUIは描かない。人数・配置・持ち物は候補ごとの監査対象であり、採用前に固定しない。
 - **全体を分割パネルやカード列にしない。** 左右は一続きの落ち着いた背景と余白でつなぎ、濃い区切り枠・派手な装飾・右側への共通タイトルの移動を禁止する。
 - 承認済みの共通部分を**画像生成で描き直さない**。前案の右側黒色タイトルパネルと人物4カード案は不採用で、再利用しない。
 - この構図は **AMJ共通シリーズに限定**。独立CCTO・CCTO for VPE・独立QoLへの強制適用をしない。
@@ -14,13 +14,13 @@
 
 ## 人のシルエットの許可（作者追加決定）
 
-- **Charactersの右側可変イラストに限り、人間のシルエットを許可する。** Project共通の「人物を描かない」原則に対する、作者が明示した**このMod限定の例外**。他のModへの許可にはならない。
+- **Backgrounds & Traitsの右側可変イラストに限り、人間のシルエットを許可する。** Project共通の「人物を描かない」原則に対する、作者が明示した**このMod限定の例外**。他のModへの許可にはならない。
 - 許可対象：全身または上半身の**単純な人影**、年齢や生活歴を連想させる大小・姿勢・向きの違い、必要最低限の道具や荷物との組み合わせ。
 - 不可：顔・目鼻・表情を描き分けた人物絵、肖像・キャラクター紹介パネル、人物が新しい外見や衣装としてゲームに追加されるかのような宣伝。
 - **人物をカード状に分割しない。** 複数の人影を描く場合も、右側に一つのまとまった画面を成立させ、主役・余白・縮小時の識別性を事前監査する。
 - この許可は**シルエットという表現手段の承認だけ**であり、具体的な構図やPreview完成画像の採用ではない。
 
-## Characters固有のモチーフ条件
+## Backgrounds & Traits固有のモチーフ条件
 
 - 実装の中心は **元の背景126件の改稿、通常生成制限135件、新規の通常候補背景12件、酒に関する新特性2件**。職能や幼少期、生活史を象徴する物品を描いても、衣装・設備・武器・アイテム・新職業そのものをゲームに追加するModと誤認させない。
 - 漁労・手仕事・農耕・旅装などの史実に合う物品を**候補として**検討できるが、実装された新道具だと宣伝しない。人物の職業名を小さなラベルで並べる説明カードは作らない。
@@ -38,11 +38,11 @@
 
 ## 候補の監査と採用
 
-1. 制作前に、Characters `Docs/Design.md`・`README.md`・実製品 `Defs/`/`Patches/` と、Projectの承認済み表紙を照合する。
+1. 制作前に、本Modの `Docs/Design.md`・`README.md`・実製品 `Defs/`/`Patches/` と、Projectの承認済み表紙を照合する。
 2. まずモチーフの歴史的妥当性、固有Modの機能との関係、右60％で成立する**構図の強弱・視線・余白**を判断する。不適切な構図は作画せず棄却する。
 3. 画像候補が作れたら**毎回**、元画像・承認済み参照と比較し、形状・画風・背景の透過・サイズと比率・輪郭・文字・縮小視認性・右側の構図について監査し、採否と具体的な理由を示す。客観的に失敗した候補は作者への提示前に除外する。
 4. 表示と同時に未監査結果が公開される生成ツールを使う場合、提示前監査を済ませたとは主張しない。候補の表示は作者の採用承認を意味しない。
 5. **最終的な美術採用は作者判断。** 承認前に採用済みPreviewやSteam公開済みと扱わない。採用後、元データと完成PNGを保存し、GitHubのトピックブランチ→PR→mainに統合する。
 6. 公開前に承認済みの原本との一致・サイズ・現在のREADME/Workshop文面との整合を再確認する。Steam初回公開は別途承認が必要。
 
-2026-10-22現在、Charactersの `About/Preview.png` は未作成・未採用。ここで復元するのは**制作規則のみ**。
+2026-10-22現在、本Modの `About/Preview.png` は未作成・未採用。ここで復元するのは**制作規則のみ**。

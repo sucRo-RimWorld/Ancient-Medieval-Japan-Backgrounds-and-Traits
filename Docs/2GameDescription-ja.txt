@@ -22,4 +22,4 @@ RimWorldの人物背景・特性を古代から中世の日本に合わせて調
 ・MO 1.7や各背景の自然抽選頻度は未検証
 
 詳しい仕様・更新履歴・検証範囲はGitHubを参照。
-https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters
+https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits

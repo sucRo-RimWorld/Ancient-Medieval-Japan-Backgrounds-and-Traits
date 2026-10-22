@@ -1,8 +1,8 @@
-# Ancient & Medieval Japan - Culture Characters（中世日本 - 文化・人物）
+# Ancient & Medieval Japan - Backgrounds & Traits（中世日本 - 背景と特性）
 
 **First-release candidate: 0.1.0 (not yet published on Steam).** RimWorld 1.6 / 1.7. English / Japanese.
 
-This standalone Mod adapts the backgrounds and traits of generated pawns to ancient and medieval Japan. In ordinary RimWorld, many original biographies refer to modern or futuristic professions; Characters preserves the game's existing identities where possible while adding historically relevant lives and restricting anachronistic random selections.
+This standalone Mod adapts the backgrounds and traits of generated pawns to ancient and medieval Japan. In ordinary RimWorld, many original biographies refer to modern or futuristic professions; this Mod preserves the game's existing identities where possible while adding historically relevant lives and restricting anachronistic random selections.
 
 ## Features
 
@@ -19,7 +19,7 @@ The 34 historical occupation rewrites, 89 additional rewrites and three original
 
 Existing original BackstoryDef/TraitDef identities remain intact. Original skill gains and work restrictions remain unchanged in the three newly rewritten Core occupations (`Logger16`, `Logger95`, `Weaver63`); only `Weaver63` also gains an `Outlander` candidate category. Targeted anachronistic forced traits and certain original possessions are changed according to the [design](Docs/Design.md).
 
-The two new alcohol preferences have **no standing mood effect while sober**. Original `Transhumanist`, `BodyPurist` and `DrugDesire` traits are preserved for saved characters but disabled for normal new generation, including specifically documented forced-background paths. Characters does **not** add alcohol production, new drugs, new professions/jobs, character skills or factions.
+The two new alcohol preferences have **no standing mood effect while sober**. Original `Transhumanist`, `BodyPurist` and `DrugDesire` traits are preserved for saved characters but disabled for normal new generation, including specifically documented forced-background paths. This Mod does **not** add alcohol production, new drugs, new professions/jobs, character skills or factions.
 
 ## Why this Mod exists
 
@@ -29,7 +29,7 @@ A randomly assembled RimWorld colony is not inherently a historical court, noble
 
 - **Required:** [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
 - **Optional:** [Medieval Overhaul](https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067), and the separately maintained [AMJ Culture](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture). Neither is a hard dependency.
-- **Important:** Do **not** combine Characters with an **older, unsplit** AMJ Culture version that still contains the same generation patches. Use a current split Culture build if installing both Mods.
+- **Important:** Do **not** combine this Mod with an **older, unsplit** AMJ Culture version that still contains the same generation patches. Use a current split Culture build if installing both Mods.
 - **Save games:** Start a new game where possible. The original Def IDs are retained, but existing-save migration/loading and removal from an active save have not been verified.
 - **Not included:** Shared-lodging/Greedy/Jealous mood rules, entrance/no-shoes, dining, bedding, drugs/chemical availability and initial addictions remain responsibilities of AMJ Culture.
 

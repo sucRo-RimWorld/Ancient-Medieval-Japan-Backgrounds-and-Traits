@@ -19,7 +19,7 @@ Vanilla backgrounds frequently describe modern or futuristic careers. This Mod f
 [b]Optional:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url] and the [url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture]current separated AMJ Culture[/url].
 [b]Do not install with older unsplit AMJ Culture[/b] versions containing the same character generation rules. New game recommended; old-save compatibility is not verified. Original 1.7 Vanilla and 1.6 MO + current separated Culture/Characters passed focused game checks, but MO 1.7 and every individual random selection frequency were not tested.
 
-[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters]Detailed features, limitations and sources on GitHub[/url]
+[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]Detailed features, limitations and sources on GitHub[/url]
 
 [hr][/hr]
 
@@ -44,4 +44,4 @@ Vanilla backgrounds frequently describe modern or futuristic careers. This Mod f
 [b]任意Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]、[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture]分離済みの現行AMJ Culture[/url]。
 [b]分離前の旧AMJ Cultureとは併用しないでください。[/b] 人物生成規則が重複します。新規ゲームを推奨し、旧セーブとの互換性は未検証です。1.7 Vanillaと1.6 MO＋分離済みCulture/Charactersの限定実ゲーム検証は通過していますが、MO 1.7や背景ごとの自然抽選頻度は未検証です。
 
-[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters]詳細仕様・検証範囲はGitHubを参照[/url]
+[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]詳細仕様・検証範囲はGitHubを参照[/url]

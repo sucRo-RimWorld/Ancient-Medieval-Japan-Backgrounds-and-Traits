@@ -1,4 +1,4 @@
-# Ancient & Medieval Japan - Culture Characters
+# Ancient & Medieval Japan - Backgrounds & Traits
 # Prepared for first release. Steam upload and visibility are not implied by this file.
 
 0.1.0 - Initial historical backgrounds and traits
