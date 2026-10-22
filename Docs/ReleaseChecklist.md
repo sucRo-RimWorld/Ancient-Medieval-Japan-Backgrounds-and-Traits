@@ -1,4 +1,4 @@
-# First Workshop release checklist — Culture Characters 0.1.0
+# First Workshop release checklist — Backgrounds & Traits 0.1.0
 
 Status: **PREPARING / NOT PUBLISHED**. This checklist records evidence and boundaries, not an instruction to upload or create a public item.
 
@@ -21,7 +21,7 @@ Status: **PREPARING / NOT PUBLISHED**. This checklist records evidence and bound
 
 ## Workshop source directory — direct upload without ZIP
 
-**Characters does not require a distribution ZIP or an archive builder.** Use the checked-out and reviewed Mod directory directly as the upload source. No `WorkshopPayload` or separate packaging pipeline is needed.
+**This Mod does not require a distribution ZIP or an archive builder.** Use the checked-out and reviewed Mod directory directly as the upload source. No `WorkshopPayload` or separate packaging pipeline is needed.
 
 The following game content must exist under the Mod root:
 
@@ -41,10 +41,10 @@ Preserve the Mod-relative directory structure. Use the chosen upload tool's norm
 
 ## HOLD before Steam/2game publication
 
-- [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. Follow the [Characters Preview creation/QA/approval procedure](GoldenPaths/WorkshopPreview.md), including the Project-approved fixed-left 960×540 common master and masking. Documented rules or generated drafts are not acceptance. No unrelated image is to be substituted automatically.
+- [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. Follow the [Backgrounds & Traits Preview creation/QA/approval procedure](GoldenPaths/WorkshopPreview.md), including the Project-approved fixed-left 960×540 common master/mask and the two-line `Backgrounds` / `& Traits` addon label in the existing editable name slot. Documented rules or generated drafts are not acceptance. No unrelated image is to be substituted automatically.
 - [ ] Confirm the actual Mod folder is accepted directly by the selected uploader (no distribution ZIP).
 - [ ] Verify current source folder includes 1.6/1.7 DLLs and matching About/Manifest/Changelog versions.
-- [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Characters-specific publisher/Workshop ID**, and no instruction to create/upload one.
+- [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Backgrounds & Traits publisher/Workshop ID**, and no instruction to create/upload one.
 - [ ] Confirm changenote and complete tags can actually be transmitted by the authorized uploader; an XML file alone does not update Steam.
 - [ ] Separate author's approval for first Steam publication and visibility, and live Steam subscriber download / uploaded description / tags verification.
 - [ ] 2game posting is separately author-gated; source copy preparation does not mean the page exists.

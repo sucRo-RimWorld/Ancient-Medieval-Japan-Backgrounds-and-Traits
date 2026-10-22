@@ -1,4 +1,4 @@
-# AMJ Culture – Characters — independent Mod design
+# AMJ Backgrounds & Traits — independent Mod design
 
 **Author scope decision (2026-10-19):** Split only **backgrounds and traits** from the existing AMJ Culture. Other Culture subfeatures remain in the original Mod, with no broader decomposition authorized. The identity and game effect of all existing original Vanilla/MO BackstoryDef and TraitDef records must remain stable.
 
@@ -236,6 +236,6 @@ Characters independent source and versioned DLLs are in its owner repository, bu
 
 ## Repository ownership and migration provenance
 
-The author-provisioned `sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters` is now the canonical source repository for Characters. The source originates from Culture's frozen independent-root candidate commit `7448f290f2e1b0c0bdde93431c27662f0e066821`. The new repository's original MIT `LICENSE` is preserved.
+The author-renamed `sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits` is the canonical source repository for Backgrounds & Traits (historically developed under Culture Characters). The source originates from Culture's frozen independent-root candidate commit `7448f290f2e1b0c0bdde93431c27662f0e066821`. The new repository's original MIT `LICENSE` is preserved.
 
 **Owner status:** source migrated via Characters PR #1 (`6deefec90d74bd99e89045f1cfbaf8031b3c97e6`), independent DLLs via PR #2 (`c7148fbc06a9b12c6e236988673afb715ff34c9f`), corrected background runtime test via PR #3 (`4c947fffa7bed55bf87a6df2815e778752512c54`). Production XML/DLL removal from Culture main via Culture PR #160 (`52b16d398112a64b6f934dc0f5ea2ee0cc77c9e8`). Native acceptance is limited to the three scoped PASS profiles above. The old independent-root candidate must never replace Culture main; the extracted owner is now Characters.
