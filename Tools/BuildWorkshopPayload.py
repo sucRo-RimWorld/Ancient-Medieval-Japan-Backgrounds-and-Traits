@@ -101,7 +101,7 @@ def source_inventory(root: Path) -> tuple[dict[str, bytes], dict]:
         'package_id': PACKAGE_ID,
         'version': version,
         'preview_present': has_preview,
-        'release_ready': has_preview,
+        'payload_inputs_complete': has_preview,
         'entry_count': len(files),
         'entries': [
             {'path': path, 'size': len(data), 'sha256': sha256(data)}
@@ -141,7 +141,7 @@ def main() -> int:
         files, report = source_inventory(args.root.resolve())
         if not args.audit_only:
             if not report['preview_present']:
-                raise ValueError('Missing author-approved About/Preview.png; refusing release ZIP')
+                raise ValueError('Missing About/Preview.png; add only author-approved artwork; refusing release ZIP')
             output = args.output.resolve()
             if output.is_relative_to(args.root.resolve()):
                 raise ValueError('Output ZIP must be outside the source tree')
