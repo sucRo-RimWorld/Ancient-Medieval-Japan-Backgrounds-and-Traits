@@ -1,0 +1,25 @@
+▼ 概要
+RimWorldの人物背景・特性を古代から中世の日本に合わせて調整するMod。既存の背景IDをできるだけ維持しつつ、時代に合った職業・幼少期を追加し、不自然な背景の通常生成を制限します。
+
+▼ 主な特徴
+・既存背景126件の名称・説明を改稿。新規追加とは別の件数です
+・新規背景12件を追加（成人8・幼少期4）。通常のポーン生成候補に追加
+・新規定義は計14件ですが、重複する2件は互換性維持用として残し通常生成から除外
+・時代に合わない既存背景135件の通常生成を制限（定義は削除しない）
+・酒好き・酒嫌いの新規特性2件。酩酊時のみ小さな心情効果
+・既存背景23件の初期所持品を変更
+
+▼ 対応・互換性
+・RimWorld 1.6 / 1.7、日本語 / 英語対応
+・必須Mod Harmony https://rimworld.2game.info/detail.php?id=2009463077
+・任意Mod Medieval Overhaul https://rimworld.2game.info/detail.php?id=2553700067
+・任意Mod 分離済みの現行AMJ Culture https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture
+・分離前の旧AMJ Cultureと併用すると人物生成規則が重複するため併用不可
+
+▼ セーブ互換性・検証
+・新規ゲーム推奨。旧セーブへの追加・削除は未検証
+・1.7 Vanillaおよび1.6 Medieval Overhaul＋分離済みCulture/Charactersの限定実ゲーム検証を通過
+・MO 1.7や各背景の自然抽選頻度は未検証
+
+詳しい仕様・更新履歴・検証範囲はGitHubを参照。
+https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters

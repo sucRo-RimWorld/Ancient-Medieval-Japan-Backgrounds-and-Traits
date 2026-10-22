@@ -1,19 +1,60 @@
-# AMJ Culture – Characters（中世日本 - 文化・人物）
+# Ancient & Medieval Japan - Culture Characters（中世日本 - 文化・人物）
 
-Independent Mod for ancient-to-medieval Japanese character backgrounds and traits, split **only** from [AMJ Culture](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture).
+**First-release candidate: 0.1.0 (not yet published on Steam).** RimWorld 1.6 / 1.7. English / Japanese.
 
-**Status: independent RimWorld 1.6/1.7 Characters DLLs built; original 1.7 Japanese Vanilla + current Culture and original 1.6 English Medieval Overhaul 1.6.2.2 + current Culture focused game acceptance PASS. Do not co-install with an older unsplit Culture build. Development Mod, not Steam-published.**
+This standalone Mod adapts the backgrounds and traits of generated pawns to ancient and medieval Japan. In ordinary RimWorld, many original biographies refer to modern or futuristic professions; Characters preserves the game's existing identities where possible while adding historically relevant lives and restricting anachronistic random selections.
 
-- Original BackstoryDef/TraitDef identities, skills and work restrictions preserved.
-- **Existing backgrounds rewritten: 126 distinct IDs** — 123 earlier bilingual historical rewrites plus three original Core occupations (`Logger16`, `Logger95`, `Weaver63`). These change historical names and descriptions, **not** add new biographies; original IDs and underlying skills/possessions are retained (except the documented `Outlander` eligibility addition for `Weaver63`).
-- **New playable backgrounds: 12** (8 adulthood, 4 childhood), with original English and Japanese text and historical roles. **14 new BackstoryDef IDs exist in source**, but the two overlapping adult roles (new woodcutter and new textile weaver) are retained for save identity only and excluded from normal pawn generation; they must not be advertised as playable additions.
-- **Existing backgrounds restricted from ordinary generation: 135** (77 adulthood, 58 childhood); these are not deleted. 23 original starting-possession substitutions are separate from new-background counts. **Two new traits** are added: alcohol lover / alcohol averse (酒好き／酒嫌い).
-- Transhumanist, BodyPurist and DrugDesire ordinary-generation suppression (including known forced background entries); new alcohol-preference traits affect mood only while intoxicated.
-- Approved English XML and Japanese DefInjected, separate Solid-child Harmony patch and `AMJ.Culture.Characters` source project.
-- Harmony required, Medieval Overhaul optional; no mandatory Culture dependency.
-- Greedy/Jealous shared-lodging mood rules, initial chemical addictions, other drugs, entrances, meals and bedding stay in Culture.
-- New game recommended; old-save compatibility not guaranteed.
+## Features
 
-[Design](Docs/Design.md) is authoritative; [Workshop description draft](Docs/WorkshopDescription.md) separates original rewrites from new content. [Coordination](Docs/Coordination.md) tracks cutover. Unsplit Culture historical native evidence is not transferred retroactively. New Characters alone 1.6 PASS [Project #39228255901](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39228255901); paired separated Culture 1.6 PASS [#39229556343](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39229556343); paired 1.7 PASS [#39228936614](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39228936614). The earlier paired 1.6 native crash in Mono GC remains unexplained; paired-only rerun passed. Latest original 1.6 MO 1.6.2.2 + Culture + Characters P3 occupation-dedup acceptance [#39590687182](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39590687182) PASS; latest original 1.7 Japanese Vanilla + Culture + Characters occupation-dedup acceptance [#39587913897](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39587913897) PASS. Individual natural draw frequency, original MO MP3 playback, MO 1.7, DLC, old-save, visual glyphs and Steam acceptance remain untested.
+| Change | Count | Meaning |
+| --- | ---: | --- |
+| Existing backgrounds rewritten | **126** | Historical names and descriptions for 123 previously rewritten original IDs plus 3 original Core occupations. **These are not new backgrounds.** |
+| Newly playable backgrounds | **12** | 8 adulthood and 4 childhood backgrounds eligible for ordinary pawn generation. |
+| New IDs retained but not generated | **2** | Duplicate new woodcutter/weaver IDs kept to avoid removing definitions; excluded from ordinary selection. Total new source IDs: **14**. |
+| Existing backgrounds restricted | **135** | 77 adulthood and 58 childhood records excluded from ordinary generation, **not deleted**. |
+| New traits | **2** | Alcohol lover (酒好き) and alcohol averse (酒嫌い), with +2/−2 mood only while intoxicated. |
+| Starting possession revisions | **23** | Change selected original item grants to fit the period. |
 
-Provenance: [Culture candidate commit `7448f290`](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture/commit/7448f290f2e1b0c0bdde93431c27662f0e066821). User-created MIT license preserved.
+The 34 historical occupation rewrites, 89 additional rewrites and three original Core profession rewrites have **126 distinct original DefNames**. New IDs are counted separately. The 12 additions are *eligible* for ordinary generation; this does not guarantee that every new background is drawn in every scenario.
+
+Existing original BackstoryDef/TraitDef identities remain intact. Original skill gains and work restrictions remain unchanged in the three newly rewritten Core occupations (`Logger16`, `Logger95`, `Weaver63`); only `Weaver63` also gains an `Outlander` candidate category. Targeted anachronistic forced traits and certain original possessions are changed according to the [design](Docs/Design.md).
+
+The two new alcohol preferences have **no standing mood effect while sober**. Original `Transhumanist`, `BodyPurist` and `DrugDesire` traits are preserved for saved characters but disabled for normal new generation, including specifically documented forced-background paths. Characters does **not** add alcohol production, new drugs, new professions/jobs, character skills or factions.
+
+## Why this Mod exists
+
+A randomly assembled RimWorld colony is not inherently a historical court, noble house or warrior clan. The background selection should still reflect plausible occupations and childhoods from a variety of ordinary Japanese communities without replacing every old biography one-for-one or requiring a specific social class.
+
+## Requirements and compatibility
+
+- **Required:** [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
+- **Optional:** [Medieval Overhaul](https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067), and the separately maintained [AMJ Culture](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture). Neither is a hard dependency.
+- **Important:** Do **not** combine Characters with an **older, unsplit** AMJ Culture version that still contains the same generation patches. Use a current split Culture build if installing both Mods.
+- **Save games:** Start a new game where possible. The original Def IDs are retained, but existing-save migration/loading and removal from an active save have not been verified.
+- **Not included:** Shared-lodging/Greedy/Jealous mood rules, entrance/no-shoes, dining, bedding, drugs/chemical availability and initial addictions remain responsibilities of AMJ Culture.
+
+## Verification and limitations
+
+Focused real-game acceptance passed with original RimWorld **1.7 Japanese Vanilla** and current separated Culture + Characters ([Actions #39587913897](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39587913897)); original **1.6 English + Medieval Overhaul 1.6.2.2/VEF/SYR + Culture + Characters** also passed ([Actions #39590687182](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39590687182)). These checks covered loaded definitions, original Core occupation changes, key exclusion/generation paths and generic pawn generation. Earlier trait mood checks passed within their scoped Vanilla 1.7 scenario.
+
+Not verified by these passes: each biography's natural selection frequency; starting items awarded to actual generated pawns; an existing-save reload; MO 1.7; all DLC or third-party combinations; Japanese on-screen glyph layout; original MO MP3 playback or Steam subscriber download. No additional real-game test is implied by preparing this release metadata.
+
+## 日本語概要
+
+RimWorldの人物背景・特性を古代から中世の日本向けに調整します。もとのポーンの背景IDをなるべく維持し、歴史的に不自然な通常生成を制限しつつ、庶民の職業・幼少期の選択肢を増やします。
+
+**既存背景126件の名称・説明の改稿**と、**通常生成対象の新規背景12件（成人8・幼少期4）**は別の数です。新規定義は14件存在しますが、重複する職業2件は互換性のため定義だけを残して通常生成対象から外しています。既存背景135件の通常生成を制限（定義自体は保持）。既存背景23件の初期所持品を見直し、酒好き・酒嫌いの2特性を追加します。
+
+Harmony必須。Medieval Overhaulと分離後の現行AMJ Cultureは任意。**分離前の旧Cultureとの同時導入は不可**。RimWorld 1.6／1.7対応、日英対応。新規ゲームを推奨します。旧セーブとの互換、MO 1.7等は未検証です。初回公開候補で、Steamへの掲載はまだ行っていません。
+
+## Release documentation
+
+- [Workshop bilingual BBCode](Docs/SteamWorkshopDescription.txt) (unpublished)
+- [2game Japanese copy](Docs/2GameDescription-ja.txt) (unpublished)
+- [Release checklist](Docs/ReleaseChecklist.md)
+- [Changelog](About/Changelog.txt)
+- [Fail-closed Workshop package builder](Tools/BuildWorkshopPayload.py) (audit: `python Tools/BuildWorkshopPayload.py --audit-only`; zip requires approved Preview.png)
+- [Technical design](Docs/Design.md) and [native acceptance](Docs/Stage3NativeAcceptance.md)
+- [MIT license](LICENSE)
+
+Historical source provenance: [AMJ Culture split candidate](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture/commit/7448f290f2e1b0c0bdde93431c27662f0e066821).
