@@ -53,7 +53,6 @@ Harmony必須。Medieval Overhaulと分離後の現行AMJ Cultureは任意。**�
 - [2game Japanese copy](Docs/2GameDescription-ja.txt) (unpublished)
 - [Release checklist](Docs/ReleaseChecklist.md)
 - [Changelog](About/Changelog.txt)
-- [Fail-closed Workshop package builder](Tools/BuildWorkshopPayload.py) (audit: `python Tools/BuildWorkshopPayload.py --audit-only`; zip requires approved Preview.png)
 - [Technical design](Docs/Design.md) and [native acceptance](Docs/Stage3NativeAcceptance.md)
 - [MIT license](LICENSE)
 

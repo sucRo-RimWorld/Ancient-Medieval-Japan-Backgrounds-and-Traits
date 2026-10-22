@@ -19,16 +19,18 @@ Status: **PREPARING / NOT PUBLISHED**. This checklist records evidence and bound
 - [x] `Docs/2GameDescription-ja.txt`: shorter Japanese description, **not posted** to 2game.
 - [x] `About/WorkshopTags.xml`: planned `Gameplay`, `Storytelling`; actual Steam-side tags remain unverified.
 
-## Exact subscriber payload — release staging contract
+## Workshop source directory — direct upload without ZIP
 
-Include only these source paths, from one fixed and reviewed main commit:
+**Characters does not require a distribution ZIP or an archive builder.** Use the checked-out and reviewed Mod directory directly as the upload source. No `WorkshopPayload` or separate packaging pipeline is needed.
+
+The following game content must exist under the Mod root:
 
 - `LoadFolders.xml`, `LICENSE`;
 - `About/About.xml`, `About/Manifest.xml`, `About/Changelog.txt`, `About/WorkshopTags.xml`, and an **approved** `About/Preview.png` once supplied;
 - `1.6/Assemblies/AMJ.Culture.Characters.dll` and `1.7/Assemblies/AMJ.Culture.Characters.dll` (do not use `AMJ.Culture.dll`);
 - `Defs/**`, `Patches/**`, `Languages/**` including the Japanese DefInjected translations.
 
-Do not ship `Source/`, `Tests/`, `Docs/`, `AGENTS.md`, `README.md`, `.github/` or developer-only assets. Preserve the Mod-relative directory structure. Do not invent `About/PublishedFileId.txt` before Steam allocates one. Validate actual staged bytes, required DLLs, all XML and matching versions before upload; Git source alone does not prove the submitted payload.
+Preserve the Mod-relative directory structure. Use the chosen upload tool's normal exclusion handling for development-only files (`Source/`, `Tests/`, `Docs/`, `AGENTS.md`, `README.md`, `.github/`) where supported. Do not create a parallel staged copy or ZIP solely for this. Do not invent `About/PublishedFileId.txt` before Steam allocates one. Check the actual upload source directory, required DLLs, XML and version metadata before publication.
 
 ## Acceptance already obtained (no automatic rerun)
 
@@ -40,9 +42,8 @@ Do not ship `Source/`, `Tests/`, `Docs/`, `AGENTS.md`, `README.md`, `.github/` o
 ## HOLD before Steam/2game publication
 
 - [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. No unrelated image is to be substituted automatically.
-- [x] `Tools/BuildWorkshopPayload.py` implemented as the strict publisher-file whitelist and version/XML/changelog gate. Its isolated synthetic check passed locally (inventory, missing-preview rejection, deterministic ZIP); **not** a check against complete original runtime source.
-- [ ] Run `python Tools/BuildWorkshopPayload.py --audit-only` against the actual source checkout; review its file list and `payload_inputs_complete`. The missing preview currently forces `payload_inputs_complete=false`.
-- [ ] Once an approved preview exists, use `python Tools/BuildWorkshopPayload.py --output ../Characters_0.1.0.zip --lock-output ../Characters_0.1.0.source-lock.json` on the exact pinned checkout. Review source/entry SHA-256 and both actual DLL bytes. No candidate ZIP is currently sealed.
+- [ ] Confirm the actual Mod folder is accepted directly by the selected uploader (no distribution ZIP).
+- [ ] Verify current source folder includes 1.6/1.7 DLLs and matching About/Manifest/Changelog versions.
 - [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Characters-specific publisher/Workshop ID**, and no instruction to create/upload one.
 - [ ] Confirm changenote and complete tags can actually be transmitted by the authorized uploader; an XML file alone does not update Steam.
 - [ ] Separate author's approval for first Steam publication and visibility, and live Steam subscriber download / uploaded description / tags verification.
