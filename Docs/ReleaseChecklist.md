@@ -40,7 +40,9 @@ Do not ship `Source/`, `Tests/`, `Docs/`, `AGENTS.md`, `README.md`, `.github/` o
 ## HOLD before Steam/2game publication
 
 - [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. No unrelated image is to be substituted automatically.
-- [ ] Verify exact, deterministic **staged subscriber package** and its source/entry hashes, and that the current 1.6/1.7 DLLs are included.
+- [x] `Tools/BuildWorkshopPayload.py` implemented as the strict publisher-file whitelist and version/XML/changelog gate. Its isolated synthetic check passed locally (inventory, missing-preview rejection, deterministic ZIP); **not** a check against complete original runtime source.
+- [ ] Run `python Tools/BuildWorkshopPayload.py --audit-only` against the actual source checkout; review its file list and `release_ready`. The missing preview currently forces `release_ready=false`.
+- [ ] Once an approved preview exists, use `python Tools/BuildWorkshopPayload.py --output ../Characters_0.1.0.zip --lock-output ../Characters_0.1.0.source-lock.json` on the exact pinned checkout. Review source/entry SHA-256 and both actual DLL bytes. No candidate ZIP is currently sealed.
 - [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Characters-specific publisher/Workshop ID**, and no instruction to create/upload one.
 - [ ] Confirm changenote and complete tags can actually be transmitted by the authorized uploader; an XML file alone does not update Steam.
 - [ ] Separate author's approval for first Steam publication and visibility, and live Steam subscriber download / uploaded description / tags verification.
