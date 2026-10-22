@@ -1,0 +1,47 @@
+[b]Adapts character backgrounds and traits for ancient-to-medieval Japanese play.[/b]
+
+[h2]What changes[/h2]
+[list]
+[*][b]126 existing backgrounds rewritten[/b] — names and descriptions adapted for the period (123 earlier rewrites plus three original Core occupations). These are [b]not[/b] newly added backgrounds.
+[*][b]12 new backgrounds available for normal pawn generation[/b] — eight adulthood and four childhood biographies.
+[*]14 new background IDs exist in source, but two overlapping roles are kept for compatibility and excluded from ordinary generation.
+[*][b]135 existing backgrounds restricted from ordinary generation[/b] because they are anachronistic. Their definitions are not deleted.
+[*][b]2 new traits[/b] — alcohol lover and alcohol averse. These give a small positive or negative mood effect only while intoxicated.
+[*]Revise initial possessions for 23 existing backgrounds.
+[/list]
+
+[h2]Design[/h2]
+Vanilla backgrounds frequently describe modern or futuristic careers. This Mod favors historically plausible lives in varied Japanese communities without assuming the colony is a court, noble household or exclusive warrior group. It keeps original IDs and most original mechanics. It does not add new work types, alcohol production or factions.
+
+[h2]Requirements and compatibility[/h2]
+[b]RimWorld 1.6 / 1.7. English / Japanese.[/b]
+[b]Required:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
+[b]Optional:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url] and the [url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture]current separated AMJ Culture[/url].
+[b]Do not install with older unsplit AMJ Culture[/b] versions containing the same character generation rules. New game recommended; old-save compatibility is not verified. Original 1.7 Vanilla and 1.6 MO + current separated Culture/Characters passed focused game checks, but MO 1.7 and every individual random selection frequency were not tested.
+
+[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters]Detailed features, limitations and sources on GitHub[/url]
+
+[hr][/hr]
+
+[b]人物背景・特性を古代から中世の日本に合わせて調整します。[/b]
+
+[h2]主な変更[/h2]
+[list]
+[*][b]既存背景126件を改稿[/b]：従来の123件とCore職業3件の名称・説明文を変更。[b]新規背景を126件追加するわけではありません。[/b]
+[*][b]新規背景12件を追加[/b]：成人8件・幼少期4件。通常のポーン生成の候補になります。
+[*]新規定義自体は14件ですが、重複する職業2件は互換性のため残し、通常生成から除外しています。
+[*][b]既存背景135件の通常生成を制限[/b]：時代に合わない背景を抽選対象から外します。定義自体は削除しません。
+[*][b]新規特性2件[/b]：酒好き・酒嫌い。飲酒による酩酊中だけ、小さな心情効果があります。
+[*]既存背景23件の初期所持品を変更します。
+[/list]
+
+[h2]設計方針[/h2]
+バニラには近現代・未来の職業を含む背景があります。元の背景IDと基本的なゲーム性を保ちながら、中世日本のさまざまな庶民の暮らしに近い人物設定を追加します。コロニーを特定の貴族・武家集団とは想定しません。新しい作業カテゴリ、酒造設備、派閥は追加しません。
+
+[h2]対応・互換性[/h2]
+[b]RimWorld 1.6／1.7、日本語・英語対応。[/b]
+[b]必須Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
+[b]任意Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]、[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture]分離済みの現行AMJ Culture[/url]。
+[b]分離前の旧AMJ Cultureとは併用しないでください。[/b] 人物生成規則が重複します。新規ゲームを推奨し、旧セーブとの互換性は未検証です。1.7 Vanillaと1.6 MO＋分離済みCulture/Charactersの限定実ゲーム検証は通過していますが、MO 1.7や背景ごとの自然抽選頻度は未検証です。
+
+[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters]詳細仕様・検証範囲はGitHubを参照[/url]
