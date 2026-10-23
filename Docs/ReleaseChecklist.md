@@ -39,9 +39,9 @@ Preserve the Mod-relative directory structure. Use the chosen upload tool's norm
 - Existing original Vanilla 1.7 alcohol preference mood checks: [Actions #39403987672](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39403987672).
 - These accepted checks cover the tested loaded definitions, specific forced-Trait rules, generic pawn generation and mood behavior in their declared configurations, **not** every source ID being naturally drawn.
 
-## HOLD before Steam/2game publication
+## HOLD before Steam/2game publication (remaining release gates; Preview approved)
 
-- [ ] Accepted `About/Preview.png` and any additional approved Workshop visual assets; **not present in owner main**. Follow the [Backgrounds & Traits Preview creation/QA/approval procedure](GoldenPaths/WorkshopPreview.md), including the Project-approved fixed-left 960×540 common master/mask and the two-line `Backgrounds` / `& Traits` addon label in the existing editable name slot. Documented rules or generated drafts are not acceptance. No unrelated image is to be substituted automatically.
+- [x] Author-approved Preview F stored as `Art/Sources/Workshop/Backgrounds_Traits_Approved_F_960x540.png` (960×540 original; immutable common-left pixels confirmed) and exact direct-LANCZOS derivative `About/Preview.png` (**640×380**, 413,540 bytes, SHA-256 `f90dcce8051605bce16fd579e4c879d77dec125564b9b5c7200127497c1570b2`). The author requested this export size specifically; Project master and mask remain 960×540. No image regeneration. **Approval of the file is not authorization for initial Steam publication.**
 - [ ] Confirm the actual Mod folder is accepted directly by the selected uploader (no distribution ZIP).
 - [ ] Verify current source folder includes 1.6/1.7 DLLs and matching About/Manifest/Changelog versions.
 - [ ] Establish an explicitly authorized first-item Steam upload path and host/account ownership, Workshop ID creation and visibility policy. At present there is **no verified Backgrounds & Traits publisher/Workshop ID**, and no instruction to create/upload one.
