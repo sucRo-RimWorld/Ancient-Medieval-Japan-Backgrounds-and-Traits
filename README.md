@@ -52,6 +52,7 @@ Harmony必須。Medieval Overhaulと分離後の現行AMJ Cultureは任意。**�
 - [Workshop bilingual BBCode](Docs/SteamWorkshopDescription.txt) (unpublished)
 - [2game Japanese copy](Docs/2GameDescription-ja.txt) (unpublished)
 - [Release checklist](Docs/ReleaseChecklist.md)
+- **Workshop Preview approved:** `About/Preview.png` (640×380, directly resized from the accepted 960×540 cover; no regeneration). Acceptance of the preview does not mean the Mod has been uploaded to Steam.
 - [Changelog](About/Changelog.txt)
 - [Technical design](Docs/Design.md) and [native acceptance](Docs/Stage3NativeAcceptance.md)
 - [MIT license](LICENSE)
