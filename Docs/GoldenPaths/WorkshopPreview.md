@@ -33,7 +33,7 @@
 1. Projectの `Art/Sources/Workshop/AMJ_WorkshopCover_Core_Approved_Reference.jpg`、`AMJ_WorkshopCover_CommonBase.png`、`AMJ_WorkshopCover_VariableMask.png` を**実際に取得・開いて比較**し、[登録済みハッシュ](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/References/AMJ_WorkshopCover_Manifest.md) と照合する。参照できない場合は想像による代替制作をしない。
 2. 生成・描画するのは**右側の可変イラストのみ**。共通左側やタイトル、背景、装飾は生成対象に含めない。
 3. Project `Scripts/build_workshop_cover.py` で既存マスター・マスクと合成し、`Scripts/validate_workshop_cover.py` で保護範囲の不変性を確認する。変更可能なのは右側可変領域と左側のMod名スロットのみ。
-4. Project共通の**原本・合成マスターは960×540 px、16:9のまま固定**。Backgrounds & Traitsでは作者が候補Fを採用し、公開用`About/Preview.png`を例外的に **640×380 px** と明示指定したため、採用済み960×540完成画像だけをLANCZOSで直接リサイズする（描き直し・トリミング・新しい文字配置は禁止）。これに伴い**縮小後の画素は当然マスターと一致しない**が、保護領域の不変性は縮小前960×540完成画像に対して検証する。Projectの共通原本・可変マスク・960×540制作規則は変更しない。PNGは1 MiB未満。
+4. Project共通の**原本・合成マスターは960×540 px（16:9）のまま固定**。Backgrounds & Traitsの公開用`About/Preview.png`は、Environmentの現行Previewに揃え**640×360 px（16:9）**とする。採用済み候補Fの960×540完成画像からLANCZOSで等比縮小し、トリミング・引き伸ばし・再生成・新しい文字配置を行わない。縮小後にEnvironmentの現行640×360 Previewから、共通左側の固定領域（`x=0..219`のうちMod名スロット`x=44..207, y=252..284`を除く）を画素単位で再使用し、左側の見た目を一致させる。Mod名はBackgrounds / & Traitsの承認済み2行を維持する。縮小前960×540完成画像のProject共通保護領域検証は引き続き有効であり、承認済み原本・マスク・完成マスターは一切変更しない。公開PNGは1 MiB未満。
 5. 配布ZIPや重複した配布ステージングは作らない。採用後はMod本体 `About/Preview.png` に含め、[ReleaseChecklist](../ReleaseChecklist.md) に従う。
 
 ## 候補の監査と採用
@@ -45,4 +45,4 @@
 5. **最終的な美術採用は作者判断。** 承認前に採用済みPreviewやSteam公開済みと扱わない。採用後、元データと完成PNGを保存し、GitHubのトピックブランチ→PR→mainに統合する。
 6. 公開前に承認済みの原本との一致・サイズ・現在のREADME/Workshop文面との整合を再確認する。Steam初回公開は別途承認が必要。
 
-**採用済み（2026-10-23、作者承認）**：960×540完成元データ `Art/Sources/Workshop/Backgrounds_Traits_Approved_F_960x540.png`（SHA-256 `fcec8a498eef9bc4b88e2d1c10d9fa8ae2989665be2be502d67028594196112d`、共通保護画素の差分0）。この画像を**再生成せず縮小のみ**で作った640×380公開Preview `About/Preview.png`（SHA-256 `f90dcce8051605bce16fd579e4c879d77dec125564b9b5c7200127497c1570b2`）。採用はSteamへのアップロード・公開許可を意味しない。
+**採用済み（2026-10-23、作者承認、2026-10-25サイズ補正）**：960×540完成元データ `Art/Sources/Workshop/Backgrounds_Traits_Approved_F_960x540.png`（SHA-256 `fcec8a498eef9bc4b88e2d1c10d9fa8ae2989665be2be502d67028594196112d`、共通保護画素の差分0）。現行公開用`About/Preview.png`は承認済み原本を再生成せず640×360に等比縮小し、Environmentの固定左領域と照合・一致させたPNG（Git blob SHA `4690cc87c502fb119d1ae961a6e0c400d5b8e1f1`）。旧640×380版は廃止。採用はSteamへのアップロード・公開許可を意味しない。
