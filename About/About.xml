@@ -20,9 +20,9 @@
   <description>Adapts pawn backgrounds and traits to ancient-to-medieval Japan.
 126 existing background identities receive historical names and descriptions. 12 new backgrounds (8 adulthood, 4 childhood) are eligible for ordinary pawn generation; 2 additional new IDs are preserved but excluded to avoid duplicate roles. Ordinary generation of 135 anachronistic existing backgrounds is restricted. Adds 2 alcohol-preference traits and revises 23 existing starting-possession records.
 
-RimWorld 1.6 / 1.7. Harmony required; Medieval Overhaul and current separated AMJ Culture optional. Do not combine with older unsplit Culture builds. New game recommended; older saves and MO 1.7 are unverified.
+RimWorld 1.6 / 1.7. Harmony required; Medieval Overhaul optional. New game recommended; adding to or removing from an existing save has not been verified.
 
 既存背景126件の名称・説明を中世日本向けに改稿。新規背景12件（成人8・幼少期4）は通常生成対象。重複する新規定義2件は識別子を保持し、通常生成から除外。時代に合わない既存背景135件の通常生成を制限し、酒好き・酒嫌いの2特性と既存背景23件の初期所持品変更を追加。
 
-RimWorld 1.6／1.7対応。Harmony必須、Medieval Overhaulと分離済みの現行AMJ Cultureは任意。分離前の旧Cultureとの併用不可。新規ゲーム推奨。旧セーブ・MO 1.7は未検証。</description>
+RimWorld 1.6／1.7対応。Harmony必須、Medieval Overhaulは任意。新規ゲーム推奨。既存セーブへの追加・削除は未検証。</description>
 </ModMetaData>
