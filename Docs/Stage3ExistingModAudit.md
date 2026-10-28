@@ -71,7 +71,7 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 **過去の比較・候補検討を上書きする確定方針:** Vanilla `Logger16`、`Logger95`、`Weaver63` を歴史的な名称・説明へ英日改稿する。通常生成は「村の杣人」（Logger16: Tribal）、「山の杣人」（Logger95: Outlander等）、「織物職人」（Weaver63: Tribal、必要最小限のOutlander追加）が担当する。既存の技能・作業タグ・強制Trait・初期所持品・IDは原本通り。織物職人を普通のVanilla Outlanderにも供給できるよう原本 `Weaver63.spawnCategories` に **Outlanderのみ**追加する。他の既存カテゴリは保持する。
 
-**重複Defのセーブ互換性:** `AMJC_WoodcutterAdult` と `AMJC_TextileWeaverAdult` は**削除せず**、`spawnCategories` のみ `AMJ_CultureExcluded` 1件に変更する。ゲームが普通に選択する新規P3は**14定義中12件**（成人8・幼少期4）。元の14定義の表示名・本文・能力、原本他職、原本135生成制限、123改稿、23初期所持品を変更しない。2件の非候補化は原本制限135件の加算ではない。初期木材10・布10は原本での対応する所持品であり、新規P3の制約なし所持品へ引き継ぐのではない。
+**重複する新規Defの扱い（2026-10-28更新）：** `AMJC_WoodcutterAdult` と `AMJC_TextileWeaverAdult` は削除せず、`AMJ_CultureExcluded` 1件のみで通常生成から除外する。既存Core職業名との**表示名の重複**を避けるため、追加側の名称・短縮名を「木伐り」／英語 `timber cutter`、および「機織り師」／英語 `handloom weaver`（短縮 `loom weaver`）に改める。新規P3は**14定義中12件**（成人8・幼少4）が通常生成候補。ID・技能・本文・原本135生成制限・既存職業3件・初期所持品23件は不変。公開前のため、この2件を残す理由は旧版セーブ互換性ではない。
 
 **ゲーム上の利害:** 同じ職業が新規DefとVanilla Defの双方から生成される問題は抑える。新規P3を無制限に維持した場合と比べ、`Logger16` のMelee+3、`Logger95` のPlants+8、`Weaver63` のPlants+2が実際の強化として付く。原本にあった木材/布も残る。原本には `PlantWork`／`Crafting` の必須作業タグがある。旧新規Defの `Civil/MedievalCommon` 候補は現状引き継がず、通常VanillaとMOに必要なカテゴリだけを用いるためその候補数は縮む。職業の存在意義を技能セットの変更や新規Jobで無理に作らない。
 

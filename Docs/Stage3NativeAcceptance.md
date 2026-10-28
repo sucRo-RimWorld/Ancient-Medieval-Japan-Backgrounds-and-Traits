@@ -1,3 +1,5 @@
+**注記（2026-10-28）：** 以下は従来の名称「杣人」「織物職人」を検証した2026-10-21の**履歴的な実ゲーム受入結果**。現行製品では通常生成から除外したAMJ新規2件の英日表示名のみ「木伐り」／`timber cutter`、「機織り師」／`handloom weaver`（英語短縮名 `loom weaver`）へ変更。現行の改名後タイトルのゲーム描画・実ロードは未検証。既存Core背景の名前・技能は不変。
+
 # P3 five original backgrounds — real-game acceptance (2026-10-20)
 
 ## 2026-10-21 — Original 1.6 MO Core occupation consolidation: loaded-game PASS

@@ -745,8 +745,8 @@ namespace AMJ.Culture.Test
                     ctx.Require(bio.forcedTraits == null || bio.forcedTraits.Count == 0,
                         "P3 crafts should not force any Trait: " + entry.Key);
                     string expectedTitle = japanese
-                        ? (entry.Key == "AMJC_TextileWeaverAdult" ? "織物職人" : "焼き物師")
-                        : (entry.Key == "AMJC_TextileWeaverAdult" ? "textile weaver" : "potter");
+                        ? (entry.Key == "AMJC_TextileWeaverAdult" ? "機織り師" : "焼き物師")
+                        : (entry.Key == "AMJC_TextileWeaverAdult" ? "handloom weaver" : "potter");
                     ctx.Require(bio.TitleFor(Gender.Male) == expectedTitle &&
                         bio.TitleFor(Gender.Female) == expectedTitle &&
                         !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
@@ -796,7 +796,7 @@ namespace AMJ.Culture.Test
                         { "AMJC_SaltMakerAdult", "浜の塩焼き" },
                         { "AMJC_FishingVillageChild", "漁村育ち" },
                         { "AMJC_WeaverChild", "織屋の子" },
-                        { "AMJC_WoodcutterAdult", "杣人" }
+                        { "AMJC_WoodcutterAdult", "木伐り" }
                     };
                     foreach (var expected in addedFour)
                     {
@@ -933,7 +933,7 @@ namespace AMJ.Culture.Test
                         { "AMJC_SaltMakerAdult", "coastal salt maker" },
                         { "AMJC_FishingVillageChild", "fishing village childhood" },
                         { "AMJC_WeaverChild", "weaver's child" },
-                        { "AMJC_WoodcutterAdult", "woodcutter" }
+                        { "AMJC_WoodcutterAdult", "timber cutter" }
                     };
                     foreach (var item in quartet)
                     {
