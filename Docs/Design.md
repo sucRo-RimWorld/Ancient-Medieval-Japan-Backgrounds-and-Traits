@@ -67,6 +67,16 @@
 
 **Module boundary:** Vanilla Beer and original Medieval Overhaul Ale/Cider/Mead/Wine use AlcoholHigh; future sake can be recognized if its effects use the same hediff. New TraitDefs, trait-generation restrictions and their related Thoughts live exclusively in Characters. Culture still owns drug supply and initial addiction generation; no Culture C#/XML/DLL is modified. No new dependency on Culture or MO.
 
+### 上戸・下戸の追加 — 実装負担のため先送り（2026-10-28 作者決定）
+
+**状態：保留・未実装。初回公開の収録対象にしない。** 酒に強い「上戸」と酒に弱い「下戸」は、飲酒への好悪を表す実装済みの「酒好き・酒嫌い」とは別の、**身体的な酔いやすさ**を表す候補として記録する。「酒好き・酒嫌い」で置き換えた、または構想を廃止したという判断ではない。
+
+**先送り理由：** 特性名・抽選設定の追加はXMLで可能だが、既存の `AlcoholHigh` / `AlcoholTolerance` をポーンの特性に応じて変えるには、通常のTraitDef・ThoughtDefのXMLだけでは完結せず、C#による限定的な飲酒処理の補正が必要と見込まれる。実装・既存の酩酊/耐性処理との整合・互換性検証の負担に対し、現時点では優先度を上げない。既存アルコール処理の変更や暫定的な名前だけの特性追加は行わない。
+
+**再検討時の未決定事項：** 効果を酔いの進行速度に限定するか、二日酔い・急性酩酊などにも及ぼすか、獲得性の `AlcoholTolerance` とどう区別するか、具体的な効果値とVanilla/MO双方への影響。これらは未承認であり、今回新たな数値や仕様は確定しない。背景・特性Modは特性の担当であり、Culture側の酒類供給・薬物バランスの責務を移管しない。
+
+**公開説明：** 未実装の上戸・下戸を追加済みの機能として列挙しない。実装済みの酒好き・酒嫌いの説明と効果は変更しない。
+
 **Alcohol preference original-game acceptance (2026-10-20): scoped RimWorld 1.7 Vanilla PASS.** Characters [PR #23](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/23) introduced **test-only** in-game checks in the existing single-Pickle background scenario, with non-public `TraitDef.commonality` access corrected in [PR #24](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/24); current exact Characters source `8fd4af612f1233345752b56ec129f33b81618b68`. Production XML, versioned Characters/Culture DLLs and existing-save identifiers **did not change**.
 
 **Accepted game evidence:** Original RimWorld `1.7.4977 rev1248` Vanilla + separated Culture/Characters, [Project Actions #39403987672](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39403987672), pinned Project runner [PR #842](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/pull/842), source `643139f5c307b2ede7bc006d64b153c3fce31ac8`: one original Pickle scenario **1/1 PASS**, Unity ERROR `[]`, FMOD errors `[]`, exit 0, original game unchanged. Test-only `AMJ_CULTURE_ALCOHOL_PREFERENCE_MOOD_OK` occurred **exactly once** in the retained launcher log (artifact `culture17-native-39403987672`, ID **12256633765**). The source verified exact loaded 0.3 generation weight for each trait, mutually exclusive / legacy `DrugDesire` conflicts, `requiredTraits` and `AlcoholHigh` links, and six stage mood effects fixed +2/-2. It sampled **six freshly generated, individually spawned Pawns** and inspected real `GetAllMoodThoughts` / `MoodOffset()`: sober/neutral, sober/lover, sober/averse, drunk/neutral all had no additional AMJC alcohol Thought; lover with `AlcoholHigh` severity 0.1 had exactly one +2; averse at severity 0.75 exactly one −2. Thus the existing alcohol preference feature is **functionally accepted for this Vanilla 1.7 scope**, without requiring production fixes. Existing P2 forced old Trait removals and seven P3 background checks also passed in the combined background-only scenario.
