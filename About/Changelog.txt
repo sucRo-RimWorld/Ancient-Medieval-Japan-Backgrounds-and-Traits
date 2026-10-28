@@ -7,7 +7,7 @@
 - Restrict normal selection of 135 anachronistic existing backgrounds without deleting their definitions.
 - Adjust 23 original starting-possession records.
 - Suppress ordinary generation of Transhumanist, BodyPurist and DrugDesire while preserving old definitions; add two alcohol-only preference traits with mood effects while intoxicated.
-- Support RimWorld 1.6 and 1.7; Harmony is required. Medieval Overhaul and current split AMJ Culture are optional.
+- Support RimWorld 1.6 and 1.7; Harmony is required. Medieval Overhaul is optional.
 - Focused original 1.7 Japanese Vanilla and original 1.6 MO 1.6.2.2 + separated Culture/Characters game tests passed. Old saves, MO 1.7 and individual natural selection frequencies are not verified.
 
 日本語
@@ -16,5 +16,5 @@
 - 時代に合わない既存背景135件の通常生成を制限。元の定義は削除しない。
 - 既存背景23件の初期所持品を変更。
 - 義体化願望・義体化嫌悪・薬物嗜好の通常生成を制限し、酒好き・酒嫌いの新規特性2件を追加。
-- RimWorld 1.6／1.7、Harmony必須。Medieval Overhaulおよび分離済みCultureは任意。
+- RimWorld 1.6／1.7、Harmony必須。Medieval Overhaulは任意。
 - 1.7日本語Vanillaと1.6 MO 1.6.2.2＋分離済みCulture/Charactersで限定的な実ゲーム検証済み。旧セーブ、MO 1.7、背景ごとの自然抽選頻度は未検証。
