@@ -4,22 +4,23 @@
 
 This standalone Mod adapts the backgrounds and traits of generated pawns to ancient and medieval Japan. In ordinary RimWorld, many original biographies refer to modern or futuristic professions; this Mod preserves the game's existing identities where possible while adding historically relevant lives and restricting anachronistic random selections.
 
-## Features
+## Backgrounds
 
-| Change | Count | Meaning |
-| --- | ---: | --- |
-| Existing backgrounds rewritten | **126** | Historical names and descriptions for 123 previously rewritten original IDs plus 3 original Core occupations. **These are not new backgrounds.** |
-| Newly playable backgrounds | **12** | 8 adulthood and 4 childhood backgrounds eligible for ordinary pawn generation. |
-| New IDs retained but not generated | **2** | Duplicate new woodcutter/weaver IDs kept to avoid removing definitions; excluded from ordinary selection. Total new source IDs: **14**. |
-| Existing backgrounds restricted | **135** | 77 adulthood and 58 childhood records excluded from ordinary generation, **not deleted**. |
-| New traits | **2** | Alcohol lover (酒好き) and alcohol averse (酒嫌い), with +2/−2 mood only while intoxicated. |
-| Starting possession revisions | **23** | Change selected original item grants to fit the period. |
+- **126 existing backgrounds:** Historical names and descriptions rewritten (123 previous rewrites plus three original Core occupations).
+- **12 new backgrounds** available for new pawn generation:
+  - **Adulthood (8):** shrine officiant; shrine ritual attendant (shrine miko for women); itinerant ritualist (traveling miko for women); itinerant woodturner; falconer; potter; coastal fisher; coastal salt maker.
+  - **Childhood (4):** hunter's child; traveling artisan's child; fishing village childhood; weaver's child.
+- **135 anachronistic existing backgrounds** excluded from selection for newly generated pawns (77 adulthood and 58 childhood).
+- **23 existing backgrounds** have their starting possessions adjusted.
 
-The 34 historical occupation rewrites, 89 additional rewrites and three original Core profession rewrites have **126 distinct original DefNames**. New IDs are counted separately. The 12 additions are *eligible* for ordinary generation; this does not guarantee that every new background is drawn in every scenario.
+These use the base game's existing skills and work systems. The three original Core occupation rewrites retain their original skills, work restrictions and starting possessions; Weaver63 additionally becomes eligible in the original Outlander category. Implementation details are in the [design](Docs/Design.md).
 
-Existing original BackstoryDef/TraitDef identities remain intact. Original skill gains and work restrictions remain unchanged in the three newly rewritten Core occupations (`Logger16`, `Logger95`, `Weaver63`); only `Weaver63` also gains an `Outlander` candidate category. Targeted anachronistic forced traits and certain original possessions are changed according to the [design](Docs/Design.md).
+## Traits
 
-The two new alcohol preferences have **no standing mood effect while sober**. Original `Transhumanist`, `BodyPurist` and `DrugDesire` traits are preserved for saved characters but disabled for normal new generation, including specifically documented forced-background paths. This Mod does **not** add alcohol production, new drugs, new professions/jobs, character skills or factions.
+- **Likes alcohol (酒好き):** +2 mood while intoxicated.
+- **Dislikes alcohol (酒嫌い):** −2 mood while intoxicated.
+
+Neither new trait has a mood effect while sober; they are preferences, not alcohol dependence or tolerance. The existing **Transhumanist**, **Body Purist** and **Drug Desire** traits (including teetotaler) are excluded from ordinary new pawn generation, including documented forced-background paths. Existing trait definitions and already saved characters are not retroactively changed.
 
 ## Why this Mod exists
 
@@ -40,11 +41,25 @@ Not verified by these passes: each biography's natural selection frequency; star
 
 ## 日本語概要
 
-RimWorldの人物背景・特性を古代から中世の日本向けに調整します。もとのポーンの背景IDをなるべく維持し、歴史的に不自然な通常生成を制限しつつ、庶民の職業・幼少期の選択肢を増やします。
+ポーンの背景と特性を古代から中世の日本に合わせて調整します。
 
-**既存背景126件の名称・説明の改稿**と、**通常生成対象の新規背景12件（成人8・幼少期4）**は別の数です。新規定義は14件存在しますが、重複する職業2件は互換性のため定義だけを残して通常生成対象から外しています。既存背景135件の通常生成を制限（定義自体は保持）。既存背景23件の初期所持品を見直し、酒好き・酒嫌いの2特性を追加します。
+### 背景
 
-Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日英対応。新規ゲームを推奨します。旧セーブとの互換、MO 1.7等は未検証です。初回公開候補で、Steamへの掲載はまだ行っていません。
+- **既存背景126件**の名称・説明を改稿。
+- **新規成人期背景8件：**社の神職、社の神楽役（女性は「社に仕える巫女」）、巡回する祭祀役（女性は「渡り巫女」）、木地師、鷹匠、焼き物師、沿岸の漁師、浜の塩焼き。
+- **新規幼少期背景4件：**狩人の家の子、渡り職人の子、漁村育ち、織屋の子。
+- 時代に合わない**既存背景135件**を新しいポーンの生成候補から除外。
+- **既存背景23件**の初期所持品を見直し。
+
+### 特性
+
+- **酒好き：**酩酊中の心情+2。
+- **酒嫌い：**酩酊中の心情−2。
+- 義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）が新しいポーンに付かなくなります。
+
+### 対応・互換性
+
+Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日本語・英語対応。新規ゲームを推奨します。既存セーブへの途中導入・削除は未検証です。初回公開候補で、Steamにはまだ掲載していません。
 
 ## Release documentation
 

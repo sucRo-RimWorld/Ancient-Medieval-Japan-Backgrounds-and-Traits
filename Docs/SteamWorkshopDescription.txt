@@ -1,47 +1,59 @@
-[b]Adapts character backgrounds and traits for ancient-to-medieval Japanese play.[/b]
+[b]Adapts pawn backgrounds and traits for ancient-to-medieval Japanese play.[/b]
 
-[h2]What changes[/h2]
+[h2]Backgrounds[/h2]
 [list]
-[*][b]126 existing backgrounds rewritten[/b] — names and descriptions adapted for the period (123 earlier rewrites plus three original Core occupations). These are [b]not[/b] newly added backgrounds.
-[*][b]12 new backgrounds available for normal pawn generation[/b] — eight adulthood and four childhood biographies.
-[*]14 new background IDs exist in source, but two overlapping roles are kept for compatibility and excluded from ordinary generation.
-[*][b]135 existing backgrounds restricted from ordinary generation[/b] because they are anachronistic. Their definitions are not deleted.
-[*][b]2 new traits[/b] — alcohol lover and alcohol averse. These give a small positive or negative mood effect only while intoxicated.
-[*]Revise initial possessions for 23 existing backgrounds.
+[*]Rewrite the names and descriptions of [b]126 existing backgrounds[/b] for the period.
+[*]Add [b]12 backgrounds[/b] for newly generated pawns.
+[b]Adulthood (8):[/b] shrine officiant; shrine ritual attendant (shrine miko for women); itinerant ritualist (traveling miko for women); itinerant woodturner; falconer; potter; coastal fisher; coastal salt maker.
+[b]Childhood (4):[/b] hunter's child; traveling artisan's child; fishing village childhood; weaver's child.
+[*]Exclude [b]135 anachronistic backgrounds[/b] from selection for newly generated pawns.
+[*]Adjust starting possessions for 23 existing backgrounds.
+[/list]
+
+[h2]Traits[/h2]
+[list]
+[*]Add [b]likes alcohol[/b] (+2 mood while intoxicated) and [b]dislikes alcohol[/b] (−2 mood while intoxicated). Neither has a mood effect while sober.
+[*]New pawns no longer receive the existing Transhumanist, Body Purist or Drug Desire trait family (including teetotaler).
 [/list]
 
 [h2]Design[/h2]
-Vanilla backgrounds frequently describe modern or futuristic careers. This Mod favors historically plausible lives in varied Japanese communities without assuming the colony is a court, noble household or exclusive warrior group. It keeps original IDs and most original mechanics. It does not add new work types, alcohol production or factions.
+Original RimWorld backgrounds can describe modern or futuristic careers. This Mod makes a wider variety of historically plausible Japanese lives available while retaining the base game's skill and work systems.
 
 [h2]Requirements and compatibility[/h2]
 [b]RimWorld 1.6 / 1.7. English / Japanese.[/b]
 [b]Required:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
-[b]Optional:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url].
+[b]Optional:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]
 New game recommended. Adding to or removing from an existing save has not been verified.
 
-[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]Detailed features, limitations and sources on GitHub[/url]
+[url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]Detailed features and limitations on GitHub[/url]
 
 [hr][/hr]
 
-[b]人物背景・特性を古代から中世の日本に合わせて調整します。[/b]
+[b]ポーンの背景と特性を古代から中世の日本に合わせて調整します。[/b]
 
-[h2]主な変更[/h2]
+[h2]背景[/h2]
 [list]
-[*][b]既存背景126件を改稿[/b]：従来の123件とCore職業3件の名称・説明文を変更。[b]新規背景を126件追加するわけではありません。[/b]
-[*][b]新規背景12件を追加[/b]：成人8件・幼少期4件。通常のポーン生成の候補になります。
-[*]新規定義自体は14件ですが、重複する職業2件は互換性のため残し、通常生成から除外しています。
-[*][b]既存背景135件の通常生成を制限[/b]：時代に合わない背景を抽選対象から外します。定義自体は削除しません。
-[*][b]新規特性2件[/b]：酒好き・酒嫌い。飲酒による酩酊中だけ、小さな心情効果があります。
-[*]既存背景23件の初期所持品を変更します。
+[*][b]既存背景126件[/b]の名称・説明を古代～中世日本向けに改稿します。
+[*][b]背景12件を追加[/b]し、新しいポーンの背景として登場するようにします。
+[b]成人期（8件）：[/b]社の神職、社の神楽役（女性は「社に仕える巫女」）、巡回する祭祀役（女性は「渡り巫女」）、木地師、鷹匠、焼き物師、沿岸の漁師、浜の塩焼き。
+[b]幼少期（4件）：[/b]狩人の家の子、渡り職人の子、漁村育ち、織屋の子。
+[*]時代に合わない[b]既存背景135件[/b]を、新しいポーンの生成候補から除外します。
+[*]既存背景23件の初期所持品を見直します。
+[/list]
+
+[h2]特性[/h2]
+[list]
+[*][b]酒好き[/b]（酩酊中の心情+2）と[b]酒嫌い[/b]（酩酊中の心情−2）を追加します。しらふの間は影響しません。
+[*]既存の義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）が、新しいポーンに付かなくなります。
 [/list]
 
 [h2]設計方針[/h2]
-バニラには近現代・未来の職業を含む背景があります。元の背景IDと基本的なゲーム性を保ちながら、中世日本のさまざまな庶民の暮らしに近い人物設定を追加します。コロニーを特定の貴族・武家集団とは想定しません。新しい作業カテゴリ、酒造設備、派閥は追加しません。
+バニラの背景には近現代・未来の職業も含まれます。元の技能や仕事の仕組みを活かし、古代～中世日本にふさわしい多様な人物を生成できるようにします。
 
 [h2]対応・互換性[/h2]
 [b]RimWorld 1.6／1.7、日本語・英語対応。[/b]
 [b]必須Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
-[b]任意Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]。
-新規ゲームを推奨します。既存セーブへの追加・削除は未検証です。
+[b]任意Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]
+新規ゲームを推奨します。既存セーブへの途中導入・削除は未検証です。
 
 [url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]詳細仕様・検証範囲はGitHubを参照[/url]
