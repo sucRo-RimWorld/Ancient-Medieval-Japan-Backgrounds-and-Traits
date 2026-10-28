@@ -18,11 +18,16 @@
   </loadAfter>
   <modVersion>0.1.0</modVersion>
   <description>Adapts pawn backgrounds and traits to ancient-to-medieval Japan.
-126 existing background identities receive historical names and descriptions. 12 new backgrounds (8 adulthood, 4 childhood) are eligible for ordinary pawn generation; 2 additional new IDs are preserved but excluded to avoid duplicate roles. Ordinary generation of 135 anachronistic existing backgrounds is restricted. Adds 2 alcohol-preference traits and revises 23 existing starting-possession records.
+
+Backgrounds: Rewrites 126 existing backgrounds, adds 12 (adulthood: shrine officiant; shrine ritual attendant (shrine miko for women); itinerant ritualist (traveling miko for women); itinerant woodturner; falconer; potter; coastal fisher; coastal salt maker. Childhood: hunter's child; traveling artisan's child; fishing village childhood; weaver's child.) Excludes 135 anachronistic backgrounds from new pawn generation and adjusts 23 existing starting-possession records.
+
+Traits: Adds likes alcohol (+2 mood while intoxicated) and dislikes alcohol (−2 mood while intoxicated). Excludes Transhumanist, Body Purist and Drug Desire traits, including teetotaler, from new pawn generation.
 
 RimWorld 1.6 / 1.7. Harmony required; Medieval Overhaul optional. New game recommended; adding to or removing from an existing save has not been verified.
 
-既存背景126件の名称・説明を中世日本向けに改稿。新規背景12件（成人8・幼少期4）は通常生成対象。重複する新規定義2件は識別子を保持し、通常生成から除外。時代に合わない既存背景135件の通常生成を制限し、酒好き・酒嫌いの2特性と既存背景23件の初期所持品変更を追加。
+背景：既存背景126件の名称・説明を改稿。成人期8件（社の神職、社の神楽役（女性は「社に仕える巫女」）、巡回する祭祀役（女性は「渡り巫女」）、木地師、鷹匠、焼き物師、沿岸の漁師、浜の塩焼き）、幼少期4件（狩人の家の子、渡り職人の子、漁村育ち、織屋の子）を追加。時代に合わない既存背景135件を新しいポーンの生成候補から除外し、既存背景23件の初期所持品を見直します。
 
-RimWorld 1.6／1.7対応。Harmony必須、Medieval Overhaulは任意。新規ゲーム推奨。既存セーブへの追加・削除は未検証。</description>
+特性：酒好き（酩酊中の心情+2）・酒嫌い（酩酊中の心情−2）を追加。義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）を新しいポーンの生成候補から除外します。
+
+RimWorld 1.6／1.7対応。Harmony必須、Medieval Overhaulは任意。新規ゲーム推奨。既存セーブへの途中導入・削除は未検証です。</description>
 </ModMetaData>
