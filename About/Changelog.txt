@@ -8,7 +8,6 @@ Backgrounds
 - Add 12 normal-generation backgrounds: adulthood (8): shrine officiant; shrine ritual attendant (shrine miko for women); itinerant ritualist (traveling miko for women); itinerant woodturner; falconer; potter; coastal fisher; coastal salt maker. Childhood (4): hunter's child; traveling artisan's child; fishing village childhood; weaver's child.
 - Exclude 135 anachronistic existing backgrounds from selection for newly generated pawns.
 - Adjust 23 existing starting-possession records.
-- Retain two duplicate new background IDs in source for save compatibility without allowing them in ordinary generation.
 
 Traits
 - Add likes alcohol (+2 mood while intoxicated) and dislikes alcohol (−2 mood while intoxicated).
@@ -25,7 +24,6 @@ Focused original 1.7 Japanese Vanilla and original 1.6 MO + separated Culture/Ch
 - 幼少期4件を追加：狩人の家の子、渡り職人の子、漁村育ち、織屋の子。
 - 時代に合わない既存背景135件を新しいポーンの生成候補から除外。
 - 既存背景23件の初期所持品を見直し。
-- 重複する追加背景2件の定義は互換性維持のため保持し、通常生成から除外。
 
 特性
 - 酒好き（酩酊中の心情+2）・酒嫌い（酩酊中の心情−2）を追加。
