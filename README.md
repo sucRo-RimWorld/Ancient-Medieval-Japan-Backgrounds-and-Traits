@@ -13,7 +13,7 @@ This standalone Mod adapts the backgrounds and traits of generated pawns to anci
 - **135 anachronistic existing backgrounds** excluded from selection for newly generated pawns (77 adulthood and 58 childhood).
 - **23 existing backgrounds** have their starting possessions adjusted.
 
-These use the base game's existing skills and work systems. The three original Core occupation rewrites retain their original skills, work restrictions and starting possessions; Weaver63 additionally becomes eligible in the original Outlander category. Two overlapping woodcutter/weaver background IDs remain in the source solely for compatibility with prior saves, but are not normal new-pawn choices. Details are in the [design](Docs/Design.md).
+These use the base game's existing skills and work systems. The three original Core occupation rewrites retain their original skills, work restrictions and starting possessions; Weaver63 additionally becomes eligible in the original Outlander category. Implementation details are in the [design](Docs/Design.md).
 
 ## Traits
 
