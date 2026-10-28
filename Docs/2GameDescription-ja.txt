@@ -13,8 +13,6 @@ RimWorldの人物背景・特性を古代から中世の日本に合わせて調
 ・RimWorld 1.6 / 1.7、日本語 / 英語対応
 ・必須Mod Harmony https://rimworld.2game.info/detail.php?id=2009463077
 ・任意Mod Medieval Overhaul https://rimworld.2game.info/detail.php?id=2553700067
-・任意Mod 分離済みの現行AMJ Culture https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture
-・分離前の旧AMJ Cultureと併用すると人物生成規則が重複するため併用不可
 
 ▼ セーブ互換性・検証
 ・新規ゲーム推奨。旧セーブへの追加・削除は未検証

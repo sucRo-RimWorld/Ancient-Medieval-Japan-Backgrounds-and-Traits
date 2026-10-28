@@ -28,10 +28,9 @@ A randomly assembled RimWorld colony is not inherently a historical court, noble
 ## Requirements and compatibility
 
 - **Required:** [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
-- **Optional:** [Medieval Overhaul](https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067), and the separately maintained [AMJ Culture](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture). Neither is a hard dependency.
-- **Important:** Do **not** combine this Mod with an **older, unsplit** AMJ Culture version that still contains the same generation patches. Use a current split Culture build if installing both Mods.
+- **Optional:** [Medieval Overhaul](https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067).
 - **Save games:** Start a new game where possible. The original Def IDs are retained, but existing-save migration/loading and removal from an active save have not been verified.
-- **Not included:** Shared-lodging/Greedy/Jealous mood rules, entrance/no-shoes, dining, bedding, drugs/chemical availability and initial addictions remain responsibilities of AMJ Culture.
+- **Not included:** This Mod does not change shared-lodging mood rules, entrance/no-shoes, dining, bedding, drugs/chemical availability or initial addictions.
 
 ## Verification and limitations
 
@@ -45,7 +44,7 @@ RimWorldの人物背景・特性を古代から中世の日本向けに調整し
 
 **既存背景126件の名称・説明の改稿**と、**通常生成対象の新規背景12件（成人8・幼少期4）**は別の数です。新規定義は14件存在しますが、重複する職業2件は互換性のため定義だけを残して通常生成対象から外しています。既存背景135件の通常生成を制限（定義自体は保持）。既存背景23件の初期所持品を見直し、酒好き・酒嫌いの2特性を追加します。
 
-Harmony必須。Medieval Overhaulと分離後の現行AMJ Cultureは任意。**分離前の旧Cultureとの同時導入は不可**。RimWorld 1.6／1.7対応、日英対応。新規ゲームを推奨します。旧セーブとの互換、MO 1.7等は未検証です。初回公開候補で、Steamへの掲載はまだ行っていません。
+Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日英対応。新規ゲームを推奨します。旧セーブとの互換、MO 1.7等は未検証です。初回公開候補で、Steamへの掲載はまだ行っていません。
 
 ## Release documentation
 
