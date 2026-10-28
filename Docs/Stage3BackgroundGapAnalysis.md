@@ -1,3 +1,5 @@
+**現行表示名（2026-10-28）：** 通常生成除外の新規 `AMJC_WoodcutterAdult` は「木伐り」、`AMJC_TextileWeaverAdult` は「機織り師」に改名。下の2026-10-21「杣人」「織物職人」の承認名は当時の履歴であり、現在のDef表示名ではない。元Coreの「村の杣人」「山の杣人」「織物職人」は変更しない。
+
 # Stage 3 — historical background diversity and replacement-gap assessment
 
 **Latest (2026-10-20):** five earlier biographies **plus the now-approved 鷹匠 and 渡り職人の子** are present in production XML. Earlier unapproved-candidate descriptions below are superseded only for those two. Seven new Defs total; the last two passed source-pinned loaded-game acceptance in original 1.6 MO and 1.7 Vanilla **English** profiles (see [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md)); actual individual random selection and Japanese appearance remain unverified.

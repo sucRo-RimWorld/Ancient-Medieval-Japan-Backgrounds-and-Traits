@@ -145,15 +145,15 @@
   <BackstoryDef>
     <defName>AMJC_TextileWeaverAdult</defName>
     <slot>Adulthood</slot>
-    <title>textile weaver</title>
-    <titleShort>weaver</titleShort>
+    <title>handloom weaver</title>
+    <titleShort>loom weaver</titleShort>
     <description>[PAWN_nameDef] spent many years spinning thread and weaving cloth on a loom. [PAWN_pronoun] learned to judge thread tension, spot irregularities in the weave, and maintain the tools used in the work.</description>
     <skillGains>
       <Crafting>6</Crafting>
     </skillGains>
     <spawnCategories>
-      <!-- Save-compatible Def retained; ordinary category intentionally disabled.
-           Existing Core Logger16/Logger95 or Weaver63 owns this role. -->
+      <!-- Unused pre-release duplicate retained, but excluded from ordinary generation.
+           Original Core logger/weaver backgrounds provide the active occupation. -->
       <li>AMJ_CultureExcluded</li>
     </spawnCategories>
   </BackstoryDef>
@@ -248,15 +248,15 @@
   <BackstoryDef>
     <defName>AMJC_WoodcutterAdult</defName>
     <slot>Adulthood</slot>
-    <title>woodcutter</title>
-    <titleShort>woodcutter</titleShort>
+    <title>timber cutter</title>
+    <titleShort>timber cutter</titleShort>
     <description>[PAWN_nameDef] worked in the mountains, selecting trees suitable for timber, felling them and hauling the logs out of the woods. [PAWN_pronoun] learned to judge slopes and the direction of a falling tree, working with others to bring the logs down from the mountains.</description>
     <skillGains>
       <Plants>6</Plants>
     </skillGains>
     <spawnCategories>
-      <!-- Save-compatible Def retained; ordinary category intentionally disabled.
-           Existing Core Logger16/Logger95 or Weaver63 owns this role. -->
+      <!-- Unused pre-release duplicate retained, but excluded from ordinary generation.
+           Original Core logger/weaver backgrounds provide the active occupation. -->
       <li>AMJ_CultureExcluded</li>
     </spawnCategories>
   </BackstoryDef>

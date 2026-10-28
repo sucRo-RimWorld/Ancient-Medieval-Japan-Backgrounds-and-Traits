@@ -4,6 +4,10 @@
 
 ## Stage 3 原本職業への統合 — 2026-10-21 作者承認・実装
 
+**2026-10-28 表示名の重複解消（現行仕様）：** 通常生成されないAMJ追加側2件の `title` / `titleShort` を既存Core背景と区別する。 `AMJC_WoodcutterAdult` は「木伐り」／`timber cutter`、`AMJC_TextileWeaverAdult` は「機織り師」／`handloom weaver`（英語短縮名は `loom weaver`）。どちらも `AMJ_CultureExcluded` のまま保持し、技能・本文・DefName等のゲーム上の設定は維持する。既存 `Logger16`「村の杣人」、`Logger95`「山の杣人」、`Weaver63`「織物職人」は変更しない。初回公開前の新規2Defに旧版互換性の保持義務はないが、削除による実益も乏しいため今回は定義削除を行わない。ゲーム内効果の追加や通常生成への復帰ではない。
+
+**証拠上の制限：** 下記2026-10-21実ゲーム受入は旧表示名を検証した結果であり、今回変更した表示名の現物ゲーム受入ではない。製品XMLと翻訳・既存テスト期待値の静的整合のみ今回確認する。
+
 **変更後のMO 1.6原本ゲーム受入（2026-10-21）:** [Project Actions #39590687182](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39590687182) **PASS**。RimWorld 1.6.4871 + MO 1.6.2.2 + 必須Framework + Culture/Characters（**Characters `ec5b93991664e320ba5f245f8fee8ea900c25a00` をソース固定**）、英語1シナリオのPickle 1/1、Unityエラー0、終了コード0。原本Logger16/Logger95/Weaver63の年齢・元の技能・改稿英名と必要なカテゴリ、新規4件の年齢・技能・候補カテゴリ、除外する新規杣人と織物職人のDef保持・通常生成除外をLoadedDefで照合。MOの派閥・PawnKind・一般的ポーン生成も従来のチェックを通過。専用 `AMJ_CULTURE_P3_CORE_DEDUP_MO16_OK` =1。詳細の正本と旧テストの無効判定は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) を参照。**個別背景の自然抽選、原本職業の初期所持品の実際の付与、旧セーブ、MO 1.7、日本語表示、元MP3の音声再生は対象外。** 既存の1.7日本語Vanilla受入結果はその版の構成に限定して維持する。C#製品とDLLの変更なし、Steam公開未承認。
 
 
@@ -12,7 +16,7 @@
 
 
 
-**最新の確定方針（先行の14件すべて通常生成候補という記述を上書き）:** 重複する新規成人 `AMJC_WoodcutterAdult`（杣人）・`AMJC_TextileWeaverAdult`（織物職人）の `spawnCategories` は `AMJ_CultureExcluded` **1件のみ**とし、**通常生成から除外する**。両 `BackstoryDef`、従来のtitle/titleShort/description、技能、旧セーブIDは保持する。残る新規12件は従来のカテゴリ・技能・本文を変更しない。現在のStage3 XMLは **14件存在・うち通常候補12件**（成人8・幼少4）。これは既存Core通常生成制限135件に加える**独立した新規Def2件の除外**であり、Core135件の数は変えない。
+**現行の生成方針（2026-10-21の重複統合を維持）：** 新規成人 `AMJC_WoodcutterAdult`（木伐り）・`AMJC_TextileWeaverAdult`（機織り師）の `spawnCategories` は `AMJ_CultureExcluded` **1件のみ**とし、**通常生成から除外する**。両 `BackstoryDef` のID・description・技能は保持し、2026-10-28に英日タイトル・短縮名のみ上記の通り変更。残る新規12件は従来のカテゴリ・技能・本文を変更しない。Stage3 XMLは **14件存在・うち通常候補12件**（成人8・幼少4）。これは既存Core通常生成制限135件に加える**独立した新規Def2件の除外**であり、Core135件の数は変えない。
 
 **職能の所有:** Vanilla 1.6/1.7原本 `Logger16`、`Logger95`、`Weaver63` のIDを維持したまま、PatchOperationReplaceで `title`／`titleShort`／`description` **だけ**を改稿する。日本語は `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml` の各 `title`、`titleShort`、`baseDesc`、`description` に対応。原本の `slot`、`skillGains`、`requiredWorkTags`、`forcedTraits`、`workDisables`、`startingPossessions` 等は変更しない。原本のゲーム技能は次表の通りで、**廃止した新規P3の数値へ置換しない**。
 
