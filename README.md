@@ -20,7 +20,7 @@ These use the base game's existing skills and work systems. The three original C
 - **Likes alcohol (酒好き):** +2 mood while intoxicated.
 - **Dislikes alcohol (酒嫌い):** −2 mood while intoxicated.
 
-Neither new trait has a mood effect while sober; they are preferences, not alcohol dependence or tolerance. The existing **Transhumanist**, **Body Purist** and **Drug Desire** traits (including teetotaler) are excluded from ordinary new pawn generation, including documented forced-background paths. Existing trait definitions and already saved characters are not retroactively changed.
+Neither new trait has a mood effect while sober; they are preferences, not alcohol dependence or tolerance. The existing **Transhumanist**, **Body Purist** and **Drug Desire** traits (including teetotaler) are excluded from ordinary pawn generation; known forced-background assignments are also suppressed. Existing trait definitions and already saved characters are not retroactively changed.
 
 ## Why this Mod exists
 
@@ -30,7 +30,7 @@ A randomly assembled RimWorld colony is not inherently a historical court, noble
 
 - **Required:** [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
 - **Optional:** [Medieval Overhaul](https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067).
-- **Save games:** Start a new game where possible. The original Def IDs are retained, but existing-save migration/loading and removal from an active save have not been verified.
+- **Save games:** Mid-save installation is possible, but behavior in existing saves has not been verified. Removing this Mod from an active save is not recommended. Original Def IDs are retained.
 - **Not included:** This Mod does not change shared-lodging mood rules, entrance/no-shoes, dining, bedding, drugs/chemical availability or initial addictions.
 
 ## Verification and limitations
@@ -55,11 +55,11 @@ Not verified by these passes: each biography's natural selection frequency; star
 
 - **酒好き：**酩酊中の心情+2。
 - **酒嫌い：**酩酊中の心情−2。
-- 義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）が新しいポーンに付かなくなります。
+- 義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）を通常のポーン生成から除外します。
 
 ### 対応・互換性
 
-Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日本語・英語対応。新規ゲームを推奨します。既存セーブへの途中導入・削除は未検証です。初回公開候補で、Steamにはまだ掲載していません。
+Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日本語・英語対応。途中導入は可能ですが、既存セーブでの動作は未検証です。途中削除は推奨しません。初回公開候補で、Steamにはまだ掲載していません。
 
 ## Release documentation
 
