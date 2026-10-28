@@ -3,7 +3,7 @@
   <!-- Verified vanilla-format skill/forcedTrait key elements against modern 1.6/1.7 period BackstoryDefs.
        <skillGains><Social>4</Social> and <forcedTraits><Nimble>0</Nimble> are Def dictionary keys.
        Initial five Stage 3 biographies, followed by separately approved additions below.
-       Fourteen P3 IDs exist, two retained only for saved-pawn compatibility; do not remove IDs.
+       Twelve P3 backgrounds remain after removing two redundant pre-release Defs.
        Plain BackstoryDef; no new DLC/MO hard dependency or extra game behaviors.
        titleFemale is a display override, not a gender-only generation filter. -->
   <BackstoryDef>
@@ -141,22 +141,7 @@
     </spawnCategories>
   </BackstoryDef>
 
-  <!-- Two additional 2026-10-20 author-approved adult craft backgrounds. -->
-  <BackstoryDef>
-    <defName>AMJC_TextileWeaverAdult</defName>
-    <slot>Adulthood</slot>
-    <title>handloom weaver</title>
-    <titleShort>loom weaver</titleShort>
-    <description>[PAWN_nameDef] spent many years spinning thread and weaving cloth on a loom. [PAWN_pronoun] learned to judge thread tension, spot irregularities in the weave, and maintain the tools used in the work.</description>
-    <skillGains>
-      <Crafting>6</Crafting>
-    </skillGains>
-    <spawnCategories>
-      <!-- Unused pre-release duplicate retained, but excluded from ordinary generation.
-           Original Core logger/weaver backgrounds provide the active occupation. -->
-      <li>AMJ_CultureExcluded</li>
-    </spawnCategories>
-  </BackstoryDef>
+  <!-- Additional historical pottery craft background. -->
   <BackstoryDef>
     <defName>AMJC_PotterAdult</defName>
     <slot>Adulthood</slot>
@@ -242,22 +227,6 @@
       <li>Tribal</li>
       <li>Civil</li>
       <li>MedievalCommon</li>
-    </spawnCategories>
-  </BackstoryDef>
-  <!-- 2026-10-21 approved medieval Japanese woodcutting livelihood, plain adult background. -->
-  <BackstoryDef>
-    <defName>AMJC_WoodcutterAdult</defName>
-    <slot>Adulthood</slot>
-    <title>timber cutter</title>
-    <titleShort>timber cutter</titleShort>
-    <description>[PAWN_nameDef] worked in the mountains, selecting trees suitable for timber, felling them and hauling the logs out of the woods. [PAWN_pronoun] learned to judge slopes and the direction of a falling tree, working with others to bring the logs down from the mountains.</description>
-    <skillGains>
-      <Plants>6</Plants>
-    </skillGains>
-    <spawnCategories>
-      <!-- Unused pre-release duplicate retained, but excluded from ordinary generation.
-           Original Core logger/weaver backgrounds provide the active occupation. -->
-      <li>AMJ_CultureExcluded</li>
     </spawnCategories>
   </BackstoryDef>
 </Defs>

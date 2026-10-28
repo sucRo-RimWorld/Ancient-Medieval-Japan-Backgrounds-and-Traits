@@ -67,7 +67,9 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 決定事項は `AMJC_WeaverChild`、織屋の子、`Crafting +3`、`Outlander/Tribal/Civil/MedievalCommon`、強制Trait・所持品・作業制限・追加Jobなし。製品XMLと [Design.md](Design.md) が正本。実ゲーム読込の検証はまだ行っていない。
 
-## 2026-10-21 承認済み重複解消 — 既存Core IDへの職業統合（製品正本）
+## 2026-10-21 既存Core IDへの職業統合（過去の経緯）
+
+**2026-10-28現行：** 重複する新規 `AMJC_WoodcutterAdult`・`AMJC_TextileWeaverAdult` は製品Defおよび翻訳から削除。通常候補の新規12件とCore既存3背景を残す。以下の14件保持・改名・セーブ互換維持は撤回した歴史的議論である。
 
 **過去の比較・候補検討を上書きする確定方針:** Vanilla `Logger16`、`Logger95`、`Weaver63` を歴史的な名称・説明へ英日改稿する。通常生成は「村の杣人」（Logger16: Tribal）、「山の杣人」（Logger95: Outlander等）、「織物職人」（Weaver63: Tribal、必要最小限のOutlander追加）が担当する。既存の技能・作業タグ・強制Trait・初期所持品・IDは原本通り。織物職人を普通のVanilla Outlanderにも供給できるよう原本 `Weaver63.spawnCategories` に **Outlanderのみ**追加する。他の既存カテゴリは保持する。
 
@@ -102,7 +104,7 @@ Fishing skill question: [Odyssey Fishing Speed](https://rimworldwiki.com/wiki/Fi
 
 **関連する別の確定事実:** 背景Phase2で「田畑育ち」と改稿済みの `ArtisanFarmer23` は原本 `Solid_Child`、`spawnCategories=Farmer` のみ、`Plants+7 / Intellectual−2 / Cooking+2`、Violent作業不可（原本実データ）。`Outlander`／`Tribal` という通常のカテゴリー名は持たない。これも「荘園の農家の子」新規Defを無条件で正当化しないが、以前の「田畑育ち」の存在のみから一般的な抽選適格性を推定できないことを裏づける。
 
-### 解決候補と意思決定境界
+### 旧解決候補と意思決定境界（現在は解決済み）
 
 **推奨:** 重複を減らすことを優先するなら、**既存原本IDを保持して英日本文・表示名だけ歴史的な職名へ改稿し、元の技能・生成カテゴリ・必要作業タグ・初期所持品を維持する方式**を先に評価する。候補は `Logger16/Logger95` を「杣人」系、`Weaver63` を「織物職人」系にする方法。ただしこれだけでは新規P3が広げた `Outlander/Civil/MedievalCommon` の同一カテゴリ機会をすべて代替できず、既存CoreのPlankCutterは加工職である。
 

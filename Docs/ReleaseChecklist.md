@@ -6,7 +6,7 @@ Status: **PREPARING / NOT PUBLISHED**. This checklist records evidence and bound
 
 - [Design](Design.md) owns features and actual implemented decisions.
 - Runtime source counts: `Patches/HistoricalOccupationBackstories.xml` (34 unique existing IDs), `Patches/Stage2HistoricalBackstories.xml` (89), `Patches/Stage3CoreOccupationRewrites.xml` (3), disjoint = **126** rewritten original IDs.
-- `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` contains **14** new IDs, of which **12** (8 adult, 4 childhood) have ordinary categories. Two retained new IDs (`AMJC_WoodcutterAdult` and `AMJC_TextileWeaverAdult`) have `AMJ_CultureExcluded` only.
+- `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` contains **12** new IDs, all ordinary-generation candidates (8 adult, 4 childhood). The two redundant pre-release Defs and their translations have been deleted.
 - **135** historically inappropriate original IDs are excluded from ordinary generation; definitions remain. Original starting-possession changes: **23**. New TraitDefs: **2**.
 
 ## Release-copy and metadata synchronization

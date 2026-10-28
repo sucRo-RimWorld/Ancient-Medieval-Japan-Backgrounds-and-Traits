@@ -528,7 +528,7 @@ namespace AMJ.Culture.Test
                     }
                     Log.Message("AMJ_CULTURE_BACKGROUNDS16_JAPANESE_OK count=89");
 
-                    // Confirm that all ten original P3 Japanese DefInjected translations
+                    // Confirm that all twelve current P3 Japanese DefInjected translations
                     // are loaded by the actual engine, not only present in XML.
                     string p3Path = Environment.GetEnvironmentVariable("AMJ_P3_JAPANESE_SOURCE");
                     ctx.Require(!string.IsNullOrEmpty(p3Path) &&
@@ -543,14 +543,10 @@ namespace AMJ.Culture.Test
                         "AMJC_ShrineOfficiantAdult", "AMJC_ShrineRitualAttendantAdult",
                         "AMJC_ItinerantRitualistAdult", "AMJC_ItinerantWoodworkerAdult",
                         "AMJC_HunterFamilyChild", "AMJC_FalconerAdult",
-                        "AMJC_TravelingArtisanChild", "AMJC_TextileWeaverAdult",
-                        "AMJC_PotterAdult", "AMJC_CoastalFisherAdult"
+                        "AMJC_TravelingArtisanChild", "AMJC_PotterAdult",
+                        "AMJC_CoastalFisherAdult", "AMJC_SaltMakerAdult",
+                        "AMJC_FishingVillageChild", "AMJC_WeaverChild"
                     };
-                    if (newFour)
-                        p3Names.UnionWith(new[] {
-                            "AMJC_SaltMakerAdult", "AMJC_FishingVillageChild",
-                            "AMJC_WeaverChild", "AMJC_WoodcutterAdult"
-                        });
                     var p3Texts = new Dictionary<string, Dictionary<string, string>>();
                     foreach (System.Xml.XmlNode node in p3Xml.DocumentElement.ChildNodes)
                     {
@@ -565,8 +561,8 @@ namespace AMJ.Culture.Test
                         ctx.Require(!values.ContainsKey(key), "Duplicate P3 key " + node.Name);
                         values.Add(key, node.InnerText);
                     }
-                    ctx.Require(p3Texts.Count == (newFour ? 14 : 10),
-                         "P3 Japanese source ID count differs from selected ten/fourteen scope");
+                    ctx.Require(p3Texts.Count == 12,
+                         "P3 Japanese source must contain twelve biographies");
                     foreach (var entry in p3Texts)
                     {
                         string id = entry.Key;
@@ -717,26 +713,21 @@ namespace AMJ.Culture.Test
                         "Follow-on P3 description missing: " + entry.Key);
                 }
 
-                // Next two author-approved adults: loaded game behavior, not a test of random rates.
+                // Remaining potter biography: loaded game behavior, not a test of random rates.
                 var crafts = new Dictionary<string, Dictionary<string, int>>
                 {
-                    { "AMJC_TextileWeaverAdult", new Dictionary<string, int> { { "Crafting", 6 } } },
                     { "AMJC_PotterAdult", new Dictionary<string, int> { { "Crafting", 4 }, { "Artistic", 2 } } }
                 };
                 foreach (var entry in crafts)
                 {
                     BackstoryDef bio = DefDatabase<BackstoryDef>.GetNamedSilentFail(entry.Key);
                     ctx.Require(bio != null, "P3 craft biography missing: " + entry.Key);
-                    bool retiredWeaver = entry.Key == "AMJC_TextileWeaverAdult";
                     ctx.Require(bio.slot == BackstorySlot.Adulthood &&
                         bio.spawnCategories != null &&
-                        (retiredWeaver
-                            ? bio.spawnCategories.Count == 1 &&
-                              bio.spawnCategories.Contains("AMJ_CultureExcluded")
-                            : bio.spawnCategories.Contains("Outlander") &&
-                              bio.spawnCategories.Contains("Tribal") &&
-                              bio.spawnCategories.Contains("MedievalCommon")),
-                        "P3 craft save-retention/categories mismatch: " + entry.Key);
+                        bio.spawnCategories.Contains("Outlander") &&
+                        bio.spawnCategories.Contains("Tribal") &&
+                        bio.spawnCategories.Contains("MedievalCommon"),
+                        "P3 potter categories mismatch: " + entry.Key);
                     var gains = bio.skillGains.ToDictionary(x => x.skill.defName, x => x.amount);
                     ctx.Require(gains.Count == entry.Value.Count &&
                         entry.Value.All(x => gains.TryGetValue(x.Key, out int amount) &&
@@ -744,15 +735,17 @@ namespace AMJ.Culture.Test
                         "P3 craft skill gains mismatch: " + entry.Key);
                     ctx.Require(bio.forcedTraits == null || bio.forcedTraits.Count == 0,
                         "P3 crafts should not force any Trait: " + entry.Key);
-                    string expectedTitle = japanese
-                        ? (entry.Key == "AMJC_TextileWeaverAdult" ? "機織り師" : "焼き物師")
-                        : (entry.Key == "AMJC_TextileWeaverAdult" ? "handloom weaver" : "potter");
+                    string expectedTitle = japanese ? "焼き物師" : "potter";
                     ctx.Require(bio.TitleFor(Gender.Male) == expectedTitle &&
                         bio.TitleFor(Gender.Female) == expectedTitle &&
                         !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
                         "P3 craft title/description missing: " + entry.Key);
                 }
                 Log.Message("AMJ_CULTURE_P3_TWO_CRAFT_BACKSTORIES_OK");
+
+                ctx.Require(DefDatabase<BackstoryDef>.GetNamedSilentFail("AMJC_WoodcutterAdult") == null &&
+                    DefDatabase<BackstoryDef>.GetNamedSilentFail("AMJC_TextileWeaverAdult") == null,
+                    "Deleted duplicate P3 backgrounds unexpectedly loaded");
 
                 // Approved coastal fisher: existing Animals skill, no new Fishing skill/job.
                 BackstoryDef fisher = DefDatabase<BackstoryDef>.GetNamedSilentFail("AMJC_CoastalFisherAdult");
@@ -777,7 +770,7 @@ namespace AMJ.Culture.Test
                     "P3 coastal fisher translated title / description mismatch");
                 Log.Message("AMJ_CULTURE_P3_COASTAL_FISHER_OK");
 
-                // New quartet: same original-game loaded-Def Pickle scenario.
+                // Remaining three latest backgrounds: original-game loaded-Def scenario.
                 // No extra original game launch or Pawn-sampling matrix.
                 if (newFour)
                 {
@@ -789,14 +782,13 @@ namespace AMJ.Culture.Test
                             { "Animals", 2 }, { "Crafting", 1 } } },
                         { "AMJC_WeaverChild", new Dictionary<string, int> {
                             { "Crafting", 3 } } },
-                        { "AMJC_WoodcutterAdult", new Dictionary<string, int> {
-                            { "Plants", 6 } } }
+
                     };
                     var expectedJaTitles = new Dictionary<string, string> {
                         { "AMJC_SaltMakerAdult", "浜の塩焼き" },
                         { "AMJC_FishingVillageChild", "漁村育ち" },
                         { "AMJC_WeaverChild", "織屋の子" },
-                        { "AMJC_WoodcutterAdult", "木伐り" }
+
                     };
                     foreach (var expected in addedFour)
                     {
@@ -808,15 +800,11 @@ namespace AMJ.Culture.Test
                         ctx.Require(bio.slot == (child ? BackstorySlot.Childhood :
                                                       BackstorySlot.Adulthood),
                             "Newest P3 slot mismatch: " + id);
-                        bool retiredWoodcutter = id == "AMJC_WoodcutterAdult";
                         ctx.Require(bio.spawnCategories != null &&
-                            (retiredWoodcutter
-                                ? bio.spawnCategories.Count == 1 &&
-                                  bio.spawnCategories.Contains("AMJ_CultureExcluded")
-                                : bio.spawnCategories.Count == 4 &&
-                                  new[] { "Outlander", "Tribal", "Civil", "MedievalCommon" }
-                                      .All(bio.spawnCategories.Contains)),
-                            "Newest P3 ordinary/retired categories mismatch: " + id);
+                            bio.spawnCategories.Count == 4 &&
+                            new[] { "Outlander", "Tribal", "Civil", "MedievalCommon" }
+                                .All(bio.spawnCategories.Contains),
+                            "Newest P3 categories mismatch: " + id);
                         var bonuses = bio.skillGains.ToDictionary(x => x.skill.defName,
                                                                   x => x.amount);
                         ctx.Require(bonuses.Count == expected.Value.Count &&
@@ -831,7 +819,7 @@ namespace AMJ.Culture.Test
                                     !string.IsNullOrWhiteSpace(LoadedText(bio, "description")),
                             "Newest P3 Japanese loaded title/body mismatch: " + id);
                     }
-                    // The three original Core identities now own occupational generation.
+                    // The three original Core identities continue to provide those occupations.
                     // Verify the actual patched names/skills/categories, not new P3 Defs.
                     var originalTrades = new Dictionary<string, Dictionary<string, int>> {
                         { "Logger16", new Dictionary<string, int> {
@@ -926,14 +914,14 @@ namespace AMJ.Culture.Test
                         { "AMJC_FishingVillageChild", new Dictionary<string, int> {
                             { "Animals", 2 }, { "Crafting", 1 } } },
                         { "AMJC_WeaverChild", new Dictionary<string, int> { { "Crafting", 3 } } },
-                        { "AMJC_WoodcutterAdult", new Dictionary<string, int> { { "Plants", 6 } } }
+
                     };
                     var quartetTitles = new Dictionary<string, string>
                     {
                         { "AMJC_SaltMakerAdult", "coastal salt maker" },
                         { "AMJC_FishingVillageChild", "fishing village childhood" },
                         { "AMJC_WeaverChild", "weaver's child" },
-                        { "AMJC_WoodcutterAdult", "timber cutter" }
+
                     };
                     foreach (var item in quartet)
                     {
@@ -948,14 +936,11 @@ namespace AMJ.Culture.Test
                         ctx.Require(gains.Count == item.Value.Count &&
                             item.Value.All(g => gains.TryGetValue(g.Key, out int n) && n == g.Value),
                             "MO source-added P3 skills mismatch: " + id);
-                        bool retired = id == "AMJC_WoodcutterAdult";
                         ctx.Require(record.spawnCategories != null &&
-                            (retired ? record.spawnCategories.Count == 1 &&
-                                       record.spawnCategories.Contains("AMJ_CultureExcluded")
-                                     : record.spawnCategories.Count == 4 &&
-                                       new[] { "Tribal", "Outlander", "Civil", "MedievalCommon" }
-                                           .All(record.spawnCategories.Contains)),
-                            "MO source-added P3 ordinary/retired candidate mismatch: " + id);
+                            record.spawnCategories.Count == 4 &&
+                            new[] { "Tribal", "Outlander", "Civil", "MedievalCommon" }
+                                .All(record.spawnCategories.Contains),
+                            "MO source-added P3 candidate mismatch: " + id);
                         ctx.Require(record.TitleFor(Gender.Male) == quartetTitles[id] &&
                                     !string.IsNullOrWhiteSpace(LoadedText(record, "description")),
                             "MO source-added P3 English title/description mismatch: " + id);
