@@ -13,7 +13,7 @@
 [h2]Traits[/h2]
 [list]
 [*]Add [b]likes alcohol[/b] (+2 mood while intoxicated) and [b]dislikes alcohol[/b] (−2 mood while intoxicated). Neither has a mood effect while sober.
-[*]New pawns no longer receive the existing Transhumanist, Body Purist or Drug Desire trait family (including teetotaler).
+[*]Transhumanist, Body Purist and all Drug Desire degrees (including teetotaler) are excluded from ordinary pawn generation.
 [/list]
 
 [h2]Design[/h2]
@@ -23,7 +23,7 @@ Original RimWorld backgrounds can describe modern or futuristic careers. This Mo
 [b]RimWorld 1.6 / 1.7. English / Japanese.[/b]
 [b]Required:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
 [b]Optional:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]
-New game recommended. Adding to or removing from an existing save has not been verified.
+Mid-save installation is possible, but behavior in existing saves has not been verified. Removing the Mod from an ongoing save is not recommended.
 
 [url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]Detailed features and limitations on GitHub[/url]
 
@@ -44,7 +44,7 @@ New game recommended. Adding to or removing from an existing save has not been v
 [h2]特性[/h2]
 [list]
 [*][b]酒好き[/b]（酩酊中の心情+2）と[b]酒嫌い[/b]（酩酊中の心情−2）を追加します。しらふの間は影響しません。
-[*]既存の義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）が、新しいポーンに付かなくなります。
+[*]義体化願望・義体化嫌悪・薬物嗜好系特性（禁酒主義者を含む）を、通常のポーン生成から除外します。
 [/list]
 
 [h2]設計方針[/h2]
@@ -54,6 +54,6 @@ New game recommended. Adding to or removing from an existing save has not been v
 [b]RimWorld 1.6／1.7、日本語・英語対応。[/b]
 [b]必須Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
 [b]任意Mod:[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url]
-新規ゲームを推奨します。既存セーブへの途中導入・削除は未検証です。
+途中導入は可能ですが、既存セーブでの動作は未検証です。途中削除は推奨しません。
 
 [url=https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits]詳細仕様・検証範囲はGitHubを参照[/url]

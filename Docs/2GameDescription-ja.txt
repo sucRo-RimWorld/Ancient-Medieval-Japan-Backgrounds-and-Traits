@@ -19,7 +19,7 @@
 ・任意Mod Medieval Overhaul https://rimworld.2game.info/detail.php?id=2553700067
 
 ▼ セーブ互換性
-・新規ゲーム推奨。既存セーブへの途中導入・削除は未検証
+・途中導入は可能。ただし既存セーブでの動作は未検証。途中削除は非推奨
 
 詳しい仕様・検証範囲はGitHubを参照。
 https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Backgrounds-and-Traits
