@@ -8,14 +8,14 @@ This standalone Mod adapts the backgrounds and traits of generated pawns to anci
 
 | Change | Count | Meaning |
 | --- | ---: | --- |
-| Existing backgrounds rewritten | **126** | Historical names and descriptions for 123 previously rewritten original IDs plus 3 original Core occupations. **These are not new backgrounds.** |
+| Existing backgrounds rewritten | **126** | Historical names and descriptions for 123 previously rewritten original IDs plus 3 original Core occupations. |
 | Newly playable backgrounds | **12** | 8 adulthood and 4 childhood backgrounds eligible for ordinary pawn generation. |
 | New IDs retained but not generated | **2** | Duplicate new woodcutter/weaver IDs kept to avoid removing definitions; excluded from ordinary selection. Total new source IDs: **14**. |
 | Existing backgrounds restricted | **135** | 77 adulthood and 58 childhood records excluded from ordinary generation, **not deleted**. |
 | New traits | **2** | Alcohol lover (酒好き) and alcohol averse (酒嫌い), with +2/−2 mood only while intoxicated. |
 | Starting possession revisions | **23** | Change selected original item grants to fit the period. |
 
-The 34 historical occupation rewrites, 89 additional rewrites and three original Core profession rewrites have **126 distinct original DefNames**. New IDs are counted separately. The 12 additions are *eligible* for ordinary generation; this does not guarantee that every new background is drawn in every scenario.
+The 34 historical occupation rewrites, 89 additional rewrites and three original Core profession rewrites affect **126 distinct original DefNames**. The 12 new backgrounds are eligible for ordinary generation; their individual appearance rates have not been verified.
 
 Existing original BackstoryDef/TraitDef identities remain intact. Original skill gains and work restrictions remain unchanged in the three newly rewritten Core occupations (`Logger16`, `Logger95`, `Weaver63`); only `Weaver63` also gains an `Outlander` candidate category. Targeted anachronistic forced traits and certain original possessions are changed according to the [design](Docs/Design.md).
 
@@ -42,7 +42,7 @@ Not verified by these passes: each biography's natural selection frequency; star
 
 RimWorldの人物背景・特性を古代から中世の日本向けに調整します。もとのポーンの背景IDをなるべく維持し、歴史的に不自然な通常生成を制限しつつ、庶民の職業・幼少期の選択肢を増やします。
 
-**既存背景126件の名称・説明の改稿**と、**通常生成対象の新規背景12件（成人8・幼少期4）**は別の数です。新規定義は14件存在しますが、重複する職業2件は互換性のため定義だけを残して通常生成対象から外しています。既存背景135件の通常生成を制限（定義自体は保持）。既存背景23件の初期所持品を見直し、酒好き・酒嫌いの2特性を追加します。
+**既存背景126件の名称・説明を改稿**し、**新規背景12件（成人8・幼少期4）**を通常生成の候補に追加します。新規定義は14件存在しますが、重複する職業2件は互換性のため定義だけを残して通常生成対象から外しています。既存背景135件の通常生成を制限（定義自体は保持）。既存背景23件の初期所持品を見直し、酒好き・酒嫌いの2特性を追加します。
 
 Harmony必須。Medieval Overhaulは任意。RimWorld 1.6／1.7対応、日英対応。新規ゲームを推奨します。旧セーブとの互換、MO 1.7等は未検証です。初回公開候補で、Steamへの掲載はまだ行っていません。
 
