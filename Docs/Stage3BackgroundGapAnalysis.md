@@ -1,4 +1,4 @@
-**現行表示名（2026-10-28）：** 通常生成除外の新規 `AMJC_WoodcutterAdult` は「木伐り」、`AMJC_TextileWeaverAdult` は「機織り師」に改名。下の2026-10-21「杣人」「織物職人」の承認名は当時の履歴であり、現在のDef表示名ではない。元Coreの「村の杣人」「山の杣人」「織物職人」は変更しない。
+**現行仕様（2026-10-28）：** 重複した新規 `AMJC_WoodcutterAdult`・`AMJC_TextileWeaverAdult` はDef・翻訳とも削除。新規12件はすべて通常候補。既存Core「村の杣人」「山の杣人」「織物職人」は維持。以下の新規14件・除外の説明は過去の検討履歴。
 
 # Stage 3 — historical background diversity and replacement-gap assessment
 

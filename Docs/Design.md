@@ -4,9 +4,7 @@
 
 ## Stage 3 原本職業への統合 — 2026-10-21 作者承認・実装
 
-**2026-10-28 表示名の重複解消（現行仕様）：** 通常生成されないAMJ追加側2件の `title` / `titleShort` を既存Core背景と区別する。 `AMJC_WoodcutterAdult` は「木伐り」／`timber cutter`、`AMJC_TextileWeaverAdult` は「機織り師」／`handloom weaver`（英語短縮名は `loom weaver`）。どちらも `AMJ_CultureExcluded` のまま保持し、技能・本文・DefName等のゲーム上の設定は維持する。既存 `Logger16`「村の杣人」、`Logger95`「山の杣人」、`Weaver63`「織物職人」は変更しない。初回公開前の新規2Defに旧版互換性の保持義務はないが、削除による実益も乏しいため今回は定義削除を行わない。ゲーム内効果の追加や通常生成への復帰ではない。
-
-**証拠上の制限：** 下記2026-10-21実ゲーム受入は旧表示名を検証した結果であり、今回変更した表示名の現物ゲーム受入ではない。製品XMLと翻訳・既存テスト期待値の静的整合のみ今回確認する。
+**現行仕様（2026-10-28）：** 初回公開前に、既存Core職業と重複するAMJ追加の `AMJC_WoodcutterAdult`／`AMJC_TextileWeaverAdult` のBackstoryDefと翻訳を**削除**。生成除外だけのDefや別名への改名は残さない。新規P3は**12件（成人8件、幼少期4件）、全件が通常生成候補**。既存Coreの `Logger16`「村の杣人」、`Logger95`「山の杣人」、`Weaver63`「織物職人」は従来の改稿と技能・所持品・生成カテゴリを維持。他の背景・特性・通常生成制限135件は不変。以下の14件前提の検討・実ゲームPASSは削除前の履歴であり、今回の12件構成の実ゲーム受入を証明しない。
 
 **変更後のMO 1.6原本ゲーム受入（2026-10-21）:** [Project Actions #39590687182](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39590687182) **PASS**。RimWorld 1.6.4871 + MO 1.6.2.2 + 必須Framework + Culture/Characters（**Characters `ec5b93991664e320ba5f245f8fee8ea900c25a00` をソース固定**）、英語1シナリオのPickle 1/1、Unityエラー0、終了コード0。原本Logger16/Logger95/Weaver63の年齢・元の技能・改稿英名と必要なカテゴリ、新規4件の年齢・技能・候補カテゴリ、除外する新規杣人と織物職人のDef保持・通常生成除外をLoadedDefで照合。MOの派閥・PawnKind・一般的ポーン生成も従来のチェックを通過。専用 `AMJ_CULTURE_P3_CORE_DEDUP_MO16_OK` =1。詳細の正本と旧テストの無効判定は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) を参照。**個別背景の自然抽選、原本職業の初期所持品の実際の付与、旧セーブ、MO 1.7、日本語表示、元MP3の音声再生は対象外。** 既存の1.7日本語Vanilla受入結果はその版の構成に限定して維持する。C#製品とDLLの変更なし、Steam公開未承認。
 
@@ -15,8 +13,6 @@
 **変更後の原本日本語1.7ネイティブ受入（2026-10-21）:** [Project Actions #39587913897](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39587913897) はCharacters [PR #45](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Culture-Characters/pull/45) を指定した**実際のOriginal 1.7.4977日本語Vanilla環境でPASS**。Pickle1/1、Unity/FMOD ERROR0、exit0、原本3背景の年齢区分・完全な既存技能セット・必要な生成カテゴリ・日本語タイトル、元の新規2Defの読み込み維持と `AMJ_CultureExcluded` 1件のみのカテゴリを確認。新規P3の通常候補12件はコード上・ロード済み定義上の状態であって、全12件が実際に自然抽選された事実ではない。過去の「新しいPatchのゲーム受入未検証」という段落は検証**前**の履歴であり、最新の証拠は [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md) の「Approved Core occupational consolidation」節に整理。現在も **原本3件の日本語説明全文を厳密一致検査したものではなく**、既存セーブ/MO1.6/描画/個別自然抽選/初期所持品の実際の付与は未検証。製品C#・DLL変更なし、Steam公開は別途承認。
 
 
-
-**現行の生成方針（2026-10-21の重複統合を維持）：** 新規成人 `AMJC_WoodcutterAdult`（木伐り）・`AMJC_TextileWeaverAdult`（機織り師）の `spawnCategories` は `AMJ_CultureExcluded` **1件のみ**とし、**通常生成から除外する**。両 `BackstoryDef` のID・description・技能は保持し、2026-10-28に英日タイトル・短縮名のみ上記の通り変更。残る新規12件は従来のカテゴリ・技能・本文を変更しない。Stage3 XMLは **14件存在・うち通常候補12件**（成人8・幼少4）。これは既存Core通常生成制限135件に加える**独立した新規Def2件の除外**であり、Core135件の数は変えない。
 
 **職能の所有:** Vanilla 1.6/1.7原本 `Logger16`、`Logger95`、`Weaver63` のIDを維持したまま、PatchOperationReplaceで `title`／`titleShort`／`description` **だけ**を改稿する。日本語は `Languages/Japanese/DefInjected/BackstoryDef/Stage3CoreOccupationRewrites.xml` の各 `title`、`titleShort`、`baseDesc`、`description` に対応。原本の `slot`、`skillGains`、`requiredWorkTags`、`forcedTraits`、`workDisables`、`startingPossessions` 等は変更しない。原本のゲーム技能は次表の通りで、**廃止した新規P3の数値へ置換しない**。
 
@@ -132,7 +128,7 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **Bounded evidence:** category intersections support ordinary Vanilla `Outlander` and original MO `Tribal` candidate eligibility; actual selection of every individual Def by random generation **is not demonstrated**, nor are appearance rates or fixed faction/quest routes. Prior native PASS runs used earlier XML and do not certify this new source until loaded-game acceptance. New game recommended; no DLC/Steam action.
 
-## P3 — 織物職人・焼き物師の追加（2026-10-20承認、実ゲーム検証未実施）
+## P3 — 当時の織物職人・焼き物師の追加（履歴・新規織物職人Defは削除済み）
 
 既存の背景7件に加え、ユーザーが日本語本文・能力補正案を承認した成人背景2件を追加。P3新規背景合計**9件（成人7・幼少期2）**。新規ID・効果は以下。
 
@@ -182,7 +178,7 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **所有と受入れ:** 日英の製品正本は `Defs/BackstoryDefs/Stage3HistoricalBackgrounds.xml` と `Languages/Japanese/DefInjected/BackstoryDef/Stage3HistoricalBackgrounds.xml`。VE／非VEおよび職歴比較は [Stage3ExistingModAudit.md](Stage3ExistingModAudit.md)。XMLのみの追加で既存CharactersのC#／1.6・1.7 DLLは変更しない。**先行10件の原本ゲームPASSは新規の3件目（塩焼き・漁村育ち・織屋の子）には適用されない。** この3件のLoadedDef、技能、言語表示、選択率、元セーブ／MO互換は未確認。ゲーム起動は他の追加背景とまとめる。
 
-## P3 — 杣人（2026-10-21承認、14件目）
+## P3 — 当時の杣人追加（履歴・新規杣人Defは削除済み）
 
 **確定仕様:** `AMJC_WoodcutterAdult`、`Adulthood`、日本語名・略称「杣人（そまびと）」、英語 `woodcutter`。能力補正 `Plants +6` のみ。通常生成候補 `Outlander`、`Tribal`、`Civil`、`MedievalCommon`。強制Trait、仕事禁止、初期所持品、独自Job、製材設備、伐採速度への追加パッチ、DLC・MO必須依存は設けない。新規P3合計14件（成人10件・幼少期4件）。元の通常生成制限135件・元Defの改稿123件・先行新規13件は不変。
 
@@ -202,7 +198,7 @@ Both biographies have **no forced Trait, special pet, new hawking/family Job, wo
 
 **再評価条件:** `ArtisanFarmer23` が実際の Vanilla Outlander／MO Tribal 候補経路で選ばれるかは**未検証**。生成カテゴリ不一致が確認された場合には既存Defの候補適格性・パッチの修正要否を先に検討し、同内容の新規Defを追加することで迂回しない。現行14件のP3、135件の通常生成制限、123件の歴史的改稿、元Defの技能や出生背景は変更しない。候補保留はユーザーが将来具体的な追加効果・別の歴史的職能を認めた場合にのみ再検討する。これは原本ゲームのテスト結果ではなく、既存資料に基づく設計監査。
 
-## P3 original Core 1.6/1.7 occupational overlap — exact source decision review (2026-10-21)
+## P3 original Core occupational overlap — historical review (2026-10-21; superseded)
 
 **Formal design gate remains OPEN, not a production change.** The directly inspected original-game 1.6.4871 and 1.7.4977 BackstoryDef source metadata from [Project Actions #38797500765](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/38797500765), artifact **12002927488**, CSV SHA-256 `5699065686d4d6bebd59a8244b88a4f5707c57a0d16b0300cadab09ef331228d` for **both versions**, resolves the previously unknown raw slot, skill, category and starting-item data. All these original Defs remain present under unchanged IDs and have not been excluded or rewritten by Characters:
 
@@ -217,7 +213,7 @@ These are original `Shuffled` records, not unique `Solid` biographies. `Logger16
 
 **Adjacent childhood eligibility note:** `ArtisanFarmer23`「田畑育ち」 is original `Solid_Child`, category only `Farmer`, `Plants +7 / Intellectual -2 / Cooking +2`, `Violent` work disabled (same in 1.6/1.7). Ordinary `Outlander/Tribal` selection is **not implied** by its existence. This does not automatically approve adding 「荘園の農家の子」.
 
-## P3 14 backgrounds — added four original 1.7 Japanese runtime acceptance (2026-10-21)
+## Historical 14-background native acceptance (2026-10-21; before deletion)
 
 The four later author-approved biographies `AMJC_SaltMakerAdult` (浜の塩焼き), `AMJC_FishingVillageChild` (漁村育ち), `AMJC_WeaverChild` (織屋の子), `AMJC_WoodcutterAdult` (杣人) now have **original 1.7.4977 Japanese Vanilla loaded-game acceptance PASS**: [Project Actions #39582470340](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39582470340), Pickle 1/1, Unity errors 0, FMOD errors 0, exit 0, actual newest four marker exactly once. All 14 P3 Japanese entries' source and live-loaded titles, short titles and full descriptions were compared; the four new Defs' exact skill values, adulthood/childhood slot, full set of four normal categories and no forced Traits were checked. Earlier ten and P2 restrictions plus one **generic** generated Pawn retained their scenario assertions. This replaces the **test-status portions only** of each new four P3 section above; all product specifications remain authoritative and unchanged. Independent exact evidence, pinned source/DLL hashes and caveats: [Stage3NativeAcceptance.md](Stage3NativeAcceptance.md), section 2026-10-21.
 
