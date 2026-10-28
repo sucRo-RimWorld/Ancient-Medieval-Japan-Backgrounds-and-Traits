@@ -2,7 +2,7 @@
 
 [h2]What changes[/h2]
 [list]
-[*][b]126 existing backgrounds rewritten[/b] — names and descriptions adapted for the period (123 earlier rewrites plus three original Core occupations). These are [b]not[/b] newly added backgrounds.
+[*][b]126 existing backgrounds rewritten[/b] — names and descriptions adapted for the period (123 earlier rewrites plus three original Core occupations).
 [*][b]12 new backgrounds available for normal pawn generation[/b] — eight adulthood and four childhood biographies.
 [*]14 new background IDs exist in source, but two overlapping roles are kept for compatibility and excluded from ordinary generation.
 [*][b]135 existing backgrounds restricted from ordinary generation[/b] because they are anachronistic. Their definitions are not deleted.
@@ -27,7 +27,7 @@ New game recommended. Adding to or removing from an existing save has not been v
 
 [h2]主な変更[/h2]
 [list]
-[*][b]既存背景126件を改稿[/b]：従来の123件とCore職業3件の名称・説明文を変更。[b]新規背景を126件追加するわけではありません。[/b]
+[*][b]既存背景126件を改稿[/b]：従来の123件とCore職業3件の名称・説明文を変更。
 [*][b]新規背景12件を追加[/b]：成人8件・幼少期4件。通常のポーン生成の候補になります。
 [*]新規定義自体は14件ですが、重複する職業2件は互換性のため残し、通常生成から除外しています。
 [*][b]既存背景135件の通常生成を制限[/b]：時代に合わない背景を抽選対象から外します。定義自体は削除しません。
